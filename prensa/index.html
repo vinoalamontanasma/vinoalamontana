@@ -1,40 +1,330 @@
-<section id="prensa">
-  <h2 class="section-title">Prensa</h2>
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <div class="grid">
-    <div class="card">
-      <h3>Lo que dijeron los medios</h3>
+  <title>Prensa · Vino a la Montaña</title>
+  <meta name="description" content="Cobertura en medios de Vino a la Montaña: notas previas y post evento sobre la Ruta del Vino de la Patagonia en San Martín de los Andes." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0b0b" />
 
-      <p class="muted">
-        La primera edición de Vino a la Montaña contó con una amplia cobertura
-        de medios regionales y provinciales, que destacaron el perfil cuidado
-        del evento, la calidad de las bodegas participantes y el rol de
-        San Martín de los Andes como escenario del vino patagónico.
-      </p>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prensa · Vino a la Montaña" />
+  <meta property="og:description" content="Notas y cobertura de medios sobre Vino a la Montaña." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
 
-      <ul class="press-list muted">
-        <li>Diario Río Negro · Gastronomía</li>
-        <li>Neuquén Informa · Gobierno de Neuquén</li>
-        <li>Info Los Andes</li>
-        <li>IN Neuquén</li>
-        <li>Noticias NQN</li>
-      </ul>
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --text:#ededed;
+      --muted:#cfcfcf;
+      --gold:#d2b48c;
+      --border:rgba(255,255,255,0.10);
+      --shadow:0 20px 60px rgba(0,0,0,0.55);
+      --radius:18px;
+    }
 
-      <p class="muted" style="margin-top:1rem;">
-        <a href="/prensa/" class="btn btn-ghost">Ver cobertura completa</a>
-      </p>
-    </div>
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
 
-    <div class="card">
-      <div class="quote">
-        “Vino a la Montaña consolidó a San Martín de los Andes como un punto de encuentro entre vino, gastronomía y territorio.”
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a{ color: var(--gold); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,11,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+      line-height:1.1;
+    }
+    .brand span{ font-size: 0.85rem; color: rgba(237,237,237,0.75); }
+
+    .brand-logo{
+      height: 42px;
+      width: auto;
+      display: block;
+      opacity: 0.92;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35));
+    }
+    .brand-logo-link:hover{ text-decoration: none; }
+
+    .nav-links{
+      display:flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.95rem;
+    }
+    .nav-links a{
+      color: rgba(237,237,237,0.85);
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(210,180,140,0.35);
+      text-decoration:none;
+    }
+
+    main{ overflow-x: hidden; }
+
+    section{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem;
+    }
+
+    .section-title{
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 0 0 1.25rem 0;
+      letter-spacing: .2px;
+    }
+
+    .card{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 1.8rem;
+    }
+
+    .muted{ color: rgba(237,237,237,0.78); }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .quote{
+      margin: 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(210,180,140,0.55);
+      color: rgba(237,237,237,0.85);
+      font-style: italic;
+    }
+
+    .btn{
+      display:inline-block;
+      padding: .78rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      background: var(--gold);
+      color:#111;
+      border: 1px solid rgba(210,180,140,0.6);
+      text-decoration:none;
+      cursor: pointer;
+    }
+    .btn:hover{ text-decoration:none; filter: brightness(0.98); }
+    .btn-ghost{
+      background: rgba(0,0,0,0.15);
+      color:#f2f2f2;
+      border: 1px solid rgba(210,180,140,0.45);
+    }
+
+    .press-block h3{
+      margin: 0 0 .6rem 0;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: .2px;
+    }
+
+    .press-list{
+      margin: .35rem 0 0 0;
+      padding-left: 1.1rem;
+    }
+    .press-list li{ margin: .45rem 0; }
+
+    .press-list a{
+      color: rgba(237,237,237,0.9);
+      border-bottom: 1px solid rgba(210,180,140,0.25);
+    }
+    .press-list a:hover{
+      color: #fff;
+      border-bottom-color: rgba(210,180,140,0.6);
+      text-decoration: none;
+    }
+
+    footer{
+      border-top: 1px solid var(--border);
+      background: #060606;
+      text-align: center;
+      padding: 2.2rem 1.25rem;
+      font-size: 0.9rem;
+      color: rgba(237,237,237,0.72);
+    }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px){
+      .brand-logo{ height: 36px; }
+      section{ padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <a href="/" class="brand-logo-link" aria-label="Vino a la Montaña">
+          <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
+        </a>
+        <span>San Martín de los Andes · Patagonia</span>
       </div>
 
-      <p class="muted" style="margin-top:1rem;">
-        La repercusión mediática confirmó la necesidad de un espacio
-        que articule productores, trade, turismo y cultura del vino
-        en la Patagonia.
-      </p>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="/#experiencia">Experiencia</a>
+        <a href="/#galeria">Galería</a>
+        <a href="/#contacto">Contacto</a>
+        <a href="/prensa/">Prensa</a>
+      </nav>
     </div>
   </div>
-</section>
+
+  <main>
+    <section>
+      <h1 class="section-title">Prensa</h1>
+
+      <div class="grid">
+        <div class="card press-block">
+          <h3>Previas al evento</h3>
+          <ul class="press-list muted">
+            <li>
+              <a href="https://www.neuqueninforma.gob.ar/noticias/2025/08/29/251010-las-bodegas-patagonicas-las-estrellas-de-vino-a-la-montana" target="_blank" rel="noopener noreferrer">
+                Neuquén Informa (29/08/2025) — “Las bodegas patagónicas, las estrellas de Vino a la Montaña”
+              </a>
+            </li>
+            <li>
+              <a href="https://infolosandes.com.ar/2025/09/09/vino-a-la-montana-tendra-una-nutrida-agenda-de-charlas-degustaciones-y-maridajes-en-san-martin-de-los-andes/" target="_blank" rel="noopener noreferrer">
+                Info Los Andes (09/09/2025) — “Agenda de charlas, degustaciones y maridajes”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.lamontana.com.ar/noticias/2025/09/15/12545-vino-a-la-montana-un-brindis-grande-como-la-patagonia" target="_blank" rel="noopener noreferrer">
+                La Montaña (15/09/2025) — “Un brindis grande como la Patagonia”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.neuqueninforma.gob.ar/noticias/2025/09/17/251346-llega-la-feria-de-vinos-de-la-patagonia-a-san-martin-de-los-andes" target="_blank" rel="noopener noreferrer">
+                Neuquén Informa (17/09/2025) — “Llega la feria de vinos de la Patagonia…”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.neuquenalinstante.com.ar/noticias/2025/09/18/120806-san-martn-de-los-andes--vino-a-la-montana-la-patagonia-se-sirve-en-copa" target="_blank" rel="noopener noreferrer">
+                Neuquén al Instante (18/09/2025) — “La Patagonia se sirve en copa”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.noticiasnqn.com.ar/noticias/2025/09/19/320155-vino-a-la-montana-en-san-martin-de-los-andes-charlas-degustaciones-y-maridajes" target="_blank" rel="noopener noreferrer">
+                Noticias NQN (19/09/2025) — “Charlas, degustaciones y maridajes”
+              </a>
+            </li>
+            <li>
+              <a href="https://inneuquen.info/enfoque/vino-a-la-montana-reunira-a-20-bodegas-de-la-patagonia-en-san-martin-de-los-andes" target="_blank" rel="noopener noreferrer">
+                IN Neuquén — “Reunirá a 20 bodegas de la Patagonia…”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.zapala-noticias.com.ar/vino-a-la-montana-la-gran-feria-de-vinos-de-la-patagonia-se-realizara-en-san-martin-de-los-andes/" target="_blank" rel="noopener noreferrer">
+                Zapala Noticias — “La gran feria de vinos de la Patagonia…”
+              </a>
+            </li>
+            <li>
+              <a href="https://inneuquen.info/y-ademas/san-martin-de-los-andes-recibira-el-evento-vino-a-la-montana-con-bodegas-de-toda-la-patagonia" target="_blank" rel="noopener noreferrer">
+                IN Neuquén — “San Martín de los Andes recibirá el evento…”
+              </a>
+            </li>
+            <li>
+              <a href="https://www.rionegro.com.ar/gastronomia/san-martin-de-los-andes-se-prepara-e-invita-a-disfrutar-de-su-feria-de-vinos-patagonicos/" target="_blank" rel="noopener noreferrer">
+                Diario Río Negro — “Se prepara e invita a disfrutar…”
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="quote">
+            “Vino a la Montaña consolidó a San Martín de los Andes como un punto de encuentro entre vino, gastronomía y territorio.”
+          </div>
+          <p class="muted" style="margin-top:1rem;">
+            La cobertura reflejó el espíritu del evento: una experiencia cuidada, con foco en el disfrute y el descubrimiento,
+            y también en el vínculo directo entre productores, gastronomía y turismo.
+          </p>
+        </div>
+      </div>
+
+      <div class="card press-block" style="margin-top:1.5rem;">
+        <h3>Post evento</h3>
+        <ul class="press-list muted">
+          <li>
+            <a href="https://www.noticiasnqn.com.ar/noticias/2025/09/21/320602-vino-a-la-montana-reunio-a-bodegas-patagonicas-y-consolido-a-san-martin-de-los-andes-como-destino-turistico" target="_blank" rel="noopener noreferrer">
+              Noticias NQN (21/09/2025) — “Reunió a bodegas patagónicas y consolidó a San Martín…”
+            </a>
+          </li>
+          <li>
+            <a href="https://realidadsm.com/2025/09/22/fue-un-exito-la-primera-edicion-de-vino-a-la-montana-en-san-martin-de-los-andes/" target="_blank" rel="noopener noreferrer">
+              Realidad SM (22/09/2025) — “Fue un éxito la primera edición…”
+            </a>
+          </li>
+          <li>
+            <a href="https://radio3cadenapatagonia.com.ar/vino-a-la-montana-la-patagonia-vitivinicola-brillo-en-san-martin-de-los-andes/" target="_blank" rel="noopener noreferrer">
+              Radio 3 Cadena Patagonia — “La Patagonia vitivinícola brilló…”
+            </a>
+          </li>
+          <li>
+            <a href="https://www.rionegro.com.ar/gastronomia/san-martin-de-los-andes-la-primera-edicion-de-vino-a-la-montana-se-llevo-todos-los-aplausos-4308498/" target="_blank" rel="noopener noreferrer">
+              Diario Río Negro — “La primera edición… se llevó todos los aplausos”
+            </a>
+          </li>
+        </ul>
+
+        <p class="muted" style="margin-top:1rem;">
+          <a href="/" class="btn btn-ghost">Volver al sitio</a>
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
+  </footer>
+
+</body>
+</html>
