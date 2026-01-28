@@ -1,85 +1,290 @@
 <!doctype html>
-<p>
-📧 <strong>Email:</strong> <a href="mailto:vinoalamontana.sma@gmail.com" style="color:#d2b48c;">vinoalamontana.sma@gmail.com</a><br>
-📸 <strong>Instagram:</strong> <a href="https://instagram.com/vinoalamontana.sma" target="_blank" style="color:#d2b48c;">@vinoalamontana.sma</a>
-</p>
-<p class="highlight">
-Próximamente, contacto institucional con dominio propio.
-</p>
-</section>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <title>Vino a la Montaña · Ruta del Vino Patagónico en San Martín de los Andes</title>
 
-<section id="contacto">
-<h2>Contacto</h2>
-<div class="card">
-<p><strong>Información adicional, participación de bodegas o propuestas de sponsor</strong></p>
-<p class="note">Completá el formulario y te respondemos a la brevedad. Mientras tanto, podés escribirnos o encontrarnos en redes.</p>
+  <meta name="description" content="Vino a la Montaña es una experiencia de vinos patagónicos en San Martín de los Andes. Un encuentro cuidado entre bodegas, sommeliers, enólogos y público especializado, en el entorno único del Loi Suites Chapelco." />
+  <meta name="keywords" content="Vino a la Montaña, vino patagónico, San Martín de los Andes, vinos de la Patagonia, enoturismo, Loi Suites Chapelco, feria de vinos" />
+  <meta name="author" content="Vino a la Montaña" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111111" />
 
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<!--
-IMPORTANTE:
-Este formulario es visual. Para que envíe mails necesitas conectar un servicio (Formspree / Getform / Netlify Forms)
-o reemplazar action="" por el endpoint del servicio.
--->
-<form action="" method="post">
-<div class="form-grid">
-<div>
-<label for="nombre">Nombre</label>
-<input id="nombre" name="nombre" type="text" autocomplete="name" required />
-</div>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
 
+    header.hero {
+      background-image: url("assets/vino-a-la-montana-header.png");
+      background-size: cover;
+      background-position: center;
+      height: 62vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
 
-<div>
-<label for="email">Email</label>
-<input id="email" name="email" type="email" autocomplete="email" required />
-</div>
+    .hero-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2.5rem 3rem;
+      max-width: 760px;
+      border-radius: 6px;
+    }
 
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0 0 0.5rem 0;
+      color: #fff;
+    }
 
-<div>
-<label for="tipo">Motivo de contacto</label>
-<select id="tipo" name="tipo" required>
-<option value="" selected disabled>Seleccionar…</option>
-<option value="info">Información adicional</option>
-<option value="participar">Quiero participar con una bodega</option>
-<option value="sponsor">Quiero ser sponsor</option>
-<option value="prensa">Prensa / acreditaciones</option>
-<option value="otros">Otros</option>
-</select>
-</div>
+    .hero p {
+      font-size: 1.2rem;
+      margin: 0;
+      color: #ddd;
+    }
 
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
 
-<div>
-<label for="telefono">Teléfono (opcional)</label>
-<input id="telefono" name="telefono" type="tel" autocomplete="tel" />
-</div>
+    h2 {
+      font-size: 2rem;
+      color: #d2b48c;
+      margin-bottom: 1.5rem;
+    }
 
+    p {
+      margin-bottom: 1rem;
+    }
 
-<div class="full">
-<label for="mensaje">Mensaje</label>
-<textarea id="mensaje" name="mensaje" placeholder="Contanos brevemente tu propuesta o consulta…" required></textarea>
-</div>
-</div>
+    .highlight {
+      font-style: italic;
+      color: #d2b48c;
+    }
 
+    .contact-box {
+      background: #1a1a1a;
+      padding: 2.5rem;
+      border-radius: 6px;
+    }
 
-<div class="actions">
-<button type="submit">Enviar</button>
-<span class="note">(Próximamente: correo con dominio propio)</span>
-</div>
-</form>
+    .contact-box p {
+      margin-bottom: 0.8rem;
+    }
 
+    form {
+      margin-top: 2rem;
+    }
 
-<div class="contact-links">
-<span>📩 <a href="mailto:vinoalamontana.sma@gmail.com">vinoalamontana.sma@gmail.com</a></span>
-<span>📷 <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener">@vinoalamontana.sma</a></span>
-</div>
-</div>
-</section>
+    label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
 
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      background: #111;
+      border: 1px solid #444;
+      color: #eee;
+      border-radius: 4px;
+      font-family: inherit;
+    }
 
-<footer>
-<p>© Vino a la Montaña · San Martín de los Andes · Patagonia Argentina</p>
-</footer>
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
 
+    button {
+      background: #d2b48c;
+      color: #111;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background: #c4a373;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #d2b48c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      header.hero {
+        height: 54vh;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-box">
+      <h1>Vino a la Montaña</h1>
+      <p>La Ruta del Vino de la Patagonia en San Martín de los Andes</p>
+    </div>
+  </header>
+
+  <!-- EXPERIENCIA -->
+  <section>
+    <h2>Una experiencia que se distingue</h2>
+
+    <p>
+      Vino a la Montaña es una iniciativa que combina el impulso del sector privado con el acompañamiento de organismos públicos,
+      orientada a posicionar a San Martín de los Andes como un espacio de referencia para el vino patagónico.
+    </p>
+
+    <p>
+      No se trata de una feria más, sino de una experiencia cuidada, pensada para el encuentro entre bodegas patagónicas,
+      sommeliers, enólogos, periodistas especializados y un público atento, interesado y respetuoso del vino.
+    </p>
+  </section>
+
+  <!-- ORGANIZACIÓN -->
+  <section>
+    <h2>Organización y visión</h2>
+
+    <p>
+      La curaduría de contenidos y la selección de bodegas están a cargo de
+      <strong>Sergio Landoni</strong>, sommelier y comunicador especializado en vinos patagónicos,
+      asegurando un perfil coherente, cuidado y enfocado en la calidad del encuentro.
+    </p>
+
+    <p>
+      La organización general, la logística y la comunicación del evento son responsabilidad de
+      <strong>Fernando Sánchez</strong>, director de <em>Consultora Identidad Sur</em>,
+      con amplia experiencia en la gestión de eventos e iniciativas institucionales.
+    </p>
+  </section>
+
+  <!-- ENTORNO -->
+  <section>
+    <h2>El entorno importa</h2>
+
+    <p>
+      El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> es parte esencial de la identidad del evento.
+      La montaña, el bosque y la amplitud del paisaje crean un marco natural que eleva la experiencia
+      y acompaña el espíritu de Vino a la Montaña.
+    </p>
+
+    <p class="highlight">
+      En San Martín de los Andes, los vinos saben mejor.
+    </p>
+  </section>
+
+  <!-- PRIMERA EDICIÓN -->
+  <section>
+    <h2>Una primera edición que marcó el camino</h2>
+
+    <p>
+      La primera edición, realizada en 2025, fue evaluada de manera muy positiva por bodegas,
+      público, hotel anfitrión e instituciones acompañantes.
+      Ese resultado confirmó que existe un espacio real para una feria distinta,
+      más cuidada y profundamente vinculada al territorio.
+    </p>
+  </section>
+
+  <!-- CIUDAD -->
+  <section>
+    <h2>San Martín de los Andes</h2>
+
+    <p>
+      Ubicada en el corazón de la Patagonia andina, San Martín de los Andes es uno de los destinos turísticos
+      más reconocidos del país. Naturaleza, servicios de calidad y una fuerte identidad cultural
+      la convierten en el escenario ideal para experiencias que combinan vino, turismo y cultura.
+    </p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section>
+    <h2>Contacto</h2>
+
+    <div class="contact-box">
+      <p>
+        Para <strong>información adicional</strong>, consultas para <strong>participar</strong>,
+        propuestas de <strong>sponsoreo</strong> o prensa:
+      </p>
+
+      <p>
+        📩 <a href="mailto:vinoalamontana.sma@gmail.com">vinoalamontana.sma@gmail.com</a><br />
+        📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank">@vinoalamontana.sma</a>
+      </p>
+
+      <p style="font-size:0.85rem; color:#bbb;">
+        Próximamente: correo institucional con dominio propio.
+      </p>
+
+      <!-- Formulario visual (se conectará más adelante) -->
+      <form>
+        <label>Nombre</label>
+        <input type="text" placeholder="Nombre y apellido" />
+
+        <label>Email</label>
+        <input type="email" placeholder="tu@email.com" />
+
+        <label>Motivo de contacto</label>
+        <select>
+          <option>Información general</option>
+          <option>Participar como bodega</option>
+          <option>Sponsoreo</option>
+          <option>Prensa</option>
+        </select>
+
+        <label>Mensaje</label>
+        <textarea placeholder="Escribinos tu consulta"></textarea>
+
+        <button type="submit" disabled>Enviar (próximamente)</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
+  </footer>
 
 </body>
 </html>
