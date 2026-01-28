@@ -1,20 +1,438 @@
-<section id="galeria">
-  <h2 class="section-title">Imágenes del evento</h2>
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <div class="gallery">
-    <figure class="g-item">
-      <img src="assets/galeria/01.jpg" alt="Vino a la Montaña · entorno patagónico">
-    </figure>
-    <figure class="g-item">
-      <img src="assets/galeria/02.jpg" alt="Vino a la Montaña · degustaciones">
-    </figure>
-    <figure class="g-item">
-      <img src="assets/galeria/03.jpg" alt="Vino a la Montaña · público y bodegas">
-    </figure>
+  <title>Galería · Vino a la Montaña</title>
+
+  <meta name="description" content="Galería de imágenes de Vino a la Montaña: una experiencia boutique de vinos patagónicos en San Martín de los Andes, con el paisaje y el encuentro como protagonistas." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Galería · Vino a la Montaña" />
+  <meta property="og:description" content="Imágenes del evento: degustaciones, conversación, productores y paisaje patagónico." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
+
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --text:#ededed;
+      --muted:#cfcfcf;
+      --gold:#d2b48c;
+      --border:rgba(255,255,255,0.10);
+      --shadow:0 20px 60px rgba(0,0,0,0.55);
+      --radius:18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a{ color: var(--gold); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    /* NAV */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,11,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:0.25rem;
+      line-height:1.1;
+    }
+    .brand span{
+      font-size: 0.85rem;
+      color: rgba(237,237,237,0.75);
+    }
+    .brand-logo{
+      height: 42px;
+      width: auto;
+      display:block;
+      opacity: 0.92; /* transparencia suave del logo */
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35));
+    }
+    .brand-logo-link:hover{ text-decoration:none; }
+
+    .nav-links{
+      display:flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.95rem;
+    }
+    .nav-links a{
+      color: rgba(237,237,237,0.85);
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(210,180,140,0.35);
+      text-decoration:none;
+    }
+
+    /* HERO SIMPLE */
+    header.page-hero{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 1.25rem 1.2rem 1.25rem;
+    }
+    .kicker{
+      color: rgba(210,180,140,0.95);
+      letter-spacing: .25px;
+      font-size: 0.95rem;
+      margin: 0 0 .4rem 0;
+    }
+    h1{
+      margin: 0 0 .5rem 0;
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      color:#fff;
+      letter-spacing: .2px;
+    }
+    .lead{
+      margin: 0;
+      color: rgba(237,237,237,0.82);
+      font-size: 1.05rem;
+      max-width: 70ch;
+    }
+
+    /* SECTION WRAPPER */
+    main{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.6rem 1.25rem 4rem 1.25rem;
+    }
+
+    .card{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 1.4rem;
+    }
+
+    .actions{
+      display:flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1.1rem;
+    }
+    .btn{
+      display:inline-block;
+      padding: .78rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      background: var(--gold);
+      color:#111;
+      border: 1px solid rgba(210,180,140,0.6);
+      text-decoration:none;
+      cursor: pointer;
+    }
+    .btn:hover{ text-decoration:none; filter: brightness(0.98); }
+    .btn-ghost{
+      background: rgba(0,0,0,0.15);
+      color:#f2f2f2;
+      border: 1px solid rgba(210,180,140,0.45);
+    }
+
+    /* GALLERY GRID */
+    .gallery{
+      margin-top: 1.25rem;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+    }
+    figure.g-item{
+      margin:0;
+      grid-column: span 4;
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+    }
+    figure.g-item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(210,180,140,0.35);
+      filter: brightness(1.02);
+    }
+    .g-item img{
+      width:100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 55%;
+      display:block;
+    }
+    .g-cap{
+      padding: .75rem .9rem;
+      font-size: .95rem;
+      color: rgba(237,237,237,0.85);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .hint{
+      margin-top: 1rem;
+      color: rgba(237,237,237,0.7);
+      font-size: .92rem;
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .lightbox.open{ display:flex; }
+    .lb-inner{
+      width: min(1100px, 96vw);
+      background: rgba(10,10,10,0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    .lb-img{
+      width: 100%;
+      height: min(72vh, 720px);
+      object-fit: contain;
+      background: #000;
+      display:block;
+    }
+    .lb-caption{
+      padding: 0.9rem 1rem;
+      color: rgba(237,237,237,0.85);
+      border-top: 1px solid rgba(255,255,255,0.10);
+      font-size: .98rem;
+    }
+    .lb-close{
+      position: absolute;
+      top: .65rem;
+      right: .65rem;
+      background: rgba(210,180,140,0.14);
+      border: 1px solid rgba(210,180,140,0.35);
+      color: #fff;
+      border-radius: 999px;
+      padding: .45rem .7rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .lb-close:hover{ filter: brightness(1.06); }
+
+    /* SEO oculto */
+    .seo-hidden{
+      position:absolute;
+      left:-9999px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
+    /* FOOTER */
+    footer{
+      border-top: 1px solid var(--border);
+      background: #060606;
+      text-align: center;
+      padding: 2.2rem 1.25rem;
+      font-size: 0.9rem;
+      color: rgba(237,237,237,0.72);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      figure.g-item{ grid-column: span 6; }
+    }
+    @media (max-width: 680px){
+      .nav-inner{ padding: 0.75rem 1rem; }
+      .brand-logo{ height: 36px; }
+      figure.g-item{ grid-column: span 12; }
+      .g-item img{ height: 210px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SEO semántico oculto -->
+  <div class="seo-hidden">
+    <h2>Sergio Landoni Sommelier de Territorio</h2>
+    <p>
+      Galería de fotos de Vino a la Montaña, la Ruta del Vino de la Patagonia en San Martín de los Andes, Neuquén.
+      Imágenes de degustaciones, productores, entorno patagónico y experiencia boutique en Loi Suites Chapelco Golf & Resort.
+    </p>
   </div>
 
-  <p class="muted" style="margin-top:1.25rem;">
-    <a href="/galeria/" class="btn btn-ghost">Ver galería completa</a>
-  </p>
-</section>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <a href="/" class="brand-logo-link" aria-label="Volver a Inicio · Vino a la Montaña">
+          <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
+        </a>
+        <span>Galería · San Martín de los Andes · Patagonia</span>
+      </div>
 
+      <nav class="nav-links" aria-label="Navegación">
+        <a href="/">Inicio</a>
+        <a href="/#prensa">Prensa</a>
+        <a href="/#contacto">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="page-hero">
+    <p class="kicker">Imágenes del evento</p>
+    <h1>Galería</h1>
+    <p class="lead">
+      Una selección de momentos: degustaciones, conversación, productores y paisaje.
+      Vas a poder sumar más fotos cuando quieras — esta página ya queda lista para crecer.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-ghost" href="/">Volver al sitio</a>
+      <a class="btn" href="/#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="gallery" aria-label="Galería de imágenes de Vino a la Montaña">
+
+        <!-- ✅ Estas son tus fotos actuales en /assets/ (no en /assets/galeria/) -->
+        <figure class="g-item" data-full="/assets/hotel-vista-copa.png" data-caption="Paisaje y entorno · Loi Suites Chapelco">
+          <img src="/assets/hotel-vista-copa.png" alt="Paisaje y entorno · Loi Suites Chapelco" />
+          <figcaption class="g-cap">Paisaje y entorno</figcaption>
+        </figure>
+
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-experiencia-01.jpeg" data-caption="Degustaciones y conversación">
+          <img src="/assets/vino-a-la-montana-experiencia-01.jpeg" alt="Degustaciones y conversación" />
+          <figcaption class="g-cap">Degustaciones y conversación</figcaption>
+        </figure>
+
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-productores-03.jpeg" data-caption="Productores y territorio">
+          <img src="/assets/vino-a-la-montana-productores-03.jpeg" alt="Productores y territorio" />
+          <figcaption class="g-cap">Productores y territorio</figcaption>
+        </figure>
+
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-experiencia-06.jpeg" data-caption="Experiencia boutique">
+          <img src="/assets/vino-a-la-montana-experiencia-06.jpeg" alt="Experiencia boutique" />
+          <figcaption class="g-cap">Experiencia boutique</figcaption>
+        </figure>
+
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-cierre-04.PNG" data-caption="El momento de compartir">
+          <img src="/assets/vino-a-la-montana-cierre-04.PNG" alt="El momento de compartir" />
+          <figcaption class="g-cap">El momento de compartir</figcaption>
+        </figure>
+
+        <!-- ⚠️ Autoridades y sponsors (si querés, dejalas abajo o comentadas)
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-autoridades-05.jpeg" data-caption="Autoridades · edición 2025">
+          <img src="/assets/vino-a-la-montana-autoridades-05.jpeg" alt="Autoridades · edición 2025" />
+          <figcaption class="g-cap">Edición 2025</figcaption>
+        </figure>
+
+        <figure class="g-item" data-full="/assets/vino-a-la-montana-sponsors-09.jpg" data-caption="Sponsors · edición 2025">
+          <img src="/assets/vino-a-la-montana-sponsors-09.jpg" alt="Sponsors · edición 2025" />
+          <figcaption class="g-cap">Sponsors</figcaption>
+        </figure>
+        -->
+
+      </div>
+
+      <div class="hint">
+        Tip: para sumar nuevas fotos, copiá y pegá un bloque <code>&lt;figure class="g-item"&gt;...&lt;/figure&gt;</code>
+        y cambiá el nombre del archivo. Respetá mayúsculas/minúsculas (GitHub Pages distingue).
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Vista ampliada de imagen">
+      <button class="lb-close" id="lbClose" aria-label="Cerrar">Cerrar ✕</button>
+      <img class="lb-img" id="lbImg" src="" alt="" />
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    // Lightbox
+    const items = document.querySelectorAll('.g-item');
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose = document.getElementById('lbClose');
+
+    function openLightbox(fullSrc, caption) {
+      lbImg.src = fullSrc;
+      lbImg.alt = caption || 'Imagen';
+      lbCaption.textContent = caption || '';
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      lbCaption.textContent = '';
+    }
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        const full = item.getAttribute('data-full');
+        const cap = item.getAttribute('data-caption') || '';
+        openLightbox(full, cap);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lb.addEventListener('click', (e) => {
+      if (e.target === lb) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
