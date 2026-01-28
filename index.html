@@ -93,27 +93,26 @@
 
     /* HERO – más bajo, más paisaje y menos opacado */
     header.hero{
-      position: relative;
-      height: 54vh;
-      min-height: 420px;
-      max-height: 620px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      overflow: hidden;
-      padding: 2.2rem 1.25rem;
-    }
+  position: relative;
+  height: 48vh;        /* antes 54vh */
+  min-height: 380px;
+  max-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem 1.25rem;
+}
     .hero-img{
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;        /* CLAVE: elimina el zoom */
-  object-position: center center;
+  object-fit: cover;              /* volvemos a cover */
+  object-position: center 62%;    /* MÁS aire arriba (clave) */
   z-index: 1;
-  transform: none;
-  background-color: #0b0b0b;  /* fondo elegante si sobra aire */
-  filter: brightness(1.03) contrast(1.03) saturate(1.03);
+  transform: none;                /* sin zoom artificial */
+  filter: brightness(1.05) contrast(1.04) saturate(1.04);
 }
     .hero-overlay{
       position: absolute;
