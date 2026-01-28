@@ -713,28 +713,28 @@
   </footer>
 
   <script>
-    // Envío simple por mailto (hasta integrar un servicio real tipo Formspree/Netlify)
-    const form = document.getElementById('contactForm');
-    const note = document.getElementById('formNote');
+  // Envío simple por mailto (hasta integrar un servicio real tipo Formspree/Netlify)
+  const form = document.getElementById('contactForm');
+  const note = document.getElementById('formNote');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const motivo = document.getElementById('motivo').value;
-      const mensaje = document.getElementById('mensaje').value.trim();
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const motivo = document.getElementById('motivo').value;
+    const mensaje = document.getElementById('mensaje').value.trim();
 
-      const subjectMap = {
-        info: 'Consulta · Vino a la Montaña',
-        bodega: 'Participación de bodega · Vino a la Montaña',
-        sponsoreo: 'Sponsoreo · Vino a la Montaña',
-        prensa: 'Prensa · Vino a la Montaña'
-      };
+    const subjectMap = {
+      info: 'Consulta · Vino a la Montaña',
+      bodega: 'Participación de bodega · Vino a la Montaña',
+      sponsoreo: 'Sponsoreo · Vino a la Montaña',
+      prensa: 'Prensa · Vino a la Montaña'
+    };
 
-      const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
+    const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
 
-      const body =
+    const body =
 `Nombre: ${nombre}
 Email: ${email}
 Motivo: ${motivo}
@@ -743,12 +743,18 @@ Mensaje:
 ${mensaje}
 `;
 
-      const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+    const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
 
-      note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
-    });
-  </script>
+    note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
+
+    // ✅ Limpia el formulario para la próxima consulta
+    form.reset();
+    // opcional: dejar el motivo en el primero sí o sí
+    document.getElementById('motivo').value = 'info';
+  });
+</script>
+
 
 </body>
 </html>
