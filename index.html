@@ -6,281 +6,486 @@
 
   <title>Vino a la Montaña · Ruta del Vino Patagónico en San Martín de los Andes</title>
 
-  <meta name="description" content="Vino a la Montaña es una experiencia de vinos patagónicos en San Martín de los Andes. Un encuentro cuidado entre bodegas, sommeliers, enólogos y público especializado, en el entorno único del Loi Suites Chapelco." />
-  <meta name="keywords" content="Vino a la Montaña, vino patagónico, San Martín de los Andes, vinos de la Patagonia, enoturismo, Loi Suites Chapelco, feria de vinos" />
+  <meta name="description" content="Vino a la Montaña es una experiencia de vinos patagónicos en San Martín de los Andes. Un encuentro cuidado entre bodegas, sommeliers, enólogos, prensa especializada y público atento, en el entorno único del Loi Suites Chapelco Golf & Resort." />
+  <meta name="keywords" content="Vino a la Montaña, vino patagónico, vinos de la Patagonia, San Martín de los Andes, enoturismo, Loi Suites Chapelco, feria de vinos, bodegas patagónicas" />
   <meta name="author" content="Vino a la Montaña" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#111111" />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <meta property="og:title" content="Vino a la Montaña" />
+  <meta property="og:description" content="La Ruta del Vino de la Patagonia en San Martín de los Andes. Una experiencia cuidada en el entorno único del Loi Suites Chapelco Golf & Resort." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.png" />
 
   <style>
-    * {
-      box-sizing: border-box;
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --text:#ededed;
+      --muted:#cfcfcf;
+      --gold:#d2b48c;
+      --border:rgba(255,255,255,0.10);
+      --shadow:0 20px 60px rgba(0,0,0,0.55);
+      --radius:18px;
     }
 
-    body {
-      margin: 0;
+    *{ box-sizing:border-box; }
+
+    html{ scroll-behavior:smooth; }
+
+    body{
+      margin:0;
       font-family: Georgia, "Times New Roman", serif;
-      background-color: #111;
-      color: #eee;
-      line-height: 1.6;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
-    header.hero {
-      background-image: url("assets/vino-a-la-montana-header.png");
-      background-size: cover;
-      background-position: center;
-      height: 62vh;
+    a{
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover{ text-decoration: underline; }
+
+    /* NAV */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,11,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:0.1rem;
+      line-height:1.1;
+    }
+    .brand strong{
+      letter-spacing: .2px;
+      font-size: 1.02rem;
+    }
+    .brand span{
+      font-size: 0.85rem;
+      color: rgba(237,237,237,0.75);
+    }
+    .nav-links{
+      display:flex;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: 0.95rem;
+    }
+    .nav-links a{
+      color: rgba(237,237,237,0.85);
+      padding: .35rem .55rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(210,180,140,0.35);
+      text-decoration:none;
+    }
+
+    /* HERO (con <img> para que la foto se vea sí o sí) */
+    header.hero{
+      position: relative;
+      height: 70vh;
+      min-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+      padding: 2rem;
+    }
+    .hero-img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transform: scale(1.01);
+      filter: contrast(1.04) saturate(1.04);
+    }
+    .hero-overlay{
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        radial-gradient(900px 420px at 50% 45%, rgba(0,0,0,0.22), rgba(0,0,0,0.82)),
+        linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.88));
+    }
+    .hero-box{
+      position: relative;
+      z-index: 3;
+      max-width: 920px;
+      width: min(920px, 92vw);
       text-align: center;
+      padding: 2.6rem 2.4rem;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.52);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(7px);
+    }
+    .hero h1{
+      margin:0 0 .6rem 0;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      letter-spacing: 0.2px;
+      color: #fff;
+    }
+    .hero p{
+      margin:0;
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      color: rgba(237,237,237,0.92);
+    }
+    .hero-cta{
+      margin-top: 1.25rem;
+      display:flex;
+      gap: .75rem;
+      justify-content:center;
+      flex-wrap: wrap;
+    }
+    .btn{
+      display:inline-block;
+      padding: .78rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      background: var(--gold);
+      color:#111;
+      border: 1px solid rgba(210,180,140,0.6);
+      text-decoration:none;
+    }
+    .btn:hover{ text-decoration:none; filter: brightness(0.98); }
+    .btn-ghost{
+      background: rgba(0,0,0,0.15);
+      color:#f2f2f2;
+      border: 1px solid rgba(210,180,140,0.45);
+    }
+
+    /* SECTIONS */
+    main{ overflow-x: hidden; }
+
+    section{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.25rem;
+    }
+
+    .section-title{
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 0 0 1.25rem 0;
+      letter-spacing: .2px;
+    }
+
+    .lead{
+      font-size: 1.06rem;
+      color: rgba(237,237,237,0.92);
+      margin-top: 0;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .card{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 1.8rem;
+    }
+
+    .card h3{
+      margin: 0 0 0.75rem 0;
+      font-size: 1.25rem;
+      color: #fff;
+      letter-spacing: .2px;
+    }
+
+    .muted{
+      color: rgba(237,237,237,0.78);
+    }
+
+    .pill{
+      display:inline-block;
+      font-size: 0.82rem;
+      padding: .25rem .55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(210,180,140,0.35);
+      color: rgba(210,180,140,0.95);
+      margin-right: .35rem;
+      margin-bottom: .35rem;
+    }
+
+    .quote{
+      margin: 1rem 0 0 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(210,180,140,0.55);
+      color: rgba(237,237,237,0.85);
+      font-style: italic;
+    }
+
+    /* CONTACT */
+    .contact-box{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
       padding: 2rem;
     }
 
-    .hero-box {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 2.5rem 3rem;
-      max-width: 760px;
-      border-radius: 6px;
-    }
+    form{ margin-top: 1.25rem; }
 
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0 0 0.5rem 0;
-      color: #fff;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin: 0;
-      color: #ddd;
-    }
-
-    section {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 4rem 2rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #d2b48c;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    .highlight {
-      font-style: italic;
-      color: #d2b48c;
-    }
-
-    .contact-box {
-      background: #1a1a1a;
-      padding: 2.5rem;
-      border-radius: 6px;
-    }
-
-    .contact-box p {
-      margin-bottom: 0.8rem;
-    }
-
-    form {
-      margin-top: 2rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.3rem;
+    label{
+      display:block;
+      margin: 0 0 0.35rem 0;
       font-size: 0.9rem;
-      color: #ccc;
+      color: rgba(237,237,237,0.78);
     }
 
-    input,
-    select,
-    textarea {
+    input, select, textarea{
       width: 100%;
-      padding: 0.6rem;
+      padding: 0.75rem 0.8rem;
       margin-bottom: 1rem;
-      background: #111;
-      border: 1px solid #444;
-      color: #eee;
-      border-radius: 4px;
+      background: #0b0b0b;
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--text);
+      border-radius: 10px;
       font-family: inherit;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(210,180,140,0.55);
+      box-shadow: 0 0 0 3px rgba(210,180,140,0.12);
     }
 
-    textarea {
-      min-height: 120px;
+    textarea{
+      min-height: 130px;
       resize: vertical;
     }
 
-    button {
-      background: #d2b48c;
-      color: #111;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.95rem;
-      cursor: pointer;
-      border-radius: 4px;
+    .form-note{
+      font-size: 0.88rem;
+      color: rgba(237,237,237,0.72);
+      margin-top: 0.5rem;
     }
 
-    button:hover {
-      background: #c4a373;
-    }
-
-    footer {
-      background: #000;
+    /* FOOTER */
+    footer{
+      border-top: 1px solid var(--border);
+      background: #060606;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #aaa;
+      padding: 2.2rem 1.25rem;
+      font-size: 0.9rem;
+      color: rgba(237,237,237,0.72);
     }
 
-    footer a {
-      color: #d2b48c;
-      text-decoration: none;
+    /* RESPONSIVE */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 768px) {
-      header.hero {
-        height: 54vh;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
+    @media (max-width: 768px){
+      header.hero{ height: 64vh; min-height: 440px; }
+      .hero-box{ padding: 2rem 1.4rem; }
+      .nav-inner{ padding: 0.75rem 1rem; }
+      .nav-links{ gap: 0.5rem; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
-  <header class="hero">
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <strong>Vino a la Montaña</strong>
+        <span>San Martín de los Andes · Patagonia</span>
+      </div>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#experiencia">Experiencia</a>
+        <a href="#organizacion">Organización</a>
+        <a href="#entorno">Entorno</a>
+        <a href="#edicion">Edición 2025</a>
+        <a href="#ciudad">La ciudad</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="hero" role="banner">
+    <img class="hero-img" src="assets/vino-a-la-montana-cabecera.png" alt="Vino a la Montaña – San Martín de los Andes" />
+    <div class="hero-overlay" aria-hidden="true"></div>
+
     <div class="hero-box">
       <h1>Vino a la Montaña</h1>
       <p>La Ruta del Vino de la Patagonia en San Martín de los Andes</p>
+
+      <div class="hero-cta">
+        <a class="btn" href="#contacto">Contacto</a>
+        <a class="btn btn-ghost" href="#experiencia">Conocer más</a>
+      </div>
     </div>
   </header>
 
-  <!-- EXPERIENCIA -->
-  <section>
-    <h2>Una experiencia que se distingue</h2>
+  <main>
 
-    <p>
-      Vino a la Montaña es una iniciativa que combina el impulso del sector privado con el acompañamiento de organismos públicos,
-      orientada a posicionar a San Martín de los Andes como un espacio de referencia para el vino patagónico.
-    </p>
+    <section id="experiencia">
+      <h2 class="section-title">Una experiencia que se distingue</h2>
 
-    <p>
-      No se trata de una feria más, sino de una experiencia cuidada, pensada para el encuentro entre bodegas patagónicas,
-      sommeliers, enólogos, periodistas especializados y un público atento, interesado y respetuoso del vino.
-    </p>
-  </section>
+      <div class="grid">
+        <div class="card">
+          <p class="lead">
+            Vino a la Montaña combina el impulso del sector privado con el acompañamiento de organismos públicos,
+            para posicionar a <strong>San Martín de los Andes</strong> como un espacio de referencia para el vino patagónico.
+          </p>
 
-  <!-- ORGANIZACIÓN -->
-  <section>
-    <h2>Organización y visión</h2>
+          <p class="muted">
+            No es una feria más: es una experiencia cuidada, pensada para el encuentro entre bodegas patagónicas,
+            sommeliers, enólogos, periodistas especializados y un público atento, interesado y respetuoso del vino.
+          </p>
 
-    <p>
-      La curaduría de contenidos y la selección de bodegas están a cargo de
-      <strong>Sergio Landoni</strong>, sommelier y comunicador especializado en vinos patagónicos,
-      asegurando un perfil coherente, cuidado y enfocado en la calidad del encuentro.
-    </p>
+          <div class="quote">“En San Martín de los Andes, los vinos saben mejor.”</div>
+        </div>
 
-    <p>
-      La organización general, la logística y la comunicación del evento son responsabilidad de
-      <strong>Fernando Sánchez</strong>, director de <em>Consultora Identidad Sur</em>,
-      con amplia experiencia en la gestión de eventos e iniciativas institucionales.
-    </p>
-  </section>
+        <div class="card">
+          <h3>Perfil del público</h3>
+          <div>
+            <span class="pill">Consumo responsable</span>
+            <span class="pill">Interés genuino</span>
+            <span class="pill">Ambiente elegante</span>
+            <span class="pill">Cultura del vino</span>
+          </div>
+          <p class="muted" style="margin-top:0.9rem;">
+            El evento está diseñado para quienes valoran la calidad del encuentro: conversación, descubrimiento,
+            y el placer de probar con tiempo y contexto.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- ENTORNO -->
-  <section>
-    <h2>El entorno importa</h2>
+    <section id="organizacion">
+      <h2 class="section-title">Organización y visión</h2>
 
-    <p>
-      El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> es parte esencial de la identidad del evento.
-      La montaña, el bosque y la amplitud del paisaje crean un marco natural que eleva la experiencia
-      y acompaña el espíritu de Vino a la Montaña.
-    </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Curaduría y contenidos</h3>
+          <p class="muted">
+            La curaduría de contenidos y la selección de bodegas están a cargo de
+            <strong>Sergio Landoni</strong>, sommelier y comunicador especializado en vinos patagónicos,
+            asegurando un perfil coherente, cuidado y enfocado en la calidad del encuentro.
+          </p>
+        </div>
 
-    <p class="highlight">
-      En San Martín de los Andes, los vinos saben mejor.
-    </p>
-  </section>
+        <div class="card">
+          <h3>Producción y comunicación</h3>
+          <p class="muted">
+            La organización general, la logística y la comunicación del evento son responsabilidad de
+            <strong>Fernando Sánchez</strong>, director de <em>Consultora Identidad Sur</em>,
+            con amplia experiencia en la gestión de eventos e iniciativas institucionales.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <!-- PRIMERA EDICIÓN -->
-  <section>
-    <h2>Una primera edición que marcó el camino</h2>
+    <section id="entorno">
+      <h2 class="section-title">El entorno importa</h2>
 
-    <p>
-      La primera edición, realizada en 2025, fue evaluada de manera muy positiva por bodegas,
-      público, hotel anfitrión e instituciones acompañantes.
-      Ese resultado confirmó que existe un espacio real para una feria distinta,
-      más cuidada y profundamente vinculada al territorio.
-    </p>
-  </section>
+      <div class="card">
+        <p class="lead">
+          El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> es parte esencial de la identidad del evento.
+        </p>
+        <p class="muted">
+          La montaña, el bosque y la amplitud del paisaje crean un marco natural que eleva la experiencia y acompaña
+          el espíritu de Vino a la Montaña: un encuentro donde la calidad se siente en cada detalle.
+        </p>
+      </div>
+    </section>
 
-  <!-- CIUDAD -->
-  <section>
-    <h2>San Martín de los Andes</h2>
+    <section id="edicion">
+      <h2 class="section-title">Una primera edición que marcó el camino</h2>
 
-    <p>
-      Ubicada en el corazón de la Patagonia andina, San Martín de los Andes es uno de los destinos turísticos
-      más reconocidos del país. Naturaleza, servicios de calidad y una fuerte identidad cultural
-      la convierten en el escenario ideal para experiencias que combinan vino, turismo y cultura.
-    </p>
-  </section>
+      <div class="card">
+        <p class="muted">
+          La primera edición (2025) fue evaluada de manera muy positiva por bodegas, público, hotel anfitrión
+          e instituciones acompañantes. Ese resultado confirmó que existe un espacio real para una feria distinta:
+          más cuidada, elegante y profundamente vinculada al territorio.
+        </p>
+      </div>
+    </section>
 
-  <!-- CONTACTO -->
-  <section>
-    <h2>Contacto</h2>
+    <section id="ciudad">
+      <h2 class="section-title">San Martín de los Andes</h2>
 
-    <div class="contact-box">
-      <p>
-        Para <strong>información adicional</strong>, consultas para <strong>participar</strong>,
-        propuestas de <strong>sponsoreo</strong> o prensa:
-      </p>
+      <div class="card">
+        <p class="muted">
+          Ubicada en el corazón de la Patagonia andina, San Martín de los Andes es uno de los destinos turísticos
+          más reconocidos del país. Naturaleza, servicios de calidad y una fuerte identidad cultural la convierten
+          en el escenario ideal para experiencias que combinan vino, turismo y cultura.
+        </p>
+      </div>
+    </section>
 
-      <p>
-        📩 <a href="mailto:vinoalamontana.sma@gmail.com">vinoalamontana.sma@gmail.com</a><br />
-        📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank">@vinoalamontana.sma</a>
-      </p>
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
 
-      <p style="font-size:0.85rem; color:#bbb;">
-        Próximamente: correo institucional con dominio propio.
-      </p>
+      <div class="contact-box">
+        <p class="lead" style="margin-bottom:0.75rem;">
+          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de <strong>sponsoreo</strong> o prensa:
+        </p>
 
-      <!-- Formulario visual (se conectará más adelante) -->
-      <form>
-        <label>Nombre</label>
-        <input type="text" placeholder="Nombre y apellido" />
+        <p class="muted" style="margin-top:0;">
+          📩 <a href="mailto:vinoalamontana.sma@gmail.com">vinoalamontana.sma@gmail.com</a><br />
+          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener">@vinoalamontana.sma</a><br />
+          <span class="form-note">Próximamente: correo institucional con dominio propio.</span>
+        </p>
 
-        <label>Email</label>
-        <input type="email" placeholder="tu@email.com" />
+        <!-- Formulario visual (GitHub Pages no procesa formularios por sí solo).
+             Cuando quieran activarlo, lo conectamos con Formspree / Getform / etc. -->
+        <form>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" placeholder="Nombre y apellido" />
 
-        <label>Motivo de contacto</label>
-        <select>
-          <option>Información general</option>
-          <option>Participar como bodega</option>
-          <option>Sponsoreo</option>
-          <option>Prensa</option>
-        </select>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="tu@email.com" />
 
-        <label>Mensaje</label>
-        <textarea placeholder="Escribinos tu consulta"></textarea>
+          <label for="motivo">Motivo de contacto</label>
+          <select id="motivo">
+            <option>Información general</option>
+            <option>Participar como bodega</option>
+            <option>Sponsoreo</option>
+            <option>Prensa</option>
+          </select>
 
-        <button type="submit" disabled>Enviar (próximamente)</button>
-      </form>
-    </div>
-  </section>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" placeholder="Escribinos tu consulta"></textarea>
+
+          <button class="btn" type="submit" disabled>Enviar (próximamente)</button>
+          <div class="form-note">Este formulario está listo para activar cuando conectemos un servicio de envío.</div>
+        </form>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
     © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
