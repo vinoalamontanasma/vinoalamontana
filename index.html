@@ -462,12 +462,6 @@
   text-decoration:none;
 }
     
-.foto-invitada{
-  margin: 1.5rem auto 0 auto;
-  background: none;          /* ← clave */
-  border: none;
-  box-shadow: none;
-}
     
 .foto-organizadores img{
   width: 100%;
@@ -482,11 +476,9 @@
   color: rgba(237,237,237,0.78);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
-/* Invitada especial – caja única (sin doble marco) */
-
+/* Invitada especial – caja única */
 .foto-invitada{
   margin: 1.5rem auto 1.75rem auto;
-  max-width: 920px;
   background: rgba(17,17,17,0.92);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -506,11 +498,13 @@
   color: rgba(237,237,237,0.78);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
-
-.boton-cta:hover{
-  text-decoration:none;
-  filter: brightness(0.98);
-}
+   /* Igualar ancho visual Organizadores / Invitada */
+.foto-organizadores,
+.foto-invitada{
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+} 
 
 /* RESPONSIVE */
 @media (max-width: 980px){
