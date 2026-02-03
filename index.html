@@ -463,13 +463,10 @@
 }
     
 .foto-invitada{
-  margin: 1.5rem auto 1.75rem auto;
-  max-width: 680px;          /* ← clave */
-  background: rgba(17,17,17,0.92);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-  overflow: hidden;
+  margin: 1.5rem auto 0 auto;
+  background: none;          /* ← clave */
+  border: none;
+  box-shadow: none;
 }
     
 .foto-organizadores img{
@@ -477,7 +474,18 @@
   height: auto;
   display: block;
 }
+    
+.foto-invitada-inner{
+  max-width: 920px;          /* mismo ancho que cards/texto */
+  margin: 0 auto;
+  background: rgba(17,17,17,0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
 
+ 
 .foto-organizadores figcaption{
   padding: .75rem .9rem;
   font-size: .95rem;
@@ -793,17 +801,17 @@
 <section id="invitada-especial">
   <h2 class="section-title">Invitada especial</h2>
 
-  <figure class="foto-invitada">
+ <figure class="foto-invitada">
+  <div class="foto-invitada-inner">
     <img
       src="assets/marisol-de-la-fuente-sergio-landoni.webp"
       alt="Marisol de la Fuente (Sol Sommelier) y Sergio Landoni en Vino a la Montaña"
-      loading="lazy"
-      decoding="async"
     />
     <figcaption class="muted">
-      Sol Sommelier · Marisol de la Fuente · Invitada especial en Vino a la Montaña.
+      Sol Sommelier · Marisol de la Fuente — Invitada especial.
     </figcaption>
-  </figure>
+  </div>
+</figure>
 
   <div class="card">
     <p class="lead" style="margin-top:0;">
