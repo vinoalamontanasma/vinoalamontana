@@ -525,6 +525,29 @@
   color: rgba(237,237,237,0.78);
   border-top: 1px solid rgba(255,255,255,0.08);
 }
+/* ENTORNO – caja y foto (mismo look que invitada/organizadores) */
+.foto-entorno{
+  max-width: 920px;
+  margin: 1.5rem auto 1.75rem auto;
+  background: rgba(17,17,17,0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.foto-entorno img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.foto-entorno figcaption{
+  padding: .75rem .9rem;
+  font-size: .95rem;
+  color: rgba(237,237,237,0.78);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
 /* IGUALAR ANCHO VISUAL (DESKTOP Y TABLET) */
 .foto-organizadores,
@@ -553,12 +576,37 @@
   /* ORGANIZADORES + INVITADA: mismo ancho real en mobile */
   .foto-organizadores,
   .foto-invitada{
-    max-width: 100%;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-  }
+  .foto-entorno{
+  max-width: 100%;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
 }
+    
+/* ENTORNO – mismo ancho visual */
+.foto-entorno{
+  max-width: 920px;
+  margin: 1.5rem auto 1.75rem auto;
+  background: rgba(17,17,17,0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  overflow: hidden;
+}
+
+.foto-entorno img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.foto-entorno figcaption{
+  padding: .75rem .9rem;
+  font-size: .95rem;
+  color: rgba(237,237,237,0.78);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
 
   </style>
 </head>
@@ -854,39 +902,38 @@
 </section>
 
 
-   <section id="entorno">
+ <section id="entorno">
   <h2 class="section-title">El entorno importa</h2>
-<figure class="foto-entorno">
+
+  <figure class="foto-entorno">
     <img
       src="assets/vino-a-la-montaña-lugar.webp"
       alt="Vino a la Montaña · Copa de vino frente a la cordillera en Loi Suites Chapelco, San Martín de los Andes"
       loading="lazy"
       decoding="async"
     />
-    <figcaption>
+    <figcaption class="muted">
       El entorno como parte de la experiencia · Loi Suites Chapelco · San Martín de los Andes.
     </figcaption>
   </figure>
 
   <div class="card">
-    <p>Texto sobre el entorno...</p>
-  </div>
-</section>
-  <div class="card">
     <p class="lead">
-      El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> no es solo la sede del encuentro: es parte esencial de la identidad de <strong>Vino a la Montaña</strong>.
+      El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> no es solo la sede del encuentro:
+      es parte esencial de la identidad de <strong>Vino a la Montaña</strong>.
     </p>
 
     <p class="muted">
-      Ubicado sobre la <strong>Ruta Nacional 40</strong>, a pocos minutos del centro de San Martín de los Andes, el hotel se despliega en un entorno natural privilegiado,
-      rodeado de bosque patagónico, con vistas abiertas <strong>al campo de golf</strong> y a la Cordillera de los Andes.
+      Ubicado sobre la <strong>Ruta Nacional 40</strong>, a pocos minutos del centro de San Martín de los Andes,
+      el hotel se despliega en un entorno natural privilegiado, rodeado de bosque patagónico,
+      con vistas abiertas <strong>al campo de golf</strong> y a la Cordillera de los Andes.
       Un lugar donde el paisaje, el silencio y la amplitud del espacio invitan a disfrutar sin apuros.
     </p>
 
     <p class="muted" style="margin-bottom:0;">
       La montaña, el bosque y la escala del entorno crean un marco natural que eleva la experiencia del vino:
-      cada copa se prueba con la Patagonia como telón de fondo, acompañando el espíritu de <strong>Vino a la Montaña</strong>,
-      un encuentro donde la calidad se siente en cada detalle.
+      cada copa se prueba con la Patagonia como telón de fondo, acompañando el espíritu de
+      <strong>Vino a la Montaña</strong>, un encuentro donde la calidad se siente en cada detalle.
     </p>
 
     <p class="muted" style="margin-top:1rem; margin-bottom:0;">
@@ -895,6 +942,7 @@
     </p>
   </div>
 </section>
+
 <section id="edicion">
   <h2 class="section-title">Una primera edición que marcó el camino</h2>
 
