@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="es-AR">
 <head>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -207,22 +206,17 @@
       object-fit: cover;
       object-position: center 55%;
       display: block;
-      background: #000; /* si tarda, no “rompe” */
+      background: #000;
     }
 
-    /* Verticales (se aplica por clase .v, auto por JS o forzado) */
+    /* Verticales */
     figure.g-item.v img{
       height: 520px;
       object-position: center 40%;
     }
 
-    /* Caption */
-    .g-cap{
-      padding: .75rem .9rem;
-      font-size: .95rem;
-      color: rgba(237,237,237,0.85);
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
+    /* ✅ Sin nombres debajo de fotos */
+    .g-cap{ display:none; }
 
     .hint{
       margin: 1rem 0 0 0;
@@ -263,6 +257,7 @@
       color: rgba(237,237,237,0.85);
       border-top: 1px solid rgba(255,255,255,0.10);
       font-size: .98rem;
+      display:none; /* ✅ también oculto texto en lightbox */
     }
     .lb-close{
       position: absolute;
@@ -286,6 +281,11 @@
       padding: 2.2rem 1.25rem;
       font-size: 0.9rem;
       color: rgba(237,237,237,0.72);
+    }
+    .footer-credit{
+      margin-top: .6rem;
+      font-size: .9rem;
+      color: rgba(237,237,237,0.65);
     }
 
     /* RESPONSIVE */
@@ -335,8 +335,8 @@
     <p class="kicker">Imágenes del evento</p>
     <h1>Galería</h1>
     <p class="lead">
-      Una selección de momentos: degustaciones, conversación, productores y paisaje.
-      Vas a poder sumar más fotos cuando quieras — esta página ya queda lista para crecer.
+      Una selección de momentos para revivir una experiencia única en San Martín de los Andes: degustaciones, conversación, productores y paisaje.
+      Acá, entre montaña y lagos y buena gente, los vinos definitivamente saben mejor.
     </p>
 
     <div class="actions">
@@ -365,13 +365,13 @@
           <figcaption class="g-cap">Gastronomía</figcaption>
         </figure>
 
-        <!-- ✅ NUEVA: Degustación 14 (horizontal) sube arriba -->
+        <!-- Degustación 14 (horizontal) sube arriba -->
         <figure class="g-item" data-orient="h" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-14.webp" data-caption="Degustación · momento 14">
           <img src="/assets/vino-a-la-montana-2025-sma-degustacion-14.webp" alt="Degustación · momento 14" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Degustación</figcaption>
         </figure>
 
-        <!-- DEGUSTACIÓN (01–14) -->
+        <!-- DEGUSTACIÓN (01–13) -->
         <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-01.webp" data-caption="Degustación · momento 01">
           <img src="/assets/vino-a-la-montana-2025-sma-degustacion-01.webp" alt="Degustación · momento 01" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Degustación</figcaption>
@@ -407,7 +407,7 @@
           <figcaption class="g-cap">Degustación</figcaption>
         </figure>
 
-        <!-- ✅ Forzadas a horizontal (archivos “raros”) -->
+        <!-- Forzadas a horizontal -->
         <figure class="g-item" data-orient="h" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-08.webp" data-caption="Degustación · momento 08">
           <img src="/assets/vino-a-la-montana-2025-sma-degustacion-08.webp" alt="Degustación · momento 08" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Degustación</figcaption>
@@ -490,14 +490,12 @@
           <figcaption class="g-cap">Visitas</figcaption>
         </figure>
 
-        <!-- ✅ NUEVA -->
         <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-autoridades.webp" data-caption="Autoridades · presencia institucional">
           <img src="/assets/vino-a-la-montana-2025-sma-autoridades.webp" alt="Autoridades · presencia institucional" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Autoridades</figcaption>
         </figure>
 
         <!-- PRODUCTORES (H) -->
-        <!-- Nota: según tu carpeta, productores-01 y productores-05 están en .jpg -->
         <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-01.jpg" data-caption="Productores · momento 01">
           <img src="/assets/vino-a-la-montana-2025-sma-productores-01.jpg" alt="Productores · momento 01" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Productores</figcaption>
@@ -543,7 +541,6 @@
           <figcaption class="g-cap">Productores</figcaption>
         </figure>
 
-        <!-- ambos existen -->
         <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-010.webp" data-caption="Productores · momento 10 (010)">
           <img src="/assets/vino-a-la-montana-2025-sma-productores-010.webp" alt="Productores · momento 10 (010)" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Productores</figcaption>
@@ -564,12 +561,13 @@
           <figcaption class="g-cap">Productores</figcaption>
         </figure>
 
-        <!-- PRODUCTORES (V) + ✅ Copas baja acá -->
+        <!-- Copas (vertical) -->
         <figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-copas-v-01.webp" data-caption="Copas · el ritual del evento">
           <img src="/assets/vino-a-la-montana-2025-sma-copas-v-01.webp" alt="Copas · el ritual del evento" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Copas</figcaption>
         </figure>
 
+        <!-- PRODUCTORES (V) -->
         <figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-01.webp" data-caption="Productores · retrato 01">
           <img src="/assets/vino-a-la-montana-2025-sma-productores-v-01.webp" alt="Productores · retrato 01" loading="lazy" decoding="async" />
           <figcaption class="g-cap">Productores</figcaption>
@@ -783,6 +781,7 @@
 
   <footer>
     © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
+    <div class="footer-credit">Ph. Félix Alberto Carrega · <a href="https://instagram.com/afc.patagoniaphoto" target="_blank" rel="noopener">@afc.patagoniaphoto</a></div>
   </footer>
 
   <!-- Lightbox -->
@@ -800,7 +799,7 @@
     const lbCaption = document.getElementById('lbCaption');
     const lbClose = document.getElementById('lbClose');
 
-    // ✅ Lightbox por delegación (si el DOM cambia, sigue andando)
+    // Lightbox por delegación
     document.addEventListener('click', (e) => {
       const item = e.target.closest('.g-item');
       if (!item) return;
@@ -811,7 +810,7 @@
       const cap = item.getAttribute('data-caption') || '';
       lbImg.src = full;
       lbImg.alt = cap || 'Imagen';
-      lbCaption.textContent = cap;
+      lbCaption.textContent = ''; // ✅ sin texto en lightbox
       lb.classList.add('open');
       lb.setAttribute('aria-hidden', 'false');
     });
@@ -827,14 +826,14 @@
     lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-    // ✅ Si una imagen no carga, eliminar la tarjeta (evita “pozos negros”)
+    // Si una imagen no carga, eliminar la tarjeta
     document.querySelectorAll('.g-item img').forEach(img => {
       img.addEventListener('error', () => {
         const fig = img.closest('figure');
         if (fig) fig.remove();
       });
 
-      // ✅ Orientación: respeta override data-orient="h|v", si no auto
+      // Orientación: respeta override data-orient="h|v", si no auto
       img.addEventListener('load', () => {
         const fig = img.closest('figure');
         if (!fig) return;
@@ -848,9 +847,10 @@
       });
     });
 
-    // ✅ Si falla la imagen del lightbox
+    // Si falla la imagen del lightbox
     lbImg.addEventListener('error', () => {
-      lbCaption.textContent = 'Imagen no disponible (verificá nombre y ubicación del archivo).';
+      // aunque el caption esté oculto, dejamos el handler por seguridad
+      lbCaption.textContent = 'Imagen no disponible.';
     });
   </script>
 
