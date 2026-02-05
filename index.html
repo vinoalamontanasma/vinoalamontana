@@ -7,7 +7,7 @@
   <title>Vino a la Montaña · Ruta del Vino Patagónico en San Martín de los Andes</title>
 
   <meta name="description" content="Vino a la Montaña es la Ruta del Vino de la Patagonia en San Martín de los Andes. Un encuentro cuidado para disfrutar, descubrir y conversar con productores, con el entorno de la montaña como protagonista. También impulsa vínculos directos entre bodegas, gastronomía y hotelería para fortalecer la presencia de vinos regionales en cartas y propuestas locales." />
-  <meta name="keywords" content="Vino a la Montaña, Ruta del Vino Patagonia, vino patagónico, vinos de la Patagonia, San Martín de los Andes, feria de vinos, degustaciones, enoturismo, Loi Suites Chapelco, trade del vino, cartas de vino regionales, Sergio Landoni sommelier" />
+  <meta name="keywords" content="Vino a la Montaña, Ruta del Vino Patagonia, vino patagónico, vinos de la Patagonia, San Martín de los Andes, feria de vinos, degustaciones, enoturismo, Loi Suites Chapelco, trade del vino, cartas de vino regionales" />
   <meta name="author" content="Vino a la Montaña" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0b0b0b" />
@@ -71,7 +71,9 @@
     "alternateName": "Sol Sommelier",
     "jobTitle": "Wine Communicator",
     "description": "Comunicadora de vinos y creadora de contenidos, reconocida por su trabajo en divulgación y comunicación del vino en Argentina.",
-    "sameAs": ["https://www.instagram.com/solsommelier"],
+    "sameAs": [
+      "https://www.instagram.com/solsommelier"
+    ],
     "affiliation": {
       "@type": "Event",
       "name": "Vino a la Montaña · Feria de Vinos Patagónicos",
@@ -100,6 +102,7 @@
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
+
     body{
       margin:0;
       font-family: Georgia, "Times New Roman", serif;
@@ -351,7 +354,7 @@
     ul.press-list{ margin:.35rem 0 0 0; padding-left: 1.1rem; }
     ul.press-list li{ margin:.35rem 0; }
 
-    /* BLOQUES DE FOTO (Organizadores / Invitada / Entorno) */
+    /* BLOQUES DE FOTO (Organizadores / Invitada / Entorno / Ciudad) */
     .foto-organizadores,
     .foto-invitada,
     .foto-entorno{
@@ -379,91 +382,56 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-/* GALERÍA MINI (HOME) */
-.galeria-mini{
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* Grid */
-.mini-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-/* Item */
-.mini-item{
-  position: relative; /* NECESARIO para el título */
-  display: block;
-  background: rgba(17,17,17,0.92);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.35);
-  transition: transform .18s ease, border-color .18s ease, filter .18s ease;
-}
-
-.mini-item:hover{
-  transform: translateY(-2px);
-  border-color: rgba(210,180,140,0.35);
-  filter: brightness(1.02);
-}
-
-/* Imagen */
-.mini-item img{
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  object-position: center 45%;
-  display: block;
-}
-
-/* Título sobre miniatura (SIEMPRE visible, no solo mobile) */
-.mini-cap{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: .65rem .85rem;
-  font-size: .95rem;
-  color: #fff;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.70),
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0)
-  );
-  letter-spacing: .2px;
-  text-align: left;
-  pointer-events: none;
-}
-
-/* Crédito fotos */
-.credito-fotos{
-  margin: .9rem 0 0 0;
-  font-size: .92rem;
-  text-align: center;
-}
-
-/* Acciones */
-.mini-actions{
-  margin-top: 1.25rem;
-  text-align: center;
-}
-
-/* RESPONSIVE (solo para mini galería) */
-@media (max-width: 980px){
-  .mini-grid{ grid-template-columns: repeat(2, 1fr); }
-  .mini-item img{ height: 220px; }
-}
-
-@media (max-width: 680px){
-  .mini-grid{ grid-template-columns: 1fr; }
-  .mini-item img{ height: 240px; }
-}
-
-}
+    /* GALERÍA MINI (3 miniaturas) */
+    .mini-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .mini-item{
+      position: relative; /* necesario para el overlay del título */
+      display:block;
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow:hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+    }
+    .mini-item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(210,180,140,0.35);
+      filter: brightness(1.02);
+    }
+    .mini-item img{
+      width:100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center 45%;
+      display:block;
+    }
+    .mini-cap{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: .65rem .85rem;
+      font-size: .95rem;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.35), rgba(0,0,0,0));
+      letter-spacing: .2px;
+      text-align: left;
+      pointer-events: none;
+    }
+    .credito-fotos{
+      margin: .9rem 0 0;
+      font-size: .92rem;
+      text-align:center;
+    }
+    .mini-actions{
+      margin-top: 1.25rem;
+      text-align:center;
+    }
 
     /* CONTACT */
     .contact-box{
@@ -526,8 +494,8 @@
     @media (max-width: 980px){
       .grid{ grid-template-columns: 1fr; }
       .pilares{ grid-template-columns: 1fr; }
-      .mini-grid{ grid-template-columns: 1fr; }
-      .mini-item img{ height: 240px; }
+      .mini-grid{ grid-template-columns: repeat(2, 1fr); }
+      .mini-item img{ height: 220px; }
     }
 
     @media (max-width: 680px){
@@ -546,25 +514,9 @@
         border-right: none;
       }
 
-.mini-cap{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: .65rem .85rem;
-  font-size: .95rem;
-  color: #fff;
-  background: linear-gradient(
-    to top,
-    rgba(0,0,0,0.70),
-    rgba(0,0,0,0.25),
-    rgba(0,0,0,0)
-  );
-  letter-spacing: .2px;
-  text-align: left;
-  pointer-events: none;
-}
-
+      .mini-grid{ grid-template-columns: 1fr; }
+      .mini-item img{ height: 240px; }
+    }
   </style>
 </head>
 
@@ -576,7 +528,7 @@
     <h2>Sergio Landoni Sommelier de Territorio</h2>
     <p>
       Vino a la Montaña es la Ruta del Vino de la Patagonia en San Martín de los Andes, Neuquén, Patagonia Argentina.
-      Curaduría: Sergio Landoni, sommelier de territorio y comunicador del vino patagónico.
+      Curaduría y contenidos: Sergio Landoni, sommelier de territorio y comunicador del vino patagónico.
       Encuentro boutique de degustaciones, descubrimiento, paisaje y vínculos profesionales (trade) para impulsar vinos regionales en cartas locales.
     </p>
   </div>
@@ -623,24 +575,26 @@
 
   <main>
 
-    <!-- EXPERIENCIA (principal) -->
+    <!-- EXPERIENCIA -->
     <section id="experiencia-vino-a-la-montana" class="experiencia">
       <h2 class="section-title">✦ Vino a la Montaña · Una experiencia patagónica inolvidable</h2>
+      <h3>Vinos extremos. Paisajes únicos. Personas reales.</h3>
 
-      <p class="lead">
+      <p>
         <strong>Vino a la Montaña</strong> es mucho más que una feria de vinos.
         Es un encuentro con los vinos de la Patagonia en el lugar donde el paisaje lo explica todo.
       </p>
 
-      <p class="muted">
-        Aquí, el frío, el viento y la amplitud térmica no son un obstáculo: son parte del carácter.
-        Los vinos que se presentan nacen en condiciones extremas y se disfrutan en un entorno que los representa.
+      <p>
+        Aquí, el frío, el viento y la amplitud térmica no son un obstáculo:
+        son parte del carácter. Los vinos que se presentan nacen en condiciones extremas
+        y se disfrutan en un entorno que los representa.
       </p>
 
       <div class="pilares">
         <div class="pilar">
           <h4>Bodegas patagónicas</h4>
-          <p class="muted">
+          <p>
             Una selección curada de bodegas de Neuquén, Río Negro y Chubut.
             Productores, enólogos y equipos presentes, contando sus vinos en primera persona.
           </p>
@@ -648,41 +602,46 @@
 
         <div class="pilar">
           <h4>Gastronomía &amp; maridajes</h4>
-          <p class="muted">
+          <p>
             Cocina regional pensada para acompañar al vino, con foco en productos patagónicos.
-            <strong>Chocolates artesanales y ahumados</strong> como protagonistas, creando maridajes que expresan identidad y territorio.
+            <strong>Chocolates artesanales y ahumados</strong> como protagonistas, creando maridajes
+            que expresan identidad y territorio.
           </p>
-          <p class="muted">
-            Además, el restaurante anfitrión ofrece <strong>una cena especial para los asistentes</strong>, diseñada para extender la experiencia más allá de la feria.
+          <p>
+            Además, el restaurante anfitrión ofrece
+            <strong>una cena especial para los asistentes del evento</strong>,
+            diseñada para extender la experiencia más allá de la feria.
           </p>
         </div>
 
         <div class="pilar">
           <h4>Entorno &amp; lifestyle</h4>
-          <p class="muted">
+          <p>
             Montaña, bosque, aire puro y una forma de disfrutar sin apuros.
-            Vino a la Montaña es paisaje, es encuentro y es disfrute compartido.
+            Vino a la Montaña es paisaje, encuentro y disfrute compartido.
           </p>
         </div>
       </div>
 
       <div class="detalle-experiencia">
         <h3>Una experiencia cuidada en cada detalle</h3>
-        <p class="muted">
-          La entrada a esta <strong>feria de vinos de la Patagonia</strong>, realizada durante <strong>dos jornadas</strong> en San Martín de los Andes,
-          incluye una copa con el logo del evento, pensada para acompañar cada degustación y transformarse en un recuerdo tangible de una experiencia vivida en la montaña.
+        <p>
+          La entrada a esta <strong>feria de vinos de la Patagonia</strong>, realizada durante
+          <strong>dos jornadas</strong> en San Martín de los Andes, incluye una copa con el logo
+          del evento, pensada para acompañar cada degustación y transformarse en un recuerdo
+          tangible de una experiencia vivida en la montaña, desde el primer brindis.
         </p>
       </div>
 
       <div class="cta">
-        <p class="muted">
+        <p>
           Vino a la Montaña crece edición tras edición. Si querés enterarte antes que nadie y vivir la próxima experiencia:
         </p>
         <a href="#contacto" class="boton-cta">Quiero enterarme de la próxima edición</a>
       </div>
     </section>
 
-    <!-- DOS MUNDOS -->
+    <!-- LA COPA (DOS MUNDOS) -->
     <section id="dos-mundos">
       <h2 class="section-title">Dos caras de la misma copa</h2>
 
@@ -744,17 +703,19 @@
         <div class="card">
           <h3>Curaduría y contenidos</h3>
           <p class="muted">
-            La curaduría del encuentro, la selección de bodegas y la línea conceptual de <strong>Vino a la Montaña</strong>
-            están a cargo de <strong>Sergio Landoni</strong>, sommelier y comunicador especializado en vinos patagónicos,
-            con foco en el territorio y en la experiencia integral del público.
+            La curaduría del encuentro, la selección de bodegas y la línea conceptual de
+            <strong>Vino a la Montaña</strong> están a cargo de <strong>Sergio Landoni</strong>,
+            sommelier y comunicador especializado en vinos patagónicos, con foco en el territorio
+            y en la experiencia integral del público.
           </p>
         </div>
 
         <div class="card">
           <h3>Producción y prensa</h3>
           <p class="muted">
-            La producción general, la logística y la articulación con medios de comunicación están a cargo de
-            <strong>Fernando Sánchez</strong>, director de <em>Consultora Identidad Sur</em>, con experiencia en la gestión de eventos
+            La producción general, la logística y la articulación con medios de comunicación
+            están a cargo de <strong>Fernando Sánchez</strong>, director de
+            <em>Consultora Identidad Sur</em>, con experiencia en la gestión de eventos
             vinculados a la cultura y la identidad regional.
           </p>
         </div>
@@ -784,6 +745,11 @@
           una de las voces más influyentes de la comunicación del vino en Argentina.
         </p>
 
+        <p class="muted">
+          Marisol fue distinguida internacionalmente por la <strong>International Wine &amp; Spirit Competition (IWSC)</strong>
+          al recibir el <strong>Wine Communicator Trophy 2026</strong>.
+        </p>
+
         <p class="muted" style="margin-bottom:0;">
           Su participación aportó una mirada cercana, clara y profundamente humana, en sintonía con el espíritu del evento:
           el vino como conversación, el territorio como relato y la copa como punto de encuentro.
@@ -809,38 +775,50 @@
 
       <div class="card">
         <p class="lead">
-          El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> no es solo la sede del encuentro: es parte esencial de la identidad de <strong>Vino a la Montaña</strong>.
+          El <strong>Loi Suites Chapelco Golf &amp; Resort</strong> no es solo la sede del encuentro:
+          es parte esencial de la identidad de <strong>Vino a la Montaña</strong>.
         </p>
 
         <p class="muted">
-          Ubicado sobre la <strong>Ruta Nacional 40</strong>, a pocos minutos del centro, el hotel se despliega en un entorno natural privilegiado,
-          rodeado de bosque patagónico, con vistas abiertas al campo de golf y a la Cordillera.
+          Ubicado sobre la <strong>Ruta Nacional 40</strong>, a pocos minutos del centro de San Martín de los Andes,
+          el hotel se despliega en un entorno natural privilegiado, rodeado de bosque patagónico,
+          con vistas abiertas <strong>al campo de golf</strong> y a la Cordillera de los Andes.
         </p>
 
         <p class="muted" style="margin-bottom:0;">
-          La montaña, el bosque y la escala del entorno elevan la experiencia del vino: cada copa se prueba con la Patagonia como telón de fondo.
+          La montaña, el bosque y la escala del entorno crean un marco natural que eleva la experiencia del vino:
+          cada copa se prueba con la Patagonia como telón de fondo.
         </p>
 
         <p class="muted" style="margin-top:1rem; margin-bottom:0;">
-          📍 <strong>Ubicación:</strong> Ruta Nacional 40, San Martín de los Andes, Neuquén, Argentina<br />
-          🌐 <strong>Web:</strong> <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener">loisuites.com/chapelco</a>
+          <strong>Web:</strong> <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener">loisuites.com/chapelco</a>
         </p>
       </div>
     </section>
 
-    <!-- EDICIÓN 2025 -->
+    <!-- EDICIÓN -->
     <section id="edicion">
       <h2 class="section-title">Una primera edición que marcó el camino</h2>
 
       <div class="card">
         <p class="lead" style="margin-bottom:0.75rem;">
-          La edición <strong>septiembre 2025</strong> consolidó a <strong>Vino a la Montaña</strong> como una experiencia boutique y profundamente vinculada al territorio.
+          La edición <strong>septiembre 2025</strong> consolidó a <strong>Vino a la Montaña</strong> como una experiencia inédita en la región:
+          un encuentro cuidado, boutique y profundamente vinculado al territorio.
         </p>
 
         <p class="muted" style="margin-top:0;">
           El evento se construyó como una <strong>alianza público-privada</strong> orientada a fortalecer el enoturismo y a posicionar
           a los <strong>Vinos de la Patagonia</strong> como una marca territorial con identidad propia.
         </p>
+
+        <div style="margin-top:1.25rem; padding-top:1.15rem; border-top:1px solid rgba(255,255,255,0.10);">
+          <h3 style="margin:0 0 0.65rem 0; font-size:1.15rem; color:#fff; letter-spacing:.2px;">Respaldo institucional</h3>
+          <p class="muted" style="margin:0;">
+            <strong>NeuquénTur SE</strong> fue el <strong>sponsor principal</strong> y el motor institucional que impulsó
+            <strong>Vino a la Montaña</strong> como herramienta estratégica para posicionar la marca
+            <strong>“Vinos de la Patagonia”</strong>.
+          </p>
+        </div>
 
         <div style="margin-top:1.25rem; padding-top:1.15rem; border-top:1px solid rgba(255,255,255,0.10);">
           <h3 style="margin:0 0 0.65rem 0; font-size:1.15rem; color:#fff; letter-spacing:.2px;">Sponsors y aliados</h3>
@@ -875,8 +853,9 @@
         <div class="card">
           <h3>Lo que dijeron los medios</h3>
           <p class="muted">
-            La primera edición contó con cobertura de medios regionales y provinciales, que destacaron el perfil cuidado del evento,
-            la calidad de las bodegas participantes y el rol de San Martín de los Andes como escenario del vino patagónico.
+            La primera edición contó con cobertura de medios regionales y provinciales, que destacaron
+            el perfil cuidado del evento, la calidad de las bodegas participantes y el rol de
+            San Martín de los Andes como escenario del vino patagónico.
           </p>
 
           <ul class="press-list muted">
@@ -895,53 +874,44 @@
         <div class="card">
           <div class="quote">“Un punto de encuentro entre vino patagónico, gastronomía y paisaje.”</div>
           <p class="muted" style="margin-top:1rem;">
-            La repercusión mediática confirmó la necesidad de un espacio que una cultura del vino, disfrute y vínculos concretos para el crecimiento regional.
+            La repercusión mediática confirmó la necesidad de un espacio que una cultura del vino,
+            disfrute y vínculos concretos para el crecimiento regional.
           </p>
         </div>
       </div>
     </section>
 
- <!-- GALERÍA MINI (3 miniaturas) -->
-<section id="galeria" class="galeria-mini">
-  <h2 class="section-title">Galería</h2>
-  <p class="section-lead">Un vistazo a Vino a la Montaña. Ver más fotos en la galería completa.</p>
+    <!-- GALERÍA MINI (3 miniaturas) -->
+    <section id="galeria" class="galeria-mini">
+      <h2 class="section-title">Galería</h2>
+      <p class="section-lead">Un vistazo a Vino a la Montaña. Ver más fotos en la galería completa.</p>
 
-  <div class="mini-grid" aria-label="Vista previa de galería">
+      <div class="mini-grid" aria-label="Vista previa de galería">
+        <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Degustación">
+          <img src="assets/vino-a-la-montana-2025-sma-degustacion-14.webp" alt="Degustación · Vino a la Montaña" loading="lazy" decoding="async">
+          <span class="mini-cap">Degustación</span>
+        </a>
 
-    <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Degustación">
-      <img src="assets/vino-a-la-montana-2025-sma-degustacion-14.webp"
-           alt="Degustación · Vino a la Montaña"
-           loading="lazy" decoding="async">
-      <span class="mini-cap">Degustación</span>
-    </a>
+        <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Productores">
+          <img src="assets/vino-a-la-montana-2025-sma-productores-04.webp" alt="Productores · Vino a la Montaña" loading="lazy" decoding="async">
+          <span class="mini-cap">Productores</span>
+        </a>
 
-    <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Productores">
-      <img src="assets/vino-a-la-montana-2025-sma-productores-04.webp"
-           alt="Productores · Vino a la Montaña"
-           loading="lazy" decoding="async">
-      <span class="mini-cap">Productores</span>
-    </a>
+        <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · El evento">
+          <img src="assets/vino-a-la-montana-2025-sma-publico-08.webp" alt="El evento · Vino a la Montaña" loading="lazy" decoding="async">
+          <span class="mini-cap">El evento</span>
+        </a>
+      </div>
 
-    <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · El evento">
-      <img src="assets/vino-a-la-montana-2025-sma-publico-08.webp"
-           alt="El evento · Vino a la Montaña"
-           loading="lazy" decoding="async">
-      <span class="mini-cap">El evento</span>
-    </a>
+      <p class="credito-fotos muted">
+        Fotos: Félix Alberto Carrega ·
+        <a href="https://www.instagram.com/afc.patagoniaphoto" target="_blank" rel="noopener nofollow">@afc.patagoniaphoto</a>
+      </p>
 
-  </div>
-
-  <p class="credito-fotos muted" style="margin: .9rem 0 0; text-align:center;">
-    Fotos: Félix Alberto Carrega ·
-    <a href="https://www.instagram.com/afc.patagoniaphoto" target="_blank" rel="noopener nofollow">
-      @afc.patagoniaphoto
-    </a>
-  </p>
-
-  <div class="mini-actions">
-    <a class="btn" href="/galeria/">Ver galería completa</a>
-  </div>
-</section>
+      <div class="mini-actions">
+        <a class="btn" href="/galeria/">Ver galería completa</a>
+      </div>
+    </section>
 
     <!-- CIUDAD -->
     <section id="ciudad">
@@ -961,8 +931,9 @@
 
       <div class="card">
         <p class="muted">
-          Ubicada en el corazón de la Patagonia andina, San Martín de los Andes es uno de los destinos turísticos más reconocidos del país.
-          Naturaleza, servicios de calidad y una fuerte identidad cultural la convierten en el escenario ideal para experiencias que combinan vino, turismo y cultura.
+          Ubicada en el corazón de la Patagonia andina, San Martín de los Andes es uno de los destinos turísticos
+          más reconocidos del país. Naturaleza, servicios de calidad y una fuerte identidad cultural la convierten
+          en el escenario ideal para experiencias que combinan vino, turismo y cultura.
         </p>
       </div>
     </section>
@@ -973,7 +944,8 @@
 
       <div class="contact-box">
         <p class="lead" style="margin-bottom:0.75rem;">
-          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de <strong>sponsoreo</strong> o prensa:
+          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
+          <strong>sponsoreo</strong> o prensa:
         </p>
 
         <p class="muted" style="margin-top:0;">
@@ -1017,24 +989,25 @@
     const form = document.getElementById('contactForm');
     const note = document.getElementById('formNote');
 
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const motivo = document.getElementById('motivo').value;
-      const mensaje = document.getElementById('mensaje').value.trim();
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const motivo = document.getElementById('motivo').value;
+        const mensaje = document.getElementById('mensaje').value.trim();
 
-      const subjectMap = {
-        info: 'Consulta · Vino a la Montaña',
-        bodega: 'Participación de bodega · Vino a la Montaña',
-        sponsoreo: 'Sponsoreo · Vino a la Montaña',
-        prensa: 'Prensa · Vino a la Montaña'
-      };
+        const subjectMap = {
+          info: 'Consulta · Vino a la Montaña',
+          bodega: 'Participación de bodega · Vino a la Montaña',
+          sponsoreo: 'Sponsoreo · Vino a la Montaña',
+          prensa: 'Prensa · Vino a la Montaña'
+        };
 
-      const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
+        const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
 
-      const body =
+        const body =
 `Nombre: ${nombre}
 Email: ${email}
 Motivo: ${motivo}
@@ -1043,14 +1016,16 @@ Mensaje:
 ${mensaje}
 `;
 
-      const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+        const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailto;
 
-      note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
+        note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
 
-      form.reset();
-      document.getElementById('motivo').value = 'info';
-    });
+        form.reset();
+        document.getElementById('motivo').value = 'info';
+      });
+    }
   </script>
+
 </body>
 </html>
