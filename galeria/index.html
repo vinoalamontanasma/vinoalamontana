@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
-
+  <link rel="preload" as="image" href="/assets/vino-a-la-montana-2025-sma-icono.webp">
   <style>
     :root{
       --bg:#0b0b0b;
@@ -287,15 +287,16 @@ figure.g-item.v img{
     }
 
     /* RESPONSIVE */
-    @media (max-width: 980px){
-      figure.g-item{ grid-column: span 6; }
-    }
-    @media (max-width: 680px){
-      .nav-inner{ padding: 0.75rem 1rem; }
-      .brand-logo{ height: 36px; }
-      figure.g-item{ grid-column: span 12; }
-      .g-item img{ height: 210px; }
-    }
+   @media (max-width: 680px){
+  .nav-inner{ padding: 0.75rem 1rem; }
+  .brand-logo{ height: 36px; }
+  figure.g-item{ grid-column: span 12; }
+  .g-item img{ height: 210px; }
+
+  /* ✅ verticales mantienen presencia */
+  figure.g-item.v img{ height: 520px; }
+}
+
   </style>
 </head>
 
@@ -343,47 +344,419 @@ figure.g-item.v img{
 
   <main>
     <div class="card">
-      <div class="gallery" aria-label="Galería de imágenes de Vino a la Montaña">
+   <!-- APERTURA / IDENTIDAD -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-icono.webp" data-caption="El lugar · identidad y paisaje">
+  <img src="/assets/vino-a-la-montana-2025-sma-icono.webp" alt="El lugar · identidad y paisaje" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El lugar</figcaption>
+</figure>
 
-        <!-- ✅ Estas son tus fotos actuales en /assets/ (no en /assets/galeria/) -->
-        <figure class="g-item" data-full="/assets/hotel-vista-copa.png" data-caption="Paisaje y entorno · Loi Suites Chapelco">
-          <img src="/assets/hotel-vista-copa.png" alt="Paisaje y entorno · Loi Suites Chapelco" />
-          <figcaption class="g-cap">Paisaje y entorno</figcaption>
-        </figure>
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-hotel.webp" data-caption="Sede · Loi Suites Chapelco">
+  <img src="/assets/vino-a-la-montana-2025-sma-hotel.webp" alt="Sede · Loi Suites Chapelco" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Sede</figcaption>
+</figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-experiencia-01.jpeg" data-caption="Degustaciones y conversación">
-          <img src="/assets/vino-a-la-montana-experiencia-01.jpeg" alt="Degustaciones y conversación" />
-          <figcaption class="g-cap">Degustaciones y conversación</figcaption>
-        </figure>
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-restaurante.webp" data-caption="Gastronomía · restaurante del hotel">
+  <img src="/assets/vino-a-la-montana-2025-sma-restaurante.webp" alt="Gastronomía · restaurante del hotel" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Gastronomía</figcaption>
+</figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-productores-03.jpeg" data-caption="Productores y territorio">
-          <img src="/assets/vino-a-la-montana-productores-03.jpeg" alt="Productores y territorio" />
-          <figcaption class="g-cap">Productores y territorio</figcaption>
-        </figure>
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-copas-v-01.webp" data-caption="Copas · el ritual del evento">
+  <img src="/assets/vino-a-la-montana-2025-sma-copas-v-01.webp" alt="Copas · el ritual del evento" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Copas</figcaption>
+</figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-experiencia-06.jpeg" data-caption="Experiencia boutique">
-          <img src="/assets/vino-a-la-montana-experiencia-06.jpeg" alt="Experiencia boutique" />
-          <figcaption class="g-cap">Experiencia boutique</figcaption>
-        </figure>
+<!-- DEGUSTACIÓN (01–13) -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-01.webp" data-caption="Degustación · momento 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-01.webp" alt="Degustación · momento 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-cierre-04.PNG" data-caption="El momento de compartir">
-          <img src="/assets/vino-a-la-montana-cierre-04.PNG" alt="El momento de compartir" />
-          <figcaption class="g-cap">El momento de compartir</figcaption>
-        </figure>
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-02.webp" data-caption="Degustación · momento 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-02.webp" alt="Degustación · momento 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
 
-        <!-- ⚠️ Autoridades y sponsors (si querés, dejalas abajo o comentadas)
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-autoridades-05.jpeg" data-caption="Autoridades · edición 2025">
-          <img src="/assets/vino-a-la-montana-autoridades-05.jpeg" alt="Autoridades · edición 2025" />
-          <figcaption class="g-cap">Edición 2025</figcaption>
-        </figure>
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-03.webp" data-caption="Degustación · momento 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-03.webp" alt="Degustación · momento 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-sponsors-09.jpg" data-caption="Sponsors · edición 2025">
-          <img src="/assets/vino-a-la-montana-sponsors-09.jpg" alt="Sponsors · edición 2025" />
-          <figcaption class="g-cap">Sponsors</figcaption>
-        </figure>
-        -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-04.webp" data-caption="Degustación · momento 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-04.webp" alt="Degustación · momento 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
 
-      </div>
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-05.webp" data-caption="Degustación · momento 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-05.webp" alt="Degustación · momento 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-06.webp" data-caption="Degustación · momento 06">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-06.webp" alt="Degustación · momento 06" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-07.webp" data-caption="Degustación · momento 07">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-07.webp" alt="Degustación · momento 07" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-08.webp" data-caption="Degustación · momento 08">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-08.webp" alt="Degustación · momento 08" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-09.webp" data-caption="Degustación · momento 09">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-09.webp" alt="Degustación · momento 09" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-10.webp" data-caption="Degustación · momento 10">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-10.webp" alt="Degustación · momento 10" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-11.webp" data-caption="Degustación · momento 11">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-11.webp" alt="Degustación · momento 11" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-12.webp" data-caption="Degustación · momento 12">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-12.webp" alt="Degustación · momento 12" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-degustacion-13.webp" data-caption="Degustación · momento 13">
+  <img src="/assets/vino-a-la-montana-2025-sma-degustacion-13.webp" alt="Degustación · momento 13" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Degustación</figcaption>
+</figure>
+
+<!-- MASTERCLASS (01–08) -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-01.webp" data-caption="Masterclass · momento 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-01.webp" alt="Masterclass · momento 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-02.webp" data-caption="Masterclass · momento 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-02.webp" alt="Masterclass · momento 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-03.webp" data-caption="Masterclass · momento 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-03.webp" alt="Masterclass · momento 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-04.webp" data-caption="Masterclass · momento 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-04.webp" alt="Masterclass · momento 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-05.webp" data-caption="Masterclass · momento 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-05.webp" alt="Masterclass · momento 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-06.webp" data-caption="Masterclass · momento 06">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-06.webp" alt="Masterclass · momento 06" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-07.webp" data-caption="Masterclass · momento 07">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-07.webp" alt="Masterclass · momento 07" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-masterclass-08.webp" data-caption="Masterclass · momento 08">
+  <img src="/assets/vino-a-la-montana-2025-sma-masterclass-08.webp" alt="Masterclass · momento 08" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Masterclass</figcaption>
+</figure>
+
+<!-- ORGANIZACIÓN / VISITAS -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-organizacion.webp" data-caption="Organización · equipo y producción">
+  <img src="/assets/vino-a-la-montana-2025-sma-organizacion.webp" alt="Organización · equipo y producción" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Organización</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-visitas.webp" data-caption="Visitas · encuentros y recorridos">
+  <img src="/assets/vino-a-la-montana-2025-sma-visitas.webp" alt="Visitas · encuentros y recorridos" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Visitas</figcaption>
+</figure>
+
+<!-- PRODUCTORES (H) -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-01.webp" data-caption="Productores · momento 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-01.webp" alt="Productores · momento 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-02.webp" data-caption="Productores · momento 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-02.webp" alt="Productores · momento 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-03.webp" data-caption="Productores · momento 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-03.webp" alt="Productores · momento 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-04.webp" data-caption="Productores · momento 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-04.webp" alt="Productores · momento 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-05.webp" data-caption="Productores · momento 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-05.webp" alt="Productores · momento 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-06.webp" data-caption="Productores · momento 06">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-06.webp" alt="Productores · momento 06" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-07.webp" data-caption="Productores · momento 07">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-07.webp" alt="Productores · momento 07" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-08.webp" data-caption="Productores · momento 08">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-08.webp" alt="Productores · momento 08" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-09.webp" data-caption="Productores · momento 09">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-09.webp" alt="Productores · momento 09" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-010.webp" data-caption="Productores · momento 10 (010)">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-010.webp" alt="Productores · momento 10 (010)" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-10.webp" data-caption="Productores · momento 10">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-10.webp" alt="Productores · momento 10" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-11.webp" data-caption="Productores · momento 11">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-11.webp" alt="Productores · momento 11" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-12.webp" data-caption="Productores · momento 12">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-12.webp" alt="Productores · momento 12" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<!-- PRODUCTORES (V) -->
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-01.webp" data-caption="Productores · retrato 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-01.webp" alt="Productores · retrato 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-02.webp" data-caption="Productores · retrato 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-02.webp" alt="Productores · retrato 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-03.webp" data-caption="Productores · retrato 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-03.webp" alt="Productores · retrato 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Protagonistas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-04.webp" data-caption="Productores · retrato 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-04.webp" alt="Productores · retrato 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Protagonistas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-05.webp" data-caption="Productores · retrato 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-05.webp" alt="Productores · retrato 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Bodegas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-06.webp" data-caption="Productores · retrato 06">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-06.webp" alt="Productores · retrato 06" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Bodegas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-07.webp" data-caption="Productores · retrato 07">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-07.webp" alt="Productores · retrato 07" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-08.webp" data-caption="Productores · retrato 08">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-08.webp" alt="Productores · retrato 08" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-09.webp" data-caption="Productores · retrato 09">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-09.webp" alt="Productores · retrato 09" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Territorio</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-10.webp" data-caption="Productores · retrato 10">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-10.webp" alt="Productores · retrato 10" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Territorio</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-12.webp" data-caption="Productores · retrato 12">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-12.webp" alt="Productores · retrato 12" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Protagonistas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-13.webp" data-caption="Productores · retrato 13">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-13.webp" alt="Productores · retrato 13" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Protagonistas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-14.webp" data-caption="Productores · retrato 14">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-14.webp" alt="Productores · retrato 14" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Bodegas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-15.webp" data-caption="Productores · retrato 15">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-15.webp" alt="Productores · retrato 15" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Bodegas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-16.webp" data-caption="Productores · retrato 16">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-16.webp" alt="Productores · retrato 16" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-17.webp" data-caption="Productores · retrato 17">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-17.webp" alt="Productores · retrato 17" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Productores</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-101.webp" data-caption="Productores · retrato (v-101)">
+  <img src="/assets/vino-a-la-montana-2025-sma-productores-v-101.webp" alt="Productores · retrato (v-101)" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Protagonistas</figcaption>
+</figure>
+
+<!-- PÚBLICO (H 01–09) -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-01.webp" data-caption="Público · momento 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-01.webp" alt="Público · momento 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-02.webp" data-caption="Público · momento 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-02.webp" alt="Público · momento 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-03.webp" data-caption="Público · momento 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-03.webp" alt="Público · momento 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-04.webp" data-caption="Público · momento 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-04.webp" alt="Público · momento 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-05.webp" data-caption="Público · momento 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-05.webp" alt="Público · momento 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-06.webp" data-caption="Público · momento 06">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-06.webp" alt="Público · momento 06" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-07.webp" data-caption="Público · momento 07">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-07.webp" alt="Público · momento 07" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-08.webp" data-caption="Público · momento 08">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-08.webp" alt="Público · momento 08" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-publico-09.webp" data-caption="Público · momento 09">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-09.webp" alt="Público · momento 09" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<!-- PÚBLICO (V 01–05) -->
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-publico-v-01.webp" data-caption="Público · vertical 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-v-01.webp" alt="Público · vertical 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-publico-v-02.webp" data-caption="Público · vertical 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-v-02.webp" alt="Público · vertical 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-publico-v-03.webp" data-caption="Público · vertical 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-v-03.webp" alt="Público · vertical 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-publico-v-04.webp" data-caption="Público · vertical 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-v-04.webp" alt="Público · vertical 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-publico-v-05.webp" data-caption="Público · vertical 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-publico-v-05.webp" alt="Público · vertical 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">El evento</figcaption>
+</figure>
+
+<!-- BOTELLAS (V) -->
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-botellas-v-01.webp" data-caption="Botellas · vertical 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-botellas-v-01.webp" alt="Botellas · vertical 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Botellas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-botellas-v-02.webp" data-caption="Botellas · vertical 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-botellas-v-02.webp" alt="Botellas · vertical 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Botellas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-botellas-v-03.webp" data-caption="Botellas · vertical 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-botellas-v-03.webp" alt="Botellas · vertical 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Botellas</figcaption>
+</figure>
+
+<figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-botellas-v-05.webp" data-caption="Botellas · vertical 05">
+  <img src="/assets/vino-a-la-montana-2025-sma-botellas-v-05.webp" alt="Botellas · vertical 05" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Botellas</figcaption>
+</figure>
+
+<!-- DETALLE BOTELLAS (H 01–04) -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-detalle-botellas-01.webp" data-caption="Detalle de botellas · 01">
+  <img src="/assets/vino-a-la-montana-2025-sma-detalle-botellas-01.webp" alt="Detalle de botellas · 01" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Detalle</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-detalle-botellas-02.webp" data-caption="Detalle de botellas · 02">
+  <img src="/assets/vino-a-la-montana-2025-sma-detalle-botellas-02.webp" alt="Detalle de botellas · 02" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Detalle</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-detalle-botellas-03.webp" data-caption="Detalle de botellas · 03">
+  <img src="/assets/vino-a-la-montana-2025-sma-detalle-botellas-03.webp" alt="Detalle de botellas · 03" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Detalle</figcaption>
+</figure>
+
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-detalle-botellas-04.webp" data-caption="Detalle de botellas · 04">
+  <img src="/assets/vino-a-la-montana-2025-sma-detalle-botellas-04.webp" alt="Detalle de botellas · 04" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Detalle</figcaption>
+</figure>
+
+<!-- CIERRE -->
+<figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-cierre.webp" data-caption="Cierre · brindis final">
+  <img src="/assets/vino-a-la-montana-2025-sma-cierre.webp" alt="Cierre · brindis final" loading="lazy" decoding="async" />
+  <figcaption class="g-cap">Cierre</figcaption>
+</figure>
+  </div> <!-- /.gallery -->
+    <p class="hint">Tip: tocá o hacé click en una foto para verla en grande.</p>
+    </div> <!-- /.card -->
 
            </main>
 
