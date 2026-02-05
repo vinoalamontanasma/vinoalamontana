@@ -555,10 +555,10 @@
           <figcaption class="g-cap">Productores</figcaption>
         </figure>
 
-        <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-12.webp" data-caption="Productores · momento 12">
-          <img src="/assets/vino-a-la-montana-2025-sma-productores-12.webp" alt="Productores · momento 12" loading="lazy" decoding="async" />
-          <figcaption class="g-cap">Productores</figcaption>
-        </figure>
+       <figure class="g-item" data-full="/assets/vino-a-la-montana-2025-sma-productores-12.webp" data-caption="Productores · momento 12">
+       <img src="/assets/vino-a-la-montana-2025-sma-productores-12.webp" alt="Productores · momento 12" loading="lazy" decoding="async" />
+       <figcaption class="g-cap">Productores</figcaption>
+     </figure>
 
         <!-- PRODUCTORES (V) -->
         <figure class="g-item v" data-full="/assets/vino-a-la-montana-2025-sma-productores-v-01.webp" data-caption="Productores · retrato 01">
@@ -1020,6 +1020,12 @@ viewport" content="width=device-width, initial-scale=1" />
   object-fit: cover;
   object-position: center 55%;
   display: block;
+  background: #000; /* ✅ para que no “rompa” visualmente si tarda */
+}
+
+/* ✅ Si la imagen no carga, ocultala (evita el ícono roto) */
+.g-item img[alt=""] { display: none; }
+
 }
 
 /* Verticales (v): darles presencia */
@@ -1638,7 +1644,6 @@ figure.g-item.v img{
       lbImg.src = '';
       lbCaption.textContent = '';
     }
-
     items.forEach(item => {
       item.addEventListener('click', () => {
         const full = item.getAttribute('data-full');
@@ -1654,6 +1659,19 @@ figure.g-item.v img{
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ✅ PLAN B: si alguna imagen no carga, ocultar la tarjeta */
+    document.querySelectorAll('.g-item img').forEach(img => {
+      img.addEventListener('error', () => {
+        const fig = img.closest('figure');
+        if (fig) fig.style.display = 'none';
+      });
+    });
+
+    /* ✅ PLAN B: si falla la imagen del lightbox */
+    lbImg.addEventListener('error', () => {
+      lbCaption.textContent = 'Imagen no disponible (verificá nombre y ubicación del archivo).';
     });
   </script>
 
