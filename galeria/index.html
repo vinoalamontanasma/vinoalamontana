@@ -784,52 +784,62 @@
     </div>
   </div>
 
-  <script>
-    const lb = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lbImg');
-    const lbCaption = document.getElementById('lbCaption');
-    const lbClose = document.getElementById('lbClose');
+ <script>
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
 
-    // ✅ Delegación de eventos: el click funciona aunque se remuevan tarjetas
-    document.addEventListener('click', (e) => {
-      const item = e.target.closest('.g-item');
-      if (!item) return;
+  document.addEventListener('click', (e) => {
+    const item = e.target.closest('.g-item');
+    if (!item) return;
 
-      const full = item.getAttribute('data-full');
-      if (!full) return;
+    const full = item.getAttribute('data-full');
+    if (!full) return;
 
-      const cap = item.getAttribute('data-caption') || '';
-      lbImg.src = full;
-      lbImg.alt = cap || 'Imagen';
-      lbCaption.textContent = cap;
-      lb.classList.add('open');
-      lb.setAttribute('aria-hidden', 'false');
+    const cap = item.getAttribute('data-caption') || '';
+    lbImg.src = full;
+    lbImg.alt = cap || 'Imagen';
+    lbCaption.textContent = cap;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+  });
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    lbCaption.textContent = '';
+  }
+
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+  // ✅ Si una imagen no carga, eliminar la tarjeta (evita “pozos negros”)
+  document.querySelectorAll('.g-item img').forEach(img => {
+    img.addEventListener('error', () => {
+      const fig = img.closest('figure');
+      if (fig) fig.remove();
     });
 
-    function closeLightbox() {
-      lb.classList.remove('open');
-      lb.setAttribute('aria-hidden', 'true');
-      lbImg.src = '';
-      lbCaption.textContent = '';
-    }
+    // ✅ Detectar orientación real y asignar clase v SOLO si corresponde
+    img.addEventListener('load', () => {
+      const fig = img.closest('figure');
+      if (!fig) return;
 
-    lbClose.addEventListener('click', closeLightbox);
-    lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+      const isPortrait = img.naturalHeight > img.naturalWidth;
 
-    // ✅ Si una imagen no carga, eliminar la tarjeta (evita “pozos negros”)
-    document.querySelectorAll('.g-item img').forEach(img => {
-      img.addEventListener('error', () => {
-        const fig = img.closest('figure');
-        if (fig) fig.remove();
-      });
+      // Si es vertical: poner .v. Si es horizontal: sacarla.
+      fig.classList.toggle('v', isPortrait);
     });
+  });
 
-    // ✅ Si falla la imagen del lightbox
-    lbImg.addEventListener('error', () => {
-      lbCaption.textContent = 'Imagen no disponible (verificá nombre y ubicación del archivo).';
-    });
-  </script>
+  // ✅ Si falla la imagen del lightbox
+  lbImg.addEventListener('error', () => {
+    lbCaption.textContent = 'Imagen no disponible (verificá nombre y ubicación del archivo).';
+  });
+</script>
 
 </body>
 </html>
