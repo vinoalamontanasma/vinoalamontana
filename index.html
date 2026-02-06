@@ -217,13 +217,21 @@
       width:1px; height:1px;
       overflow:hidden;
     }
-    .hero-cta{
-      margin-top: 1.05rem;
-      display:flex;
-      gap:.75rem;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
+   .hero-cta{
+  margin-top: 1.05rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+.hero-cta .btn{
+  width: 100%;
+  text-align: center;
+}
 
     .btn{
       display:inline-block;
