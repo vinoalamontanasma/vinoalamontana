@@ -56,292 +56,239 @@
   "url": "https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/"
 }
 </script>
+
 <style>
   :root{
-  --bg:#0b0b0b;
-  --panel:#111;
-  --text:#ededed;
-  --gold:#d2b48c;
-  --border:rgba(255,255,255,0.10);
-  --radius:18px;
-}
-/* Base fix: evita corrimientos y overflow en mobile */
-*,
-*::before,
-*::after{ box-sizing: border-box; }
+    --bg:#0b0b0b;
+    --panel:#111;
+    --text:#ededed;
+    --gold:#d2b48c;
+    --border:rgba(255,255,255,0.10);
+    --radius:18px;
+  }
 
-html{
-  overflow-x:hidden;
-}
+  *,. *::before,*::after{ box-sizing:border-box; }
+  html{ overflow-x:hidden; }
+  body{
+    margin:0;
+    width:100%;
+    overflow-x:hidden;
+    font-family: Georgia, "Times New Roman", serif;
+    background:#0b0b0b;
+    color:#ededed;
+    line-height:1.7;
+  }
 
-body{
-  margin:0;
-  width:100%;
-  overflow-x:hidden;
-  font-family: Georgia, "Times New Roman", serif;
-  background:#0b0b0b;
-  color:#ededed;
-  line-height:1.7;
-}
-section{
-  max-width:1100px;
-  margin:0 auto;
-  padding:4rem 1.25rem;
-}
-.hero{
-  text-align:center;
-  padding:5rem 1.25rem 4rem;
-  min-height:65vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.85) 100%),
-    url('/assets/vino-a-la-montana-2026-san-martin-de-los-andes.webp') center/cover no-repeat;
-}
-.hero h1{
-  font-size:3rem;
-  font-weight:600;
-  color: var(--gold, #d2b48c);
-  letter-spacing:.5px;
-  line-height:1.12;
-  text-shadow: 0 3px 14px rgba(0,0,0,0.45);
-}
-
-.hero p{
-  max-width:720px;
-  margin:0 auto 2rem;
-}
-
-.cta-grid{
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap:16px;
-  max-width:800px;
-  margin:0 auto;
-}
-
-/* Botones sólidos (igual criterio que el "btn" de la home) */
-.btn,
-.btn-ghost{
-  display:inline-block;
-  padding:.78rem 1.1rem;
-  border-radius:999px;
-  font-weight:700;
-  letter-spacing:.2px;
-  background: var(--gold, #d2b48c);
-  color:#111;
-  border:1px solid rgba(210,180,140,0.6);
-  text-decoration:none;
-  cursor:pointer;
-}
-
-.btn:hover,
-.btn-ghost:hover{
-  text-decoration:none;
-  filter: brightness(0.98);
-}
-
-/* Card con profundidad suave, como la principal */
-.card{
-  background: rgba(17,17,17,0.92);
-  border: 1px solid var(--border, rgba(255,255,255,0.10));
-  border-radius: var(--radius, 18px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-  padding: 1.8rem;
-}
-
-/* Links elegantes para fondo oscuro */
-a{
-  color: var(--gold, #d2b48c);
-  text-decoration: none;
-  transition: opacity .2s ease;
-}
-
-a:hover{
-  text-decoration: underline;
-  opacity: .9;
-}
-
-a:visited{
-  color: rgba(210,180,140,0.92);
-} 
-@media (max-width: 680px){
+  section{
+    max-width:1100px;
+    margin:0 auto;
+    padding:4rem 1.25rem;
+  }
 
   .hero{
-    min-height:72vh;
-    padding:3.2rem 1rem 2.2rem;
-    background-position:center 30%;
+    text-align:center;
+    padding:5rem 1.25rem 4rem;
+    min-height:65vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:
+      linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.85) 100%),
+      url('/assets/vino-a-la-montana-2026-san-martin-de-los-andes.webp') center/cover no-repeat;
   }
 
   .hero h1{
-    font-size: clamp(2rem, 6.5vw, 2.6rem);
+    font-size:3rem;
+    font-weight:600;
+    color: var(--gold, #d2b48c);
+    letter-spacing:.5px;
     line-height:1.12;
-    letter-spacing:.3px;
-    color:#d2b48c;
-    text-align:center;
-    margin:0 auto 1rem;
-    max-width:95%;
+    text-shadow: 0 3px 14px rgba(0,0,0,0.45);
   }
 
   .hero p{
-    font-size:1rem;
-    line-height:1.5;
-    margin:0 auto 1.2rem;
-    max-width:90%;
-    text-align:center;
+    max-width:720px;
+    margin:0 auto 2rem;
   }
 
   .cta-grid{
-    grid-template-columns:1fr;
-    gap:14px;
-    width:100%;
-    max-width:21rem;  /* más angosto */
-    margin:0 auto;    /* centrado real */
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+    max-width:800px;
+    margin:0 auto;
   }
 
-  .btn,
-  .btn-ghost{
+  .btn,.btn-ghost{
+    display:inline-block;
+    padding:.78rem 1.1rem;
+    border-radius:999px;
+    font-weight:700;
+    letter-spacing:.2px;
+    background: var(--gold, #d2b48c);
+    color:#111;
+    border:1px solid rgba(210,180,140,0.6);
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .btn:hover,.btn-ghost:hover{
+    text-decoration:none;
+    filter: brightness(0.98);
+  }
+
+  .card{
+    background: rgba(17,17,17,0.92);
+    border: 1px solid var(--border, rgba(255,255,255,0.10));
+    border-radius: var(--radius, 18px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    padding: 1.8rem;
+  }
+
+  a{
+    color: var(--gold, #d2b48c);
+    text-decoration: none;
+    transition: opacity .2s ease;
+  }
+  a:hover{ text-decoration: underline; opacity: .9; }
+  a:visited{ color: rgba(210,180,140,0.92); }
+
+  @media (max-width: 680px){
+    .hero{
+      min-height:72vh;
+      padding:3.2rem 1rem 2.2rem;
+      background-position:center 30%;
+    }
+    .hero h1{
+      font-size: clamp(2rem, 6.5vw, 2.6rem);
+      line-height:1.12;
+      letter-spacing:.3px;
+      color:#d2b48c;
+      text-align:center;
+      margin:0 auto 1rem;
+      max-width:95%;
+    }
+    .hero p{
+      font-size:1rem;
+      line-height:1.5;
+      margin:0 auto 1.2rem;
+      max-width:90%;
+      text-align:center;
+    }
+    .cta-grid{
+      grid-template-columns:1fr;
+      gap:14px;
+      width:100%;
+      max-width:21rem;
+      margin:0 auto;
+    }
+    .btn,.btn-ghost{
+      width:100%;
+      padding:.85rem 1rem;
+      font-size:1rem;
+      text-align:center;
+    }
+  }
+
+  /* FORM */
+  .form{
+    margin-top:1.25rem;
+    display:grid;
+    gap:14px;
+  }
+  .field{ display:grid; gap:6px; }
+  label{
+    font-weight:700;
+    font-size:.95rem;
+    color:rgba(255,255,255,0.92);
+  }
+  input,select,textarea{
     width:100%;
     padding:.85rem 1rem;
+    border-radius:14px;
+    border:1px solid rgba(210,180,140,0.35);
+    background:#0e0e0e;
+    color:#ededed;
+    outline:none;
+    font-family:inherit;
     font-size:1rem;
-    text-align:center;
+    transition:all .2s ease;
   }
-}
-/* =========================
-   FORMULARIO
-========================= */
-
-.form{
-  margin-top:1.25rem;
-  display:grid;
-  gap:14px;
-}
-
-.field{
-  display:grid;
-  gap:6px;
-}
-
-label{
-  font-weight:700;
-  font-size:.95rem;
-  color:rgba(255,255,255,0.92);
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:.85rem 1rem;
-  border-radius:14px;
-  border:1px solid rgba(210,180,140,0.35);
-  background:#0e0e0e;
-  color:#ededed;
-  outline:none;
-  font-family:inherit;
-  font-size:1rem;
-  transition:all .2s ease;
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-  border-color:#d2b48c;
-  box-shadow:0 0 0 3px rgba(210,180,140,0.18);
-}
-
-.form-actions{
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:6px;
-}
-
-.small{
-  font-size:.9rem;
-  color:rgba(255,255,255,0.68);
-  line-height:1.5;
-}
-
-hr.sep{
-  border:0;
-  border-top:1px solid rgba(255,255,255,0.10);
-  margin:1.6rem 0 1.2rem;
-}
-
-/* Mobile adjustments for form */
-@media (max-width: 680px){
+  textarea{ min-height:120px; resize:vertical; }
+  input:focus,select:focus,textarea:focus{
+    border-color:#d2b48c;
+    box-shadow:0 0 0 3px rgba(210,180,140,0.18);
+  }
   .form-actions{
-    flex-direction:column;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:6px;
   }
-  .form-actions .btn,
-  .form-actions .btn-ghost{
-    width:100%;
-    text-align:center;
+  .small{
+    font-size:.9rem;
+    color:rgba(255,255,255,0.68);
+    line-height:1.5;
   }
-}
+  hr.sep{
+    border:0;
+    border-top:1px solid rgba(255,255,255,0.10);
+    margin:1.6rem 0 1.2rem;
+  }
+  @media (max-width: 680px){
+    .form-actions{ flex-direction:column; }
+    .form-actions .btn,.form-actions .btn-ghost{
+      width:100%;
+      text-align:center;
+    }
+  }
 
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-  border-top:1px solid rgba(255,255,255,0.10);
-  background:#0a0a0a;
-}
-
-.footer .wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:2.2rem 1.25rem;
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.footer a{
-  color:#d2b48c;
-  text-decoration:none;
-  transition:opacity .2s ease;
-}
-
-.footer a:hover{
-  opacity:.8;
-  text-decoration:underline;
-}
-
-.footer .links{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
-.footer .legal{
-  color:rgba(255,255,255,0.6);
-  font-size:.9rem;
-}
+  /* FOOTER */
+  .footer{
+    border-top:1px solid rgba(255,255,255,0.10);
+    background:#0a0a0a;
+  }
+  .footer .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:2.2rem 1.25rem;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .footer a{
+    color:#d2b48c;
+    text-decoration:none;
+    transition:opacity .2s ease;
+  }
+  .footer a:hover{
+    opacity:.8;
+    text-decoration:underline;
+  }
+  .footer .links{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .footer .legal{
+    color:rgba(255,255,255,0.6);
+    font-size:.9rem;
+  }
 </style>
 </head>
 
 <body>
 
 <section class="hero">
- <h1>Vino a la Montaña 2026 · El evento del vino de la Patagonia</h1>
+  <h1>Vino a la Montaña 2026 · El evento del vino de la Patagonia</h1>
 
- <p style="letter-spacing:.5px; font-size:.85rem; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:1rem;">
-  Edición 2026 · Convocatoria abierta
- </p>
+  <p style="letter-spacing:.5px; font-size:.85rem; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:1rem;">
+    Edición 2026 · Convocatoria abierta
+  </p>
 
   <p>
     La próxima edición ya está en preparación.<br>
@@ -386,58 +333,63 @@ hr.sep{
     <p>
       No es una feria masiva. Es un espacio curado, con identidad y foco en continuidad.
     </p>
+
     <hr class="sep">
 
-<p class="small">
-  Completá este formulario y te enviamos condiciones y propuesta de participación.
-  Si preferís, escribinos a
-  <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
-</p>
+    <p class="small">
+      Completá este formulario y te enviamos condiciones y propuesta de participación.
+      Si preferís, escribinos a
+      <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
+    </p>
 
-<form class="form" name="vam-2026-bodegas" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/vino-a-la-montana-2026/gracias.html">
-  <input type="hidden" name="form-name" value="vam-2026-bodegas">
-  <p style="display:none;">
-    <label>Dejar en blanco: <input name="bot-field"></label>
-  </p>
+    <form class="form" id="vamBodegasForm" novalidate>
+      <div class="field">
+        <label for="nombre_b">Nombre</label>
+        <input id="nombre_b" name="nombre" type="text" autocomplete="name" required>
+      </div>
 
-  <div class="field">
-    <label for="nombre">Nombre</label>
-    <input id="nombre" name="nombre" type="text" autocomplete="name" required>
-  </div>
+      <div class="field">
+        <label for="organizacion_b">Bodega / Proyecto</label>
+        <input id="organizacion_b" name="organizacion" type="text" autocomplete="organization" required>
+      </div>
 
-  <div class="field">
-    <label for="organizacion">Bodega / Proyecto</label>
-    <input id="organizacion" name="organizacion" type="text" autocomplete="organization" required>
-  </div>
+      <div class="field">
+        <label for="email_b">Email</label>
+        <input id="email_b" name="email" type="email" autocomplete="email" required>
+      </div>
 
-  <div class="field">
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" autocomplete="email" required>
-  </div>
+      <div class="field">
+        <label for="interes_b">Interés</label>
+        <select id="interes_b" name="interes" required>
+          <option value="Participar como bodega">Participar como bodega</option>
+          <option value="Ser sponsor">Ser sponsor</option>
+          <option value="Quiero asistir">Quiero asistir</option>
+          <option value="Prensa / medios">Prensa / medios</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
 
-  <div class="field">
-    <label for="interes">Interés</label>
-    <select id="interes" name="interes" required>
-      <option value="Bodega">Participar como bodega</option>
-      <option value="Sponsor">Ser sponsor</option>
-      <option value="Asistir">Quiero asistir</option>
-      <option value="Prensa">Prensa / medios</option>
-      <option value="Otro">Otro</option>
-    </select>
-  </div>
+      <div class="field">
+        <label for="mensaje_b">Mensaje (opcional)</label>
+        <textarea id="mensaje_b" name="mensaje" placeholder="Contanos breve qué buscás o tu duda principal"></textarea>
+      </div>
 
-  <div class="field">
-    <label for="mensaje">Mensaje (opcional)</label>
-    <textarea id="mensaje" name="mensaje" placeholder="Contanos breve qué buscás o tu duda principal"></textarea>
-  </div>
+     <div class="form-actions">
+  <button class="btn" type="submit">Enviar</button>
+  <a class="btn btn-ghost" id="vamBodegasMailto"
+     href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Bodegas">
+     Enviar por email
+  </a>
+</div>
 
-  <div class="form-actions">
-    <button class="btn" type="submit">Enviar</button>
-    <a class="btn btn-ghost" href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Bodegas">Enviar por email</a>
-  </div>
+      <p class="small" id="vamBodegasNote" style="margin-top:10px;">
+        Se abrirá tu correo con el mensaje prearmado para enviar.
+      </p>
 
-  <p class="small">Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.</p>
-</form>
+      <p class="small">
+        Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.
+      </p>
+    </form>
   </div>
 </section>
 
@@ -476,50 +428,51 @@ hr.sep{
       La edición 2026 ofrecerá distintas categorías de acompañamiento institucional
       y empresarial, con presencia de marca y acciones asociadas al territorio.
     </p>
-   <hr class="sep">
 
-<p class="small">
-  Completá este formulario y te enviamos el dossier comercial y opciones de acompañamiento.
-  Si preferís, escribinos a
-  <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
-</p>
+    <hr class="sep">
 
-<form class="form" name="vam-2026-sponsors" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/vino-a-la-montana-2026/gracias.html">
-  <input type="hidden" name="form-name" value="vam-2026-sponsors">
-  <input type="hidden" name="interes" value="Sponsor">
-  <p style="display:none;">
-    <label>Dejar en blanco: <input name="bot-field"></label>
-  </p>
+    <p class="small">
+      Completá este formulario y te enviamos el dossier comercial y opciones de acompañamiento.
+      Si preferís, escribinos a
+      <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
+    </p>
 
-  <div class="field">
-    <label for="nombre_s">Nombre</label>
-    <input id="nombre_s" name="nombre" type="text" autocomplete="name" required>
-  </div>
+    <form class="form" id="vamSponsorsForm" novalidate>
+      <div class="field">
+        <label for="nombre_s">Nombre</label>
+        <input id="nombre_s" name="nombre" type="text" autocomplete="name" required>
+      </div>
 
-  <div class="field">
-    <label for="organizacion_s">Empresa / Marca</label>
-    <input id="organizacion_s" name="organizacion" type="text" autocomplete="organization" required>
-  </div>
+      <div class="field">
+        <label for="organizacion_s">Empresa / Marca</label>
+        <input id="organizacion_s" name="organizacion" type="text" autocomplete="organization" required>
+      </div>
 
-  <div class="field">
-    <label for="email_s">Email</label>
-    <input id="email_s" name="email" type="email" autocomplete="email" required>
-  </div>
+      <div class="field">
+        <label for="email_s">Email</label>
+        <input id="email_s" name="email" type="email" autocomplete="email" required>
+      </div>
 
-  <input type="hidden" name="interes" value="Sponsor">
+      <div class="field">
+        <label for="mensaje_s">Mensaje (opcional)</label>
+        <textarea id="mensaje_s" name="mensaje" placeholder="¿Qué tipo de presencia de marca te interesa?"></textarea>
+      </div>
 
-  <div class="field">
-    <label for="mensaje_s">Mensaje (opcional)</label>
-    <textarea id="mensaje_s" name="mensaje" placeholder="¿Qué tipo de presencia de marca te interesa?"></textarea>
-  </div>
+   <div class="form-actions">
+  <button class="btn" type="submit">Pedir dossier</button>
+  <a class="btn btn-ghost" id="vamSponsorsMailto"
+     href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Sponsors">
+     Enviar por email
+  </a>
+</div>
+      <p class="small" id="vamSponsorsNote" style="margin-top:10px;">
+        Se abrirá tu correo con el mensaje prearmado para enviar.
+      </p>
 
-  <div class="form-actions">
-    <button class="btn" type="submit">Pedir dossier</button>
-    <a class="btn btn-ghost" href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Sponsors">Enviar por email</a>
-  </div>
-
-  <p class="small">Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.</p>
-</form>
+      <p class="small">
+        Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.
+      </p>
+    </form>
   </div>
 </section>
 
@@ -536,7 +489,8 @@ hr.sep{
     </p>
   </div>
 </section>
-  <footer class="footer">
+
+<footer class="footer">
   <div class="wrap">
     <div class="legal">
       © Vino a la Montaña · San Martín de los Andes, Neuquén · Patagonia Argentina
@@ -547,5 +501,93 @@ hr.sep{
     </div>
   </div>
 </footer>
+
+<!-- Scripts (al final, DOM ya cargado) -->
+<script>
+(function(){
+  const form = document.getElementById('vamSponsorsForm');
+  const note = document.getElementById('vamSponsorsNote');
+  const mailLink = document.getElementById('vamSponsorsMailto');
+  if (!form) return;
+
+  function buildMailto(){
+    const nombre = document.getElementById('nombre_s').value.trim();
+    const organizacion = document.getElementById('organizacion_s').value.trim();
+    const email = document.getElementById('email_s').value.trim();
+    const mensaje = document.getElementById('mensaje_s').value.trim();
+
+    const subject = `Vino a la Montaña 2026 · Sponsor · ${organizacion || 'Empresa'}`;
+
+    const body =
+`Nombre: ${nombre || '(sin nombre)'}
+Empresa/Marca: ${organizacion || '(sin dato)'}
+Email: ${email || '(sin dato)'}
+Interés: Sponsor
+
+Mensaje:
+${mensaje || '(sin mensaje)'}
+`;
+
+    return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function syncMailtoLink(){
+    if (mailLink) mailLink.href = buildMailto();
+  }
+
+  ['input','change'].forEach(evt => form.addEventListener(evt, syncMailtoLink));
+  syncMailtoLink();
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    window.location.href = buildMailto();
+
+    if (note) note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
+
+    form.reset();
+    syncMailtoLink();
+  });
+})();
+</script>
+
+<script>
+(function(){
+  const form = document.getElementById('vamSponsorsForm');
+  const note = document.getElementById('vamSponsorsNote');
+  if (!form) return;
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const nombre = document.getElementById('nombre_s').value.trim();
+    const organizacion = document.getElementById('organizacion_s').value.trim();
+    const email = document.getElementById('email_s').value.trim();
+    const mensaje = document.getElementById('mensaje_s').value.trim();
+
+    const subject = `Vino a la Montaña 2026 · Sponsor · ${organizacion || 'Empresa'}`;
+
+    const body =
+`Nombre: ${nombre}
+Empresa/Marca: ${organizacion}
+Email: ${email}
+Interés: Sponsor
+
+Mensaje:
+${mensaje || '(sin mensaje)'}
+`;
+
+    const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
+    if (note) note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
+
+    form.reset();
+  });
+})();
+</script>
+
 </body>
 </html>
