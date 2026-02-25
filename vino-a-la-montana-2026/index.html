@@ -111,19 +111,23 @@ section{
   max-width:800px;
   margin:0 auto;
 }
-.btn{
+.btn,
+.btn-ghost{
   display:inline-block;
   padding:.9rem 1.2rem;
   border-radius:999px;
-  font-weight:700;
+  font-weight:600;
   background:#d2b48c;
   color:#111;
-  text-decoration:none;
-}
-.btn-ghost{
-  background:transparent;
   border:1px solid #d2b48c;
-  color:#d2b48c;
+  text-decoration:none;
+  transition:all .2s ease;
+}
+
+.btn:hover,
+.btn-ghost:hover{
+  background:#c5a673;
+  border-color:#c5a673;
 }
 .card{
   background:#111;
