@@ -343,15 +343,18 @@
       <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
     </p>
 
-    <form class="form" id="vamBodegasForm"
-          action="https://formspree.io/f/xnjbwnae"
-          method="POST" accept-charset="UTF-8">
+  <form class="form" id="vamBodegasForm"
+      action="https://formspree.io/f/xnjbwnae"
+      method="POST" accept-charset="UTF-8">
 
-      <!-- Formspree -->
-      <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Bodegas)" />
-      <input type="hidden" name="_format" value="plain" />
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-      <input type="hidden" name="tipo" value="Bodegas" />
+  <!-- Formspree -->
+  <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Bodegas)" />
+  <input type="hidden" name="_format" value="plain" />
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+  <input type="hidden" name="tipo" value="Bodegas" />
+
+  <!-- REDIRECCIÓN -->
+  <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
 
       <div class="field">
         <label for="nombre_b">Nombre</label>
@@ -456,6 +459,8 @@
       <input type="hidden" name="_format" value="plain" />
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="tipo" value="Sponsors" />
+        <!-- REDIRECCIÓN -->
+  <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
 
       <div class="field">
         <label for="nombre_s">Nombre</label>
@@ -525,7 +530,7 @@
 <!-- Scripts (al final, DOM ya cargado) -->
 <script>
 (function(){
-  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/gracias.html';
+  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
 
   // ===== Helpers: mailto =====
   function buildMailtoB(){
