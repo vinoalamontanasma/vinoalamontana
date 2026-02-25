@@ -23,6 +23,9 @@
 <meta property="og:image:alt" content="Vino a la Montaña 2026 · El evento del vino de la Patagonia" />
 
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Vino a la Montaña 2026 · El evento del vino de la Patagonia" />
+<meta name="twitter:description" content="Convocatoria abierta para bodegas y sponsors en San Martín de los Andes. El punto de encuentro del vino patagónico en la cordillera." />
+<meta name="twitter:image" content="https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-2026-og.jpg" />
 
 <!-- Schema.org Event 2026 -->
 <script type="application/ld+json">
@@ -328,10 +331,58 @@ hr.sep{
     <p>
       No es una feria masiva. Es un espacio curado, con identidad y foco en continuidad.
     </p>
-    <p>
-      📩 Solicitar información y condiciones de participación:
-      <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>
-    </p>
+    <hr class="sep">
+
+<p class="small">
+  Completá este formulario y te enviamos condiciones y propuesta de participación.
+  Si preferís, escribinos a
+  <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
+</p>
+
+<form class="form" name="vam-2026-leads" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/gracias/">
+  <input type="hidden" name="form-name" value="vam-2026-leads">
+  <p style="display:none;">
+    <label>Dejar en blanco: <input name="bot-field"></label>
+  </p>
+
+  <div class="field">
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="field">
+    <label for="organizacion">Bodega / Proyecto</label>
+    <input id="organizacion" name="organizacion" type="text" autocomplete="organization" required>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required>
+  </div>
+
+  <div class="field">
+    <label for="interes">Interés</label>
+    <select id="interes" name="interes" required>
+      <option value="Bodega">Participar como bodega</option>
+      <option value="Sponsor">Ser sponsor</option>
+      <option value="Asistir">Quiero asistir</option>
+      <option value="Prensa">Prensa / medios</option>
+      <option value="Otro">Otro</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="mensaje">Mensaje (opcional)</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Contanos breve qué buscás o tu duda principal"></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn" type="submit">Enviar</button>
+    <a class="btn btn-ghost" href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Bodegas">Enviar por email</a>
+  </div>
+
+  <p class="small">Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.</p>
+</form>
   </div>
 </section>
 
@@ -348,7 +399,7 @@ hr.sep{
     </p>
     <p>
       📲 Seguinos en Instagram:
-      <a href="https://instagram.com/vinoalamontana.sma" target="_blank">@vinoalamontana.sma</a>
+      <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener">@vinoalamontana.sma</a>
     </p>
   </div>
 </section>
@@ -370,10 +421,49 @@ hr.sep{
       La edición 2026 ofrecerá distintas categorías de acompañamiento institucional
       y empresarial, con presencia de marca y acciones asociadas al territorio.
     </p>
-    <p>
-      📩 Solicitar dossier comercial:
-      <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>
-    </p>
+   <hr class="sep">
+
+<p class="small">
+  Completá este formulario y te enviamos el dossier comercial y opciones de acompañamiento.
+  Si preferís, escribinos a
+  <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
+</p>
+
+<form class="form" name="vam-2026-leads" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/gracias/">
+  <input type="hidden" name="form-name" value="vam-2026-leads">
+  <p style="display:none;">
+    <label>Dejar en blanco: <input name="bot-field"></label>
+  </p>
+
+  <div class="field">
+    <label for="nombre_s">Nombre</label>
+    <input id="nombre_s" name="nombre" type="text" autocomplete="name" required>
+  </div>
+
+  <div class="field">
+    <label for="organizacion_s">Empresa / Marca</label>
+    <input id="organizacion_s" name="organizacion" type="text" autocomplete="organization" required>
+  </div>
+
+  <div class="field">
+    <label for="email_s">Email</label>
+    <input id="email_s" name="email" type="email" autocomplete="email" required>
+  </div>
+
+  <input type="hidden" name="interes" value="Sponsor">
+
+  <div class="field">
+    <label for="mensaje_s">Mensaje (opcional)</label>
+    <textarea id="mensaje_s" name="mensaje" placeholder="¿Qué tipo de presencia de marca te interesa?"></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn" type="submit">Pedir dossier</button>
+    <a class="btn btn-ghost" href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Sponsors">Enviar por email</a>
+  </div>
+
+  <p class="small">Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.</p>
+</form>
   </div>
 </section>
 
@@ -390,5 +480,16 @@ hr.sep{
     </p>
   </div>
 </section>
+  <footer class="footer">
+  <div class="wrap">
+    <div class="legal">
+      © Vino a la Montaña · San Martín de los Andes, Neuquén · Patagonia Argentina
+    </div>
+    <div class="links">
+      <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:contacto@vinoalamontana.com.ar">Contacto</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
