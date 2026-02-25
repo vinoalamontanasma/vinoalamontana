@@ -392,7 +392,7 @@
         </a>
       </div>
 
-      <p class="small" id="vamBodegasNote" style="margin-top:10px;">
+      <p class="small" id="vamBodegasNote" role="status" aria-live="polite" style="margin-top:10px;">
         Si preferís, también podés enviarlo por email con el botón de la derecha.
       </p>
 
@@ -485,7 +485,7 @@
         </a>
       </div>
 
-      <p class="small" id="vamSponsorsNote" style="margin-top:10px;">
+      <p class="small" id="vamSponsorsNote" role="status" aria-live="polite" style="margin-top:10px;">
         Si preferís, también podés enviarlo por email con el botón de la derecha.
       </p>
 
@@ -639,6 +639,26 @@ ${mensaje || '(sin mensaje)'}
 
   // Sponsors
   wireForm('vamSponsorsForm', 'vamSponsorsMailto', buildMailtoS, 'vamSponsorsNote');
+
+  // Limpieza al volver con "Atrás" (bfcache)
+  window.addEventListener('pageshow', function(e){
+    if (!e.persisted) return;
+
+    const fb = document.getElementById('vamBodegasForm');
+    const fs = document.getElementById('vamSponsorsForm');
+    if (fb) fb.reset();
+    if (fs) fs.reset();
+
+    const nb = document.getElementById('vamBodegasNote');
+    const ns = document.getElementById('vamSponsorsNote');
+    if (nb) nb.textContent = 'Si preferís, también podés enviarlo por email con el botón de la derecha.';
+    if (ns) ns.textContent = 'Si preferís, también podés enviarlo por email con el botón de la derecha.';
+
+    const mlb = document.getElementById('vamBodegasMailto');
+    const mls = document.getElementById('vamSponsorsMailto');
+    if (mlb) mlb.href = buildMailtoB();
+    if (mls) mls.href = buildMailtoS();
+  });
 })();
 </script>
 
