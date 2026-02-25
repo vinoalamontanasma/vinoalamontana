@@ -67,7 +67,7 @@
     --radius:18px;
   }
 
-  *,. *::before,*::after{ box-sizing:border-box; }
+  *, *::before, *::after{ box-sizing:border-box; }
   html{ overflow-x:hidden; }
   body{
     margin:0;
@@ -505,12 +505,62 @@
 <!-- Scripts (al final, DOM ya cargado) -->
 <script>
 (function(){
-  const form = document.getElementById('vamSponsorsForm');
-  const note = document.getElementById('vamSponsorsNote');
-  const mailLink = document.getElementById('vamSponsorsMailto');
-  if (!form) return;
+  // ===== BODEGAS =====
+  const formB = document.getElementById('vamBodegasForm');
+  const noteB = document.getElementById('vamBodegasNote');
+  const mailLinkB = document.getElementById('vamBodegasMailto');
 
-  function buildMailto(){
+  function buildMailtoB(){
+    const nombre = document.getElementById('nombre_b').value.trim();
+    const organizacion = document.getElementById('organizacion_b').value.trim();
+    const email = document.getElementById('email_b').value.trim();
+    const interes = document.getElementById('interes_b').value;
+    const mensaje = document.getElementById('mensaje_b').value.trim();
+
+    const subject = `Vino a la Montaña 2026 · ${interes} · ${organizacion || 'Bodega'}`;
+
+    const body =
+`Nombre: ${nombre || '(sin nombre)'}
+Bodega/Proyecto: ${organizacion || '(sin dato)'}
+Email: ${email || '(sin dato)'}
+Interés: ${interes}
+
+Mensaje:
+${mensaje || '(sin mensaje)'}
+`;
+
+    return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function syncMailtoB(){
+    if (mailLinkB) mailLinkB.href = buildMailtoB();
+  }
+
+  if (formB) {
+    ['input','change'].forEach(evt => formB.addEventListener(evt, syncMailtoB));
+    syncMailtoB();
+
+    formB.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!formB.checkValidity()) { formB.reportValidity(); return; }
+
+      window.location.href = buildMailtoB();
+
+      if (noteB) noteB.textContent =
+        "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
+
+      formB.reset();
+      document.getElementById('interes_b').value = 'Participar como bodega';
+      syncMailtoB();
+    });
+  }
+
+  // ===== SPONSORS =====
+  const formS = document.getElementById('vamSponsorsForm');
+  const noteS = document.getElementById('vamSponsorsNote');
+  const mailLinkS = document.getElementById('vamSponsorsMailto');
+
+  function buildMailtoS(){
     const nombre = document.getElementById('nombre_s').value.trim();
     const organizacion = document.getElementById('organizacion_s').value.trim();
     const email = document.getElementById('email_s').value.trim();
@@ -531,61 +581,27 @@ ${mensaje || '(sin mensaje)'}
     return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  function syncMailtoLink(){
-    if (mailLink) mailLink.href = buildMailto();
+  function syncMailtoS(){
+    if (mailLinkS) mailLinkS.href = buildMailtoS();
   }
 
-  ['input','change'].forEach(evt => form.addEventListener(evt, syncMailtoLink));
-  syncMailtoLink();
+  if (formS) {
+    ['input','change'].forEach(evt => formS.addEventListener(evt, syncMailtoS));
+    syncMailtoS();
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
+    formS.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!formS.checkValidity()) { formS.reportValidity(); return; }
 
-    window.location.href = buildMailto();
+      window.location.href = buildMailtoS();
 
-    if (note) note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
+      if (noteS) noteS.textContent =
+        "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
 
-    form.reset();
-    syncMailtoLink();
-  });
-})();
-</script>
-
-<script>
-(function(){
-  const form = document.getElementById('vamSponsorsForm');
-  const note = document.getElementById('vamSponsorsNote');
-  if (!form) return;
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-
-    const nombre = document.getElementById('nombre_s').value.trim();
-    const organizacion = document.getElementById('organizacion_s').value.trim();
-    const email = document.getElementById('email_s').value.trim();
-    const mensaje = document.getElementById('mensaje_s').value.trim();
-
-    const subject = `Vino a la Montaña 2026 · Sponsor · ${organizacion || 'Empresa'}`;
-
-    const body =
-`Nombre: ${nombre}
-Empresa/Marca: ${organizacion}
-Email: ${email}
-Interés: Sponsor
-
-Mensaje:
-${mensaje || '(sin mensaje)'}
-`;
-
-    const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-
-    if (note) note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo a contacto@vinoalamontana.com.ar.";
-
-    form.reset();
-  });
+      formS.reset();
+      syncMailtoS();
+    });
+  }
 })();
 </script>
 
