@@ -146,25 +146,27 @@ section{
 /* Card con profundidad suave, como la principal */
 .card{
   background: rgba(17,17,17,0.92);
-  border:1px solid rgba(255,255,255,0.10);
-  border-radius:18px;
+  border: 1px solid var(--border, rgba(255,255,255,0.10));
+  border-radius: var(--radius, 18px);
   box-shadow: 0 18px 50px rgba(0,0,0,0.35);
-  padding:1.8rem;
+  padding: 1.8rem;
 }
+
 /* Links elegantes para fondo oscuro */
 a{
-  color:#d2b48c;
-  text-decoration:none;
+  color: var(--gold, #d2b48c);
+  text-decoration: none;
+  transition: opacity .2s ease;
 }
 
 a:hover{
-  text-decoration:underline;
-  opacity:.9;
+  text-decoration: underline;
+  opacity: .9;
 }
 
 a:visited{
-  color:#c8ad86;
-}  
+  color: rgba(210,180,140,0.92);
+} 
 @media (max-width: 680px){
 
   .hero{
