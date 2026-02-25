@@ -569,6 +569,27 @@
     .next-edition{ padding: 1.6rem 1.25rem 0; }
     .next-edition__title{ font-size:1.15rem; }
   }
+  /* MOBILE NAV FIX */
+@media (max-width: 680px){
+  .nav-inner{
+    padding: 0.65rem 0.9rem;
+  }
+
+  .nav-links{
+    max-height: 62vh;         /* evita que tape toda la pantalla */
+    overflow-y: auto;         /* scroll dentro del menú */
+    -webkit-overflow-scrolling: touch;
+    gap: .35rem;              /* menos aire */
+  }
+
+  .nav-links a{
+    padding: .28rem .48rem;   /* botones más compactos */
+    font-size: .92rem;
+  }
+
+  .brand-logo{ height: 32px; } /* un toque más chico */
+  .brand span{ font-size: .8rem; }
+}
 </style>
 </head>
 
