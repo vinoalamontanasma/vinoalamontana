@@ -57,8 +57,19 @@
 }
 </script>
 <style>
+/* Base fix: evita corrimientos y overflow en mobile */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html{
+  overflow-x:hidden;
+}
+
 body{
   margin:0;
+  width:100%;
+  overflow-x:hidden;
   font-family: Georgia, "Times New Roman", serif;
   background:#0b0b0b;
   color:#ededed;
@@ -120,41 +131,60 @@ section{
   border-radius:18px;
   padding:2rem;
 }
+/* Links elegantes para fondo oscuro */
+a{
+  color:#d2b48c;
+  text-decoration:none;
+}
+
+a:hover{
+  text-decoration:underline;
+  opacity:.9;
+}
+
+a:visited{
+  color:#c8ad86;
+}  
 @media (max-width: 680px){
 
   .hero{
-    min-height: 88vh;
-    padding: 3.5rem 1rem 2.25rem;
-    background-position: center 30%;
+    min-height:72vh;
+    padding:3.2rem 1rem 2.2rem;
+    background-position:center 30%;
   }
 
   .hero h1{
-    font-size: clamp(1.75rem, 6.2vw, 2.35rem);
-    line-height: 1.08;
-    margin: 0 0 0.85rem;
-    letter-spacing: .2px;
+    font-size: clamp(2rem, 6.5vw, 2.6rem);
+    line-height:1.12;
+    letter-spacing:.3px;
+    color:#d2b48c;
+    text-align:center;
+    margin:0 auto 1rem;
+    max-width:95%;
   }
 
   .hero p{
-    font-size: 1rem;
-    line-height: 1.55;
-    margin: 0 auto 1.35rem;
-    max-width: 34rem;
+    font-size:1rem;
+    line-height:1.5;
+    margin:0 auto 1.2rem;
+    max-width:90%;
+    text-align:center;
   }
 
   .cta-grid{
-    grid-template-columns: 1fr;
-    gap: 12px;
-    width: 100%;
-    max-width: 26rem;
-    margin: 0 auto;
+    grid-template-columns:1fr;
+    gap:14px;
+    width:100%;
+    max-width:21rem;  /* más angosto */
+    margin:0 auto;    /* centrado real */
   }
 
   .btn,
   .btn-ghost{
-    width: 100%;
-    text-align: center;
-    padding: .95rem 1.1rem;
+    width:100%;
+    padding:.85rem 1rem;
+    font-size:1rem;
+    text-align:center;
   }
 }
 /* =========================
@@ -297,7 +327,7 @@ hr.sep{
   </p>
 
   <div class="cta-grid">
-    <a class="btn" href="#bodegas">Quiero participar como bodega</a>
+    <a class="btn btn-ghost" href="#bodegas">Quiero participar como bodega</a>
     <a class="btn btn-ghost" href="#asistentes">Quiero asistir</a>
     <a class="btn btn-ghost" href="#sponsors">Quiero ser sponsor</a>
   </div>
