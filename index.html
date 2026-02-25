@@ -90,15 +90,46 @@
         "addressCountry": "AR"
       }
     },
-    "organizer": {
-      "@id": "https://vinoalamontana.com.ar/#org"
-    },
+    "organizer": { "@id": "https://vinoalamontana.com.ar/#org" },
     "image": "https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG",
     "url": "https://vinoalamontana.com.ar/"
   }
   </script>
 
-</head>
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué es Vino a la Montaña?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vino a la Montaña es una feria de vinos patagónicos que forma parte de la Ruta del Vino de la Patagonia en San Martín de los Andes. Reúne bodegas de Neuquén, Río Negro y Chubut en un encuentro boutique que integra vino, gastronomía y enoturismo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde se realiza Vino a la Montaña?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El evento se realiza en San Martín de los Andes, provincia del Neuquén, Patagonia Argentina, con sede en el Loi Suites Chapelco Golf & Resort."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quiénes participan en Vino a la Montaña?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Participan bodegas patagónicas, productores, enólogos, referentes del vino y profesionales del sector gastronómico y hotelero, junto a público interesado en descubrir etiquetas regionales."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --bg:#0b0b0b;
@@ -176,7 +207,8 @@
       border-color: rgba(210,180,140,0.35);
       text-decoration:none;
     }
-
+  </style>
+</head>
     /* HERO */
     header.hero{
       position:relative;
@@ -567,7 +599,7 @@
   </div>
 
   <header class="hero" role="banner">
-  <img 
+  <img
     class="hero-img"
     src="assets/vino-a-la-montana-cabecera.JPEG"
     alt="Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes (Neuquén) · Loi Suites Chapelco Golf & Resort"
@@ -576,37 +608,36 @@
   />
   <div class="hero-overlay" aria-hidden="true"></div>
 
-<div class="hero-box">
-  <img 
-    class="hero-logo"
-    src="assets/logo-oficial.png"
-    alt="Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes"
-    decoding="async"
-  />
+  <div class="hero-box">
+    <img
+      class="hero-logo"
+      src="assets/logo-oficial.png"
+      alt="Vino a la Montaña"
+      decoding="async"
+    />
 
-  <p style="margin:0.6rem 0 0; font-size:0.95rem; letter-spacing:.8px; text-transform:uppercase; color:rgba(237,237,237,0.65);">
-    Ruta del Vino Patagónico · San Martín de los Andes
-  </p>
+    <h1 style="margin:0.6rem 0 0; font-size:1.05rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:rgba(237,237,237,0.72);">
+      Ruta del Vino Patagónico · San Martín de los Andes
+    </h1>
 
-  <div class="hero-cta">
+    <div class="hero-cta">
       <a class="btn" href="#contacto">Contacto</a>
       <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
       <a class="btn btn-ghost" href="#prensa">Ver prensa</a>
     </div>
   </div>
-</header>>
+</header>
 <section style="max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;">
-  <p class="lead" style="margin:0; text-align:center;">
-    <strong>Vino a la Montaña</strong> es la Ruta del Vino de la Patagonia en San Martín de los Andes:
-    un encuentro boutique para descubrir bodegas, conversar con productores y fortalecer vínculos entre vino, gastronomía y hotelería.
-  </p>
-</section>
+ <p class="lead" style="margin:0; text-align:center;">
+  <strong>Vino a la Montaña</strong> es la feria de vinos patagónicos que da forma a la Ruta del Vino de la Patagonia en San Martín de los Andes. 
+  Un encuentro boutique que reúne bodegas de Neuquén, Río Negro y Chubut, integrando vino, gastronomía y hotelería para fortalecer el enoturismo regional y la presencia de etiquetas patagónicas en cartas locales.
+</p>
   <main>
 
     <!-- EXPERIENCIA -->
     <section id="experiencia-vino-a-la-montana" class="experiencia">
-      <h2 class="section-title">✦ Vino a la Montaña · Una experiencia patagónica inolvidable</h2>
-      <h3>Vinos extremos. Paisajes únicos. Personas reales.</h3>
+     <h2 class="section-title">Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes</h2>
+<p class="section-lead">Vinos extremos. Paisajes únicos. Personas reales.</p>
 
       <p>
         <strong>Vino a la Montaña</strong> es mucho más que una feria de vinos.
@@ -671,7 +702,7 @@
 
     <!-- LA COPA (DOS MUNDOS) -->
     <section id="dos-mundos">
-      <h2 class="section-title">Dos caras de la misma copa</h2>
+      <h2 class="section-title">Dos caras de la misma copa · Público y trade del vino patagónico</h2>
 
       <div class="grid">
         <div class="card">
@@ -875,7 +906,7 @@
 
     <!-- PRENSA -->
     <section id="prensa">
-      <h2 class="section-title">Prensa</h2>
+     <h2 class="section-title">Prensa · Cobertura de Vino a la Montaña</h2>
 
       <div class="grid">
         <div class="card">
@@ -895,7 +926,9 @@
           </ul>
 
           <p class="muted" style="margin-top:1rem;">
-            <a class="btn btn-ghost" href="/prensa/">Ver cobertura completa</a>
+            <a class="btn btn-ghost" href="/prensa/" title="Cobertura de Vino a la Montaña en medios regionales y provinciales">
+  Ver cobertura de Vino a la Montaña en medios
+</a>
           </p>
         </div>
 
@@ -937,7 +970,9 @@
       </p>
 
       <div class="mini-actions">
-        <a class="btn" href="/galeria/">Ver galería completa</a>
+        <a class="btn" href="/galeria/" title="Fotos de la feria de vinos patagónicos en San Martín de los Andes">
+  Ver galería de la feria
+</a>
       </div>
     </section>
 
