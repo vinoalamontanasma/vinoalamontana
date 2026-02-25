@@ -350,7 +350,6 @@
       <!-- Formspree -->
       <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Bodegas)" />
       <input type="hidden" name="_format" value="plain" />
-      <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/gracias.html" />
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="tipo" value="Bodegas" />
 
@@ -455,7 +454,6 @@
       <!-- Formspree -->
       <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Sponsors)" />
       <input type="hidden" name="_format" value="plain" />
-      <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/gracias.html" />
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="tipo" value="Sponsors" />
 
@@ -527,10 +525,9 @@
 <!-- Scripts (al final, DOM ya cargado) -->
 <script>
 (function(){
-  // ===== BODEGAS: mailto dinámico =====
-  const formB = document.getElementById('vamBodegasForm');
-  const mailLinkB = document.getElementById('vamBodegasMailto');
+  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/gracias.html';
 
+  // ===== Helpers: mailto =====
   function buildMailtoB(){
     const nombre = (document.getElementById('nombre_b')?.value || '').trim();
     const organizacion = (document.getElementById('organizacion_b')?.value || '').trim();
@@ -551,19 +548,6 @@ ${mensaje || '(sin mensaje)'}
     return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  function syncMailtoB(){
-    if (mailLinkB) mailLinkB.href = buildMailtoB();
-  }
-
-  if (formB) {
-    ['input','change'].forEach(evt => formB.addEventListener(evt, syncMailtoB));
-    syncMailtoB();
-  }
-
-  // ===== SPONSORS: mailto dinámico =====
-  const formS = document.getElementById('vamSponsorsForm');
-  const mailLinkS = document.getElementById('vamSponsorsMailto');
-
   function buildMailtoS(){
     const nombre = (document.getElementById('nombre_s')?.value || '').trim();
     const organizacion = (document.getElementById('organizacion_s')?.value || '').trim();
@@ -583,14 +567,78 @@ ${mensaje || '(sin mensaje)'}
     return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
-  function syncMailtoS(){
-    if (mailLinkS) mailLinkS.href = buildMailtoS();
+  // ===== AJAX submit =====
+  async function submitToFormspree(form){
+    const endpoint = form.getAttribute('action');
+    const formData = new FormData(form);
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
+
+    if (!res.ok) {
+      let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
+      try {
+        const data = await res.json();
+        if (data && data.errors && data.errors.length) {
+          msg = data.errors.map(e => e.message).join(' ');
+        }
+      } catch (_) {}
+      throw new Error(msg);
+    }
   }
 
-  if (formS) {
-    ['input','change'].forEach(evt => formS.addEventListener(evt, syncMailtoS));
-    syncMailtoS();
+  function wireForm(formId, mailtoId, buildMailtoFn, noteId){
+    const form = document.getElementById(formId);
+    const mailto = document.getElementById(mailtoId);
+    const note = document.getElementById(noteId);
+
+    if (!form) return;
+
+    function syncMailto(){
+      if (mailto) mailto.href = buildMailtoFn();
+    }
+    ['input','change'].forEach(evt => form.addEventListener(evt, syncMailto));
+    syncMailto();
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+
+      try {
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
+        if (note) note.textContent = 'Enviando…';
+
+        await submitToFormspree(form);
+
+        form.reset();
+        syncMailto();
+
+        if (note) note.textContent = 'Enviado. Redirigiendo…';
+        window.location.href = THANK_YOU_URL;
+
+      } catch (err) {
+        if (note) note.textContent = err.message || 'Error al enviar. Intentá nuevamente.';
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+      }
+    });
   }
+
+  // Bodegas
+  wireForm('vamBodegasForm', 'vamBodegasMailto', buildMailtoB, 'vamBodegasNote');
+
+  // Sponsors
+  wireForm('vamSponsorsForm', 'vamSponsorsMailto', buildMailtoS, 'vamSponsorsNote');
 })();
 </script>
 
