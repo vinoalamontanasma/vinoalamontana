@@ -7,21 +7,18 @@
   <title>Vino a la Montaña · Ruta del Vino Patagónico en San Martín de los Andes</title>
 
   <meta name="description" content="Vino a la Montaña es la Ruta del Vino de la Patagonia en San Martín de los Andes. Un encuentro cuidado para disfrutar, descubrir y conversar con productores, con el entorno de la montaña como protagonista. También impulsa vínculos directos entre bodegas, gastronomía y hotelería para fortalecer la presencia de vinos regionales en cartas y propuestas locales." />
-  <meta name="keywords" content="Vino a la Montaña, Ruta del Vino Patagonia, vino patagónico, vinos de la Patagonia, San Martín de los Andes, feria de vinos, degustaciones, enoturismo, Loi Suites Chapelco, trade del vino, cartas de vino regionales" />
   <meta name="author" content="Vino a la Montaña" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#0b0b0b" />
 
   <!-- Canonical -->
   <link rel="canonical" href="https://vinoalamontana.com.ar/" />
 
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Vino a la Montaña · Patagonia" />
-  <meta name="twitter:description" content="La Ruta del Vino de la Patagonia en San Martín de los Andes. Disfrute, descubrimiento y encuentro profesional en un entorno único." />
-  <meta name="twitter:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
+  <!-- Preload Hero Image -->
+  <link rel="preload" as="image" href="assets/vino-a-la-montana-cabecera.JPEG" imagesrcset="assets/vino-a-la-montana-cabecera.JPEG" />
 
   <!-- Open Graph -->
+  <meta property="og:site_name" content="Vino a la Montaña" />
   <meta property="og:title" content="Vino a la Montaña · Patagonia" />
   <meta property="og:description" content="La Ruta del Vino de la Patagonia en San Martín de los Andes. Disfrute, descubrimiento y encuentro profesional en un entorno único." />
   <meta property="og:type" content="website" />
@@ -29,18 +26,59 @@
   <meta property="og:locale" content="es_AR" />
   <meta property="og:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
   <meta property="og:image:alt" content="Vino a la Montaña en San Martín de los Andes · Patagonia" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/jpeg" />
 
-  <!-- Schema.org Event -->
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vino a la Montaña · Patagonia" />
+  <meta name="twitter:description" content="La Ruta del Vino de la Patagonia en San Martín de los Andes. Disfrute, descubrimiento y encuentro profesional en un entorno único." />
+  <meta name="twitter:image" content="https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
+  <meta name="twitter:image:alt" content="Vino a la Montaña en San Martín de los Andes · Patagonia" />
+
+  <!-- Schema.org Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vinoalamontana.com.ar/#org",
+        "name": "Vino a la Montaña",
+        "url": "https://vinoalamontana.com.ar/",
+        "logo": "https://vinoalamontana.com.ar/assets/logo-oficial.png",
+        "sameAs": [
+          "https://www.instagram.com/vinoalamontana.sma/"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vinoalamontana.com.ar/#website",
+        "url": "https://vinoalamontana.com.ar/",
+        "name": "Vino a la Montaña",
+        "inLanguage": "es-AR",
+        "publisher": {
+          "@id": "https://vinoalamontana.com.ar/#org"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema.org Event (Edición 2025) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Vino a la Montaña · Feria de Vinos Patagónicos",
-    "description": "Feria y degustación de vinos patagónicos en San Martín de los Andes. Encuentro boutique que reúne bodegas de Neuquén, Río Negro y Chubut en un entorno de montaña.",
+    "@id": "https://vinoalamontana.com.ar/#event-2025",
+    "name": "Vino a la Montaña · Feria de Vinos Patagónicos (Edición 2025)",
+    "description": "Feria y degustación de vinos patagónicos en San Martín de los Andes.",
     "startDate": "2025-09-19",
     "endDate": "2025-09-20",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
+    "eventStatus": "https://schema.org/EventCompleted",
+    "inLanguage": "es-AR",
     "location": {
       "@type": "Place",
       "name": "Loi Suites Chapelco Golf & Resort",
@@ -53,41 +91,14 @@
       }
     },
     "organizer": {
-      "@type": "Organization",
-      "name": "Vino a la Montaña",
-      "url": "https://vinoalamontana.com.ar/"
+      "@id": "https://vinoalamontana.com.ar/#org"
     },
     "image": "https://vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG",
     "url": "https://vinoalamontana.com.ar/"
   }
   </script>
 
-  <!-- Schema.org Person (Invitada especial) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Marisol de la Fuente",
-    "alternateName": "Sol Sommelier",
-    "jobTitle": "Wine Communicator",
-    "description": "Comunicadora de vinos y creadora de contenidos, reconocida por su trabajo en divulgación y comunicación del vino en Argentina.",
-    "sameAs": [
-      "https://www.instagram.com/solsommelier"
-    ],
-    "affiliation": {
-      "@type": "Event",
-      "name": "Vino a la Montaña · Feria de Vinos Patagónicos",
-      "url": "https://vinoalamontana.com.ar/"
-    },
-    "knows": {
-      "@type": "Person",
-      "name": "Sergio Landoni",
-      "jobTitle": "Sommelier de Territorio",
-      "url": "https://sergiolandoni.com.ar/"
-    }
-  }
-  </script>
-
+</head>
   <style>
     :root{
       --bg:#0b0b0b;
@@ -531,16 +542,6 @@
 <body>
   <div id="top"></div>
 
-  <!-- SEO semántico oculto -->
-  <div class="seo-hidden">
-    <h2>Sergio Landoni Sommelier de Territorio</h2>
-    <p>
-      Vino a la Montaña es la Ruta del Vino de la Patagonia en San Martín de los Andes, Neuquén, Patagonia Argentina.
-      Curaduría y contenidos: Sergio Landoni, sommelier de territorio y comunicador del vino patagónico.
-      Encuentro boutique de degustaciones, descubrimiento, paisaje y vínculos profesionales (trade) para impulsar vinos regionales en cartas locales.
-    </p>
-  </div>
-
   <div class="nav">
     <div class="nav-inner">
       <div class="brand">
@@ -566,21 +567,40 @@
   </div>
 
   <header class="hero" role="banner">
-    <img class="hero-img" src="assets/vino-a-la-montana-cabecera.JPEG" alt="Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes (Neuquén) · Loi Suites Chapelco Golf & Resort" />
-    <div class="hero-overlay" aria-hidden="true"></div>
+  <img 
+    class="hero-img"
+    src="assets/vino-a-la-montana-cabecera.JPEG"
+    alt="Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes (Neuquén) · Loi Suites Chapelco Golf & Resort"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-    <div class="hero-box">
-      <img class="hero-logo" src="assets/logo-oficial.png" alt="Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes" />
-      <h1 class="seo-title">Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes</h1>
+<div class="hero-box">
+  <img 
+    class="hero-logo"
+    src="assets/logo-oficial.png"
+    alt="Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes"
+    decoding="async"
+  />
 
-      <div class="hero-cta">
-        <a class="btn" href="#contacto">Contacto</a>
-        <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
-        <a class="btn btn-ghost" href="#prensa">Ver prensa</a>
-      </div>
+  <p style="margin:0.6rem 0 0; font-size:0.95rem; letter-spacing:.8px; text-transform:uppercase; color:rgba(237,237,237,0.65);">
+    Ruta del Vino Patagónico · San Martín de los Andes
+  </p>
+
+  <div class="hero-cta">
+      <a class="btn" href="#contacto">Contacto</a>
+      <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+      <a class="btn btn-ghost" href="#prensa">Ver prensa</a>
     </div>
-  </header>
-
+  </div>
+</header>>
+<section style="max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;">
+  <p class="lead" style="margin:0; text-align:center;">
+    <strong>Vino a la Montaña</strong> es la Ruta del Vino de la Patagonia en San Martín de los Andes:
+    un encuentro boutique para descubrir bodegas, conversar con productores y fortalecer vínculos entre vino, gastronomía y hotelería.
+  </p>
+</section>
   <main>
 
     <!-- EXPERIENCIA -->
