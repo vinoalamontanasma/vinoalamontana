@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
 
   <title>Vino a la Montaña · Ruta del Vino Patagónico en San Martín de los Andes</title>
 
@@ -12,10 +13,10 @@
   <meta name="theme-color" content="#0b0b0b" />
 
   <!-- Canonical -->
-<link rel="canonical" href="https://www.vinoalamontana.com.ar/" />
+  <link rel="canonical" href="https://www.vinoalamontana.com.ar/" />
 
   <!-- Preload Hero Image -->
-  <link rel="preload" as="image" href="assets/vino-a-la-montana-cabecera.JPEG" />
+  <link rel="preload" as="image" href="/assets/vino-a-la-montana-cabecera.JPEG" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Vino a la Montaña" />
@@ -37,42 +38,42 @@
   <meta name="twitter:image" content="https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
   <meta name="twitter:image:alt" content="Vino a la Montaña en San Martín de los Andes · Patagonia" />
 
-<!-- Schema.org Organization + WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.vinoalamontana.com.ar/#org",
-      "name": "Vino a la Montaña",
-      "url": "https://www.vinoalamontana.com.ar/",
-      "logo": "https://www.vinoalamontana.com.ar/assets/logo-oficial.png",
-      "sameAs": [
-        "https://www.instagram.com/vinoalamontana.sma/"
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "contactType": "info",
-          "email": "contacto@vinoalamontana.com.ar",
-          "availableLanguage": ["es"]
+  <!-- Schema.org Organization + WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.vinoalamontana.com.ar/#org",
+        "name": "Vino a la Montaña",
+        "url": "https://www.vinoalamontana.com.ar/",
+        "logo": "https://www.vinoalamontana.com.ar/assets/logo-oficial.png",
+        "sameAs": [
+          "https://www.instagram.com/vinoalamontana.sma/"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "info",
+            "email": "contacto@vinoalamontana.com.ar",
+            "availableLanguage": ["es"]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.vinoalamontana.com.ar/#website",
+        "url": "https://www.vinoalamontana.com.ar/",
+        "name": "Vino a la Montaña",
+        "inLanguage": "es-AR",
+        "publisher": {
+          "@id": "https://www.vinoalamontana.com.ar/#org"
         }
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.vinoalamontana.com.ar/#website",
-      "url": "https://www.vinoalamontana.com.ar/",
-      "name": "Vino a la Montaña",
-      "inLanguage": "es-AR",
-      "publisher": {
-        "@id": "https://www.vinoalamontana.com.ar/#org"
       }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
   <!-- Schema.org Event (Edición 2025) -->
   <script type="application/ld+json">
@@ -137,6 +138,7 @@
     ]
   }
   </script>
+
 <style>
   :root{
     --bg:#0b0b0b;
@@ -259,12 +261,6 @@
     margin: 0 auto .65rem auto;
     opacity:.70;
     filter: drop-shadow(0 16px 30px rgba(0,0,0,0.45));
-  }
-  .seo-title{
-    position:absolute;
-    left:-9999px; top:auto;
-    width:1px; height:1px;
-    overflow:hidden;
   }
 
   .hero-cta{
@@ -518,16 +514,6 @@
     color: rgba(237,237,237,0.72);
   }
 
-  /* SEO oculto */
-  .seo-hidden{
-    position:absolute;
-    left:-9999px;
-    top:auto;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-  }
-
   /* NEXT EDITION (teaser 2026) */
   .next-edition{
     max-width:1100px;
@@ -565,64 +551,56 @@
     .mini-grid{ grid-template-columns: 1fr; }
     .mini-item img{ height: 240px; }
 
-    /* NEXT EDITION (teaser 2026) - mobile */
     .next-edition{ padding: 1.6rem 1.25rem 0; }
     .next-edition__title{ font-size:1.15rem; }
   }
+
   /* MOBILE NAV FIX */
-@media (max-width: 680px){
-  .nav-inner{
-    padding: 0.65rem 0.9rem;
+  @media (max-width: 680px){
+    .nav-inner{ padding: 0.65rem 0.9rem; }
+    .nav-links{
+      max-height: 62vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: .35rem;
+    }
+    .nav-links a{
+      padding: .28rem .48rem;
+      font-size: .92rem;
+    }
+    .brand-logo{ height: 32px; }
+    .brand span{ font-size: .8rem; }
   }
 
-  .nav-links{
-    max-height: 62vh;         /* evita que tape toda la pantalla */
-    overflow-y: auto;         /* scroll dentro del menú */
-    -webkit-overflow-scrolling: touch;
-    gap: .35rem;              /* menos aire */
+  /* WHATSAPP FLOAT */
+  .whatsapp-float{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    width:58px;
+    height:58px;
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#25D366;
+    box-shadow:0 14px 34px rgba(0,0,0,.45);
+    z-index:9999;
+    border:1px solid rgba(255,255,255,.18);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
   }
-
-  .nav-links a{
-    padding: .28rem .48rem;   /* botones más compactos */
-    font-size: .92rem;
+  .whatsapp-float:hover{
+    transform:scale(1.07);
+    box-shadow:0 18px 44px rgba(0,0,0,.55);
+    filter:brightness(.98);
   }
-
-  .brand-logo{ height: 32px; } /* un toque más chico */
-  .brand span{ font-size: .8rem; }
-}
-/* WHATSAPP FLOAT */
-.whatsapp-float{
-  position:fixed;
-  bottom:22px;
-  right:22px;
-  width:58px;
-  height:58px;
-  border-radius:999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#25D366;
-  box-shadow:0 14px 34px rgba(0,0,0,.45);
-  z-index:9999;
-  border:1px solid rgba(255,255,255,.18);
-  transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
-}
-
-.whatsapp-float:hover{
-  transform:scale(1.07);
-  box-shadow:0 18px 44px rgba(0,0,0,.55);
-  filter:brightness(.98);
-}
-
-.whatsapp-float:focus{
-  outline:none;
-  box-shadow:0 0 0 4px rgba(210,180,140,.25), 0 14px 34px rgba(0,0,0,.45);
-}
-
-/* En mobile, un poquito más arriba para no tapar UI */
-@media (max-width:680px){
-  .whatsapp-float{ bottom:18px; right:18px; }
-}  
+  .whatsapp-float:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(210,180,140,.25), 0 14px 34px rgba(0,0,0,.45);
+  }
+  @media (max-width:680px){
+    .whatsapp-float{ bottom:18px; right:18px; }
+  }
 </style>
 </head>
 
@@ -633,7 +611,7 @@
     <div class="nav-inner">
       <div class="brand">
         <a href="#top" class="brand-logo-link" aria-label="Vino a la Montaña">
-          <img src="assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
+          <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
         </a>
         <span>San Martín de los Andes · Patagonia</span>
       </div>
@@ -654,64 +632,64 @@
   </div>
 
   <header class="hero" role="banner">
-  <img
-    class="hero-img"
-    src="assets/vino-a-la-montana-cabecera.JPEG"
-    alt="Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes (Neuquén) · Loi Suites Chapelco Golf & Resort"
-    fetchpriority="high"
-    decoding="async"
-  />
-  <div class="hero-overlay" aria-hidden="true"></div>
-
-  <div class="hero-box">
     <img
-      class="hero-logo"
-      src="assets/logo-oficial.png"
-      alt="Vino a la Montaña"
+      class="hero-img"
+      src="/assets/vino-a-la-montana-cabecera.JPEG"
+      alt="Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes (Neuquén) · Loi Suites Chapelco Golf & Resort"
+      fetchpriority="high"
       decoding="async"
     />
+    <div class="hero-overlay" aria-hidden="true"></div>
 
- <p style="margin:0; font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(210,180,140,0.92);">
-  Edición 2025 · Evento realizado
-</p>
+    <div class="hero-box">
+      <img
+        class="hero-logo"
+        src="/assets/logo-oficial.png"
+        alt="Vino a la Montaña"
+        decoding="async"
+      />
 
-<h1 style="margin:0.6rem 0 0; font-size:1.05rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:rgba(237,237,237,0.72);">
-  Vino a la Montaña · San Martín de los Andes
-</h1>
+      <p style="margin:0; font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(210,180,140,0.92);">
+        Edición 2025 · Evento realizado
+      </p>
 
-    <div class="hero-cta">
-      <a class="btn" href="#contacto">Contacto</a>
-      <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
-      <a class="btn btn-ghost" href="#prensa">Ver prensa</a>
+      <h1 style="margin:0.6rem 0 0; font-size:1.05rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:rgba(237,237,237,0.72);">
+        Vino a la Montaña · San Martín de los Andes
+      </h1>
+
+      <div class="hero-cta">
+        <a class="btn" href="#contacto">Contacto</a>
+        <a class="btn btn-ghost" href="#galeria">Ver fotos</a>
+        <a class="btn btn-ghost" href="#prensa">Ver prensa</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- NEXT EDITION (teaser) -->
-<section class="next-edition" aria-label="Próxima edición">
-  <div class="container">
-    <p class="next-edition__kicker">Próxima edición</p>
-    <h2 class="next-edition__title">Vino a la Montaña 2026 · en preparación</h2>
-    <p class="next-edition__text">
-      Ya estamos trabajando la próxima edición. Si querés participar como bodega, sponsor o asistir, ingresá acá.
+  <!-- NEXT EDITION (teaser) -->
+  <section class="next-edition" aria-label="Próxima edición">
+    <div class="container">
+      <p class="next-edition__kicker">Próxima edición</p>
+      <h2 class="next-edition__title">Vino a la Montaña 2026 · en preparación</h2>
+      <p class="next-edition__text">
+        Ya estamos trabajando la próxima edición. Si querés participar como bodega, sponsor o asistir, ingresá acá.
+      </p>
+      <a class="btn" href="/vino-a-la-montana-2026/">Ir a Vino a la Montaña 2026</a>
+    </div>
+  </section>
+
+  <section style="max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;">
+    <p class="lead" style="margin:0; text-align:center;">
+      <strong>Vino a la Montaña</strong> es la feria de vinos patagónicos que da forma a la Ruta del Vino de la Patagonia en San Martín de los Andes.
+      Un encuentro boutique que reúne bodegas de Neuquén, Río Negro y Chubut, integrando vino, gastronomía y hotelería para fortalecer el enoturismo regional y la presencia de etiquetas patagónicas en cartas locales.
     </p>
-    <a class="btn" href="/vino-a-la-montana-2026/">Ir a Vino a la Montaña 2026</a>
-  </div>
-</section>
+  </section>
 
-<section style="max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;">
-  <p class="lead" style="margin:0; text-align:center;">
-    <strong>Vino a la Montaña</strong> es la feria de vinos patagónicos que da forma a la Ruta del Vino de la Patagonia en San Martín de los Andes. 
-    Un encuentro boutique que reúne bodegas de Neuquén, Río Negro y Chubut, integrando vino, gastronomía y hotelería para fortalecer el enoturismo regional y la presencia de etiquetas patagónicas en cartas locales.
-  </p>
-</section>
-
-<main>
+  <main>
 
     <!-- EXPERIENCIA -->
     <section id="experiencia-vino-a-la-montana" class="experiencia">
-     <h2 class="section-title">Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes</h2>
-<p class="section-lead">Vinos extremos. Paisajes únicos. Personas reales.</p>
+      <h2 class="section-title">Vino a la Montaña · Feria de vinos patagónicos en San Martín de los Andes</h2>
+      <p class="section-lead">Vinos extremos. Paisajes únicos. Personas reales.</p>
 
       <p>
         <strong>Vino a la Montaña</strong> es mucho más que una feria de vinos.
@@ -822,7 +800,7 @@
 
       <figure class="foto-organizadores">
         <img
-          src="assets/sergio-landoni-fernando-sanchez-vino-a-la-montana.webp"
+          src="/assets/sergio-landoni-fernando-sanchez-vino-a-la-montana.webp"
           alt="Sergio Landoni y Fernando Sánchez, organizadores de Vino a la Montaña en San Martín de los Andes"
           loading="lazy"
           decoding="async"
@@ -861,7 +839,7 @@
 
       <figure class="foto-invitada">
         <img
-          src="assets/marisol-de-la-fuente-sergio-landoni.webp"
+          src="/assets/marisol-de-la-fuente-sergio-landoni.webp"
           alt="Marisol de la Fuente (Sol Sommelier) y Sergio Landoni en Vino a la Montaña"
           loading="lazy"
           decoding="async"
@@ -874,7 +852,11 @@
       <div class="card">
         <p class="lead" style="margin-top:0;">
           En esta edición, Vino a la Montaña contó con la presencia de
-          <strong><a href="https://www.instagram.com/solsommelier" target="_blank" rel="noopener noreferrer nofollow">Sol Sommelier · Marisol de la Fuente</a>,
+          <strong>
+            <a href="https://www.instagram.com/solsommelier/" target="_blank" rel="noopener noreferrer nofollow">
+              Sol Sommelier · Marisol de la Fuente
+            </a>
+          </strong>,
           una de las voces más influyentes de la comunicación del vino en Argentina.
         </p>
 
@@ -896,7 +878,7 @@
 
       <figure class="foto-entorno">
         <img
-          src="assets/vino-a-la-montaña-lugar.webp"
+          src="/assets/vino-a-la-montaña-lugar.webp"
           alt="Vino a la Montaña · Copa de vino frente a la cordillera en Loi Suites Chapelco, San Martín de los Andes"
           loading="lazy"
           decoding="async"
@@ -924,7 +906,7 @@
         </p>
 
         <p class="muted" style="margin-top:1rem; margin-bottom:0;">
-          <strong>Web:</strong> <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener">loisuites.com/chapelco</a>
+          <strong>Web:</strong> <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener noreferrer">loisuites.com/chapelco</a>
         </p>
       </div>
     </section>
@@ -980,7 +962,7 @@
 
     <!-- PRENSA -->
     <section id="prensa">
-     <h2 class="section-title">Prensa · Cobertura de Vino a la Montaña</h2>
+      <h2 class="section-title">Prensa · Cobertura de Vino a la Montaña</h2>
 
       <div class="grid">
         <div class="card">
@@ -1001,8 +983,8 @@
 
           <p class="muted" style="margin-top:1rem;">
             <a class="btn btn-ghost" href="/prensa/" title="Cobertura de Vino a la Montaña en medios regionales y provinciales">
-  Ver cobertura de Vino a la Montaña en medios
-</a>
+              Ver cobertura de Vino a la Montaña en medios
+            </a>
           </p>
         </div>
 
@@ -1023,30 +1005,30 @@
 
       <div class="mini-grid" aria-label="Vista previa de galería">
         <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Degustación">
-          <img src="assets/vino-a-la-montana-2025-sma-degustacion-14.webp" alt="Degustación · Vino a la Montaña" loading="lazy" decoding="async">
+          <img src="/assets/vino-a-la-montana-2025-sma-degustacion-14.webp" alt="Degustación · Vino a la Montaña" loading="lazy" decoding="async">
           <span class="mini-cap">Degustación</span>
         </a>
 
         <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · Productores">
-          <img src="assets/vino-a-la-montana-2025-sma-productores-04.webp" alt="Productores · Vino a la Montaña" loading="lazy" decoding="async">
+          <img src="/assets/vino-a-la-montana-2025-sma-productores-04.webp" alt="Productores · Vino a la Montaña" loading="lazy" decoding="async">
           <span class="mini-cap">Productores</span>
         </a>
 
         <a class="mini-item" href="/galeria/" aria-label="Ver galería completa · El evento">
-          <img src="assets/vino-a-la-montana-2025-sma-publico-08.webp" alt="El evento · Vino a la Montaña" loading="lazy" decoding="async">
+          <img src="/assets/vino-a-la-montana-2025-sma-publico-08.webp" alt="El evento · Vino a la Montaña" loading="lazy" decoding="async">
           <span class="mini-cap">El evento</span>
         </a>
       </div>
 
       <p class="credito-fotos muted">
         Ph. Félix Alberto Carrega ·
-        <a href="https://www.instagram.com/afc.patagoniaphoto" target="_blank" rel="noopener noreferrer nofollow">@afc.patagoniaphoto</a>
+        <a href="https://www.instagram.com/afc.patagoniaphoto/" target="_blank" rel="noopener noreferrer nofollow">@afc.patagoniaphoto</a>
       </p>
 
       <div class="mini-actions">
         <a class="btn" href="/galeria/" title="Fotos de la feria de vinos patagónicos en San Martín de los Andes">
-  Ver galería de la feria
-</a>
+          Ver galería de la feria
+        </a>
       </div>
     </section>
 
@@ -1054,7 +1036,7 @@
     <section id="ciudad">
       <figure class="foto-entorno">
         <img
-          src="assets/vino-a-la-montaña-sma.webp"
+          src="/assets/vino-a-la-montaña-sma.webp"
           alt="Vino a la Montaña en San Martín de los Andes · Copa de vino frente al Lago Lácar y la Cordillera Patagónica"
           loading="lazy"
           decoding="async"
@@ -1087,16 +1069,16 @@
 
         <p class="muted" style="margin-top:0;">
           📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
-          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener">@vinoalamontana.sma</a><br />
+          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
           <span class="form-note">Canal de contacto institucional.</span>
         </p>
 
         <form id="contactForm">
           <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" required />
+          <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
 
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+          <input id="email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
 
           <label for="motivo">Motivo de contacto</label>
           <select id="motivo" name="motivo" required>
@@ -1127,41 +1109,40 @@
      target="_blank"
      rel="noopener"
      aria-label="WhatsApp Vino a la Montaña">
-
     <svg viewBox="0 0 32 32" width="28" height="28" fill="white" aria-hidden="true">
       <path d="M19.11 17.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.2-.24-.57-.48-.5-.66-.51l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.5.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
     </svg>
   </a>
 
-<script>
-  // Envío simple por mailto (hasta integrar un servicio real tipo Formspree/Netlify)
-  const form = document.getElementById('contactForm');
-  const note = document.getElementById('formNote');
+  <script>
+    // Envío simple por mailto (hasta integrar un servicio real tipo Formspree/Netlify)
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('formNote');
 
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
 
-      const nombre = document.getElementById('nombre').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const motivo = document.getElementById('motivo').value;
-      const mensaje = document.getElementById('mensaje').value.trim();
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const motivo = document.getElementById('motivo').value;
+        const mensaje = document.getElementById('mensaje').value.trim();
 
-      const subjectMap = {
-        info: 'Consulta · Vino a la Montaña',
-        bodega: 'Participación de bodega · Vino a la Montaña',
-        sponsoreo: 'Sponsoreo · Vino a la Montaña',
-        prensa: 'Prensa · Vino a la Montaña'
-      };
+        const subjectMap = {
+          info: 'Consulta · Vino a la Montaña',
+          bodega: 'Participación de bodega · Vino a la Montaña',
+          sponsoreo: 'Sponsoreo · Vino a la Montaña',
+          prensa: 'Prensa · Vino a la Montaña'
+        };
 
-      const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
+        const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
 
-      const body =
+        const body =
 `Nombre: ${nombre}
 Email: ${email}
 Motivo: ${motivo}
@@ -1170,19 +1151,24 @@ Mensaje:
 ${mensaje}
 `;
 
-      const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      if (note) {
-        note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
-      }
+        // 1) Disparar mailto mientras sigue siendo "gesto" del usuario (más compatible en iOS)
+        window.location.href = mailto;
 
-      form.reset();
-      document.getElementById('motivo').value = 'info';
+        // 2) Mensaje al usuario
+        if (note) {
+          note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
+        }
 
-      window.location.href = mailto;
-    });
-  }
-</script>
+        // 3) Reset luego (no interfiere con mailto en Safari/iOS)
+        setTimeout(() => {
+          form.reset();
+          document.getElementById('motivo').value = 'info';
+        }, 80);
+      });
+    }
+  </script>
 
 </body>
 </html>
