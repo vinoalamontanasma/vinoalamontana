@@ -528,6 +528,17 @@
     overflow:hidden;
   }
 
+  /* NEXT EDITION (teaser 2026) */
+  .next-edition{
+    max-width:1100px;
+    margin:0 auto;
+    padding: 2.2rem 1.25rem 0;
+  }
+  .next-edition .container{max-width:1100px;margin:0 auto}
+  .next-edition__kicker{margin:0 0 6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+  .next-edition__title{margin:0 0 10px;font-size:1.35rem;line-height:1.2;color:var(--gold)}
+  .next-edition__text{margin:0 0 14px;max-width:75ch;color:rgba(237,237,237,0.82)}
+
   /* RESPONSIVE */
   @media (max-width: 980px){
     .grid{ grid-template-columns: 1fr; }
@@ -553,6 +564,10 @@
 
     .mini-grid{ grid-template-columns: 1fr; }
     .mini-item img{ height: 240px; }
+
+    /* NEXT EDITION (teaser 2026) - mobile */
+    .next-edition{ padding: 1.6rem 1.25rem 0; }
+    .next-edition__title{ font-size:1.15rem; }
   }
 </style>
 </head>
@@ -602,7 +617,11 @@
       decoding="async"
     />
 
-   <h1 style="margin:0.6rem 0 0; font-size:1.05rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:rgba(237,237,237,0.72);">
+ <p style="margin:0; font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(210,180,140,0.92);">
+  Edición 2025 · Evento realizado
+</p>
+
+<h1 style="margin:0.6rem 0 0; font-size:1.05rem; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:rgba(237,237,237,0.72);">
   Vino a la Montaña · San Martín de los Andes
 </h1>
 
@@ -613,6 +632,18 @@
     </div>
   </div>
 </header>
+
+<!-- NEXT EDITION (teaser) -->
+<section class="next-edition" aria-label="Próxima edición">
+  <div class="container">
+    <p class="next-edition__kicker">Próxima edición</p>
+    <h2 class="next-edition__title">Vino a la Montaña 2026 · en preparación</h2>
+    <p class="next-edition__text">
+      Ya estamos trabajando la próxima edición. Si querés participar como bodega, sponsor o asistir, ingresá acá.
+    </p>
+    <a class="btn" href="/vino-a-la-montana-2026/">Ir a Vino a la Montaña 2026</a>
+  </div>
+</section>
 
 <section style="max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;">
   <p class="lead" style="margin:0; text-align:center;">
