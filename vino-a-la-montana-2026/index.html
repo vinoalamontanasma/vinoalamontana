@@ -57,6 +57,14 @@
 }
 </script>
 <style>
+  :root{
+  --bg:#0b0b0b;
+  --panel:#111;
+  --text:#ededed;
+  --gold:#d2b48c;
+  --border:rgba(255,255,255,0.10);
+  --radius:18px;
+}
 /* Base fix: evita corrimientos y overflow en mobile */
 *,
 *::before,
@@ -95,15 +103,17 @@ section{
 .hero h1{
   font-size:3rem;
   font-weight:600;
-  color:#d2b48c;
+  color: var(--gold, #d2b48c);
   letter-spacing:.5px;
   line-height:1.12;
   text-shadow: 0 3px 14px rgba(0,0,0,0.45);
 }
+
 .hero p{
   max-width:720px;
   margin:0 auto 2rem;
 }
+
 .cta-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
@@ -111,29 +121,35 @@ section{
   max-width:800px;
   margin:0 auto;
 }
+
+/* Botones sólidos (igual criterio que el "btn" de la home) */
 .btn,
 .btn-ghost{
   display:inline-block;
-  padding:.9rem 1.2rem;
+  padding:.78rem 1.1rem;
   border-radius:999px;
-  font-weight:600;
-  background:#d2b48c;
+  font-weight:700;
+  letter-spacing:.2px;
+  background: var(--gold, #d2b48c);
   color:#111;
-  border:1px solid #d2b48c;
+  border:1px solid rgba(210,180,140,0.6);
   text-decoration:none;
-  transition:all .2s ease;
+  cursor:pointer;
 }
 
 .btn:hover,
 .btn-ghost:hover{
-  background:#c5a673;
-  border-color:#c5a673;
+  text-decoration:none;
+  filter: brightness(0.98);
 }
+
+/* Card con profundidad suave, como la principal */
 .card{
-  background:#111;
-  border:1px solid rgba(255,255,255,0.1);
+  background: rgba(17,17,17,0.92);
+  border:1px solid rgba(255,255,255,0.10);
   border-radius:18px;
-  padding:2rem;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  padding:1.8rem;
 }
 /* Links elegantes para fondo oscuro */
 a{
