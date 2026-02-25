@@ -343,67 +343,51 @@
       <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
     </p>
 
-  <form class="form" id="vamBodegasForm"
+ <form class="form" id="vamBodegasForm"
       action="https://formspree.io/f/xnjbwnae"
       method="POST" accept-charset="UTF-8">
 
   <!-- Formspree -->
   <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Bodegas)" />
   <input type="hidden" name="_format" value="plain" />
+  <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
   <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
   <input type="hidden" name="tipo" value="Bodegas" />
 
-  <!-- REDIRECCIÓN -->
-  <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
-
-      <div class="field">
-        <label for="nombre_b">Nombre</label>
-        <input id="nombre_b" name="nombre" type="text" autocomplete="name" required>
-      </div>
-
-      <div class="field">
-        <label for="organizacion_b">Bodega / Proyecto</label>
-        <input id="organizacion_b" name="organizacion" type="text" autocomplete="organization" required>
-      </div>
-
-      <div class="field">
-        <label for="email_b">Email</label>
-        <input id="email_b" name="email" type="email" autocomplete="email" required>
-      </div>
-
-      <div class="field">
-        <label for="interes_b">Interés</label>
-        <select id="interes_b" name="interes" required>
-          <option value="Participar como bodega">Participar como bodega</option>
-          <option value="Ser sponsor">Ser sponsor</option>
-          <option value="Quiero asistir">Quiero asistir</option>
-          <option value="Prensa / medios">Prensa / medios</option>
-          <option value="Otro">Otro</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="mensaje_b">Mensaje (opcional)</label>
-        <textarea id="mensaje_b" name="mensaje" placeholder="Contanos breve qué buscás o tu duda principal"></textarea>
-      </div>
-
-      <div class="form-actions">
-        <button class="btn" type="submit">Enviar</button>
-        <a class="btn btn-ghost" id="vamBodegasMailto"
-           href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Bodegas">
-           Enviar por email
-        </a>
-      </div>
-
-      <p class="small" id="vamBodegasNote" role="status" aria-live="polite" style="margin-top:10px;">
-        Si preferís, también podés enviarlo por email con el botón de la derecha.
-      </p>
-
-      <p class="small">
-        Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.
-      </p>
-    </form>
+  <div class="field">
+    <label for="nombre_b">Nombre</label>
+    <input id="nombre_b" name="nombre" type="text" autocomplete="name" required>
   </div>
+
+  <div class="field">
+    <label for="organizacion_b">Bodega / Proyecto</label>
+    <input id="organizacion_b" name="organizacion" type="text" autocomplete="organization" required>
+  </div>
+
+  <div class="field">
+    <label for="email_b">Email</label>
+    <input id="email_b" name="email" type="email" autocomplete="email" required>
+  </div>
+
+  <div class="field">
+    <label for="mensaje_b">Mensaje (opcional)</label>
+    <textarea id="mensaje_b" name="mensaje" placeholder="Contanos breve qué buscás o tu duda principal"></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn" type="submit">Enviar</button>
+  </div>
+
+  <p class="small" id="vamBodegasNote" role="status" aria-live="polite" style="margin-top:10px;">
+    Te respondemos a la brevedad con condiciones y propuesta de participación.
+  </p>
+
+  <p class="small">
+    Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.
+  </p>
+
+</form>
+</div>
 </section>
 
 <!-- ASISTENTES -->
@@ -450,18 +434,17 @@
       <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a>.
     </p>
 
-    <form class="form" id="vamSponsorsForm"
-          action="https://formspree.io/f/xnjbwnae"
-          method="POST" accept-charset="UTF-8">
+<form class="form" id="vamSponsorsForm"
+      action="https://formspree.io/f/xnjbwnae"
+      method="POST" accept-charset="UTF-8">
 
-      <!-- Formspree -->
-      <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Sponsors)" />
-      <input type="hidden" name="_format" value="plain" />
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-      <input type="hidden" name="tipo" value="Sponsors" />
-        <!-- REDIRECCIÓN -->
+  <!-- Formspree -->
+  <input type="hidden" name="_subject" value="Vino a la Montaña 2026 — Consulta (Sponsors)" />
+  <input type="hidden" name="_format" value="plain" />
   <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
-
+  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+  <input type="hidden" name="tipo" value="Sponsors" />
+  
       <div class="field">
         <label for="nombre_s">Nombre</label>
         <input id="nombre_s" name="nombre" type="text" autocomplete="name" required>
@@ -482,17 +465,12 @@
         <textarea id="mensaje_s" name="mensaje" placeholder="¿Qué tipo de presencia de marca te interesa?"></textarea>
       </div>
 
-      <div class="form-actions">
-        <button class="btn" type="submit">Pedir dossier</button>
-        <a class="btn btn-ghost" id="vamSponsorsMailto"
-           href="mailto:contacto@vinoalamontana.com.ar?subject=Vino%20a%20la%20Monta%C3%B1a%202026%20-%20Sponsors">
-           Enviar por email
-        </a>
-      </div>
-
-      <p class="small" id="vamSponsorsNote" role="status" aria-live="polite" style="margin-top:10px;">
-        Si preferís, también podés enviarlo por email con el botón de la derecha.
-      </p>
+     <div class="form-actions">
+  <button class="btn" type="submit">Enviar</button>
+</div>
+     <p class="small" id="vamSponsorsNote" role="status" aria-live="polite" style="margin-top:10px;">
+  Te enviamos el dossier comercial a la brevedad.
+</p>
 
       <p class="small">
         Al enviar, aceptás ser contactado/a por el equipo de Vino a la Montaña con información de la edición 2026.
@@ -532,47 +510,6 @@
 (function(){
   const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
 
-  // ===== Helpers: mailto =====
-  function buildMailtoB(){
-    const nombre = (document.getElementById('nombre_b')?.value || '').trim();
-    const organizacion = (document.getElementById('organizacion_b')?.value || '').trim();
-    const email = (document.getElementById('email_b')?.value || '').trim();
-    const interes = (document.getElementById('interes_b')?.value || '').trim();
-    const mensaje = (document.getElementById('mensaje_b')?.value || '').trim();
-
-    const subject = `Vino a la Montaña 2026 · ${interes || 'Consulta'} · ${organizacion || 'Bodega'}`;
-    const body =
-`Nombre: ${nombre || '(sin nombre)'}
-Bodega/Proyecto: ${organizacion || '(sin dato)'}
-Email: ${email || '(sin dato)'}
-Interés: ${interes || '(sin dato)'}
-
-Mensaje:
-${mensaje || '(sin mensaje)'}
-`;
-    return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  function buildMailtoS(){
-    const nombre = (document.getElementById('nombre_s')?.value || '').trim();
-    const organizacion = (document.getElementById('organizacion_s')?.value || '').trim();
-    const email = (document.getElementById('email_s')?.value || '').trim();
-    const mensaje = (document.getElementById('mensaje_s')?.value || '').trim();
-
-    const subject = `Vino a la Montaña 2026 · Sponsor · ${organizacion || 'Empresa'}`;
-    const body =
-`Nombre: ${nombre || '(sin nombre)'}
-Empresa/Marca: ${organizacion || '(sin dato)'}
-Email: ${email || '(sin dato)'}
-Interés: Sponsor
-
-Mensaje:
-${mensaje || '(sin mensaje)'}
-`;
-    return `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  // ===== AJAX submit =====
   async function submitToFormspree(form){
     const endpoint = form.getAttribute('action');
     const formData = new FormData(form);
@@ -595,18 +532,10 @@ ${mensaje || '(sin mensaje)'}
     }
   }
 
-  function wireForm(formId, mailtoId, buildMailtoFn, noteId){
+  function wireForm(formId, noteId){
     const form = document.getElementById(formId);
-    const mailto = document.getElementById(mailtoId);
     const note = document.getElementById(noteId);
-
     if (!form) return;
-
-    function syncMailto(){
-      if (mailto) mailto.href = buildMailtoFn();
-    }
-    ['input','change'].forEach(evt => form.addEventListener(evt, syncMailto));
-    syncMailto();
 
     form.addEventListener('submit', async function(e){
       e.preventDefault();
@@ -626,7 +555,6 @@ ${mensaje || '(sin mensaje)'}
         await submitToFormspree(form);
 
         form.reset();
-        syncMailto();
 
         if (note) note.textContent = 'Enviado. Redirigiendo…';
         window.location.href = THANK_YOU_URL;
@@ -639,31 +567,8 @@ ${mensaje || '(sin mensaje)'}
     });
   }
 
-  // Bodegas
-  wireForm('vamBodegasForm', 'vamBodegasMailto', buildMailtoB, 'vamBodegasNote');
-
-  // Sponsors
-  wireForm('vamSponsorsForm', 'vamSponsorsMailto', buildMailtoS, 'vamSponsorsNote');
-
-  // Limpieza al volver con "Atrás" (bfcache)
-  window.addEventListener('pageshow', function(e){
-    if (!e.persisted) return;
-
-    const fb = document.getElementById('vamBodegasForm');
-    const fs = document.getElementById('vamSponsorsForm');
-    if (fb) fb.reset();
-    if (fs) fs.reset();
-
-    const nb = document.getElementById('vamBodegasNote');
-    const ns = document.getElementById('vamSponsorsNote');
-    if (nb) nb.textContent = 'Si preferís, también podés enviarlo por email con el botón de la derecha.';
-    if (ns) ns.textContent = 'Si preferís, también podés enviarlo por email con el botón de la derecha.';
-
-    const mlb = document.getElementById('vamBodegasMailto');
-    const mls = document.getElementById('vamSponsorsMailto');
-    if (mlb) mlb.href = buildMailtoB();
-    if (mls) mls.href = buildMailtoS();
-  });
+  wireForm('vamBodegasForm', 'vamBodegasNote');
+  wireForm('vamSponsorsForm', 'vamSponsorsNote');
 })();
 </script>
 
