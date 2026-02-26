@@ -198,25 +198,42 @@
   }
   .brand-logo-link:hover{ text-decoration:none; }
 
-  .nav-links{
-    display:flex;
-    gap:.7rem;
-    flex-wrap:wrap;
-    justify-content:flex-end;
-    font-size:.95rem;
-  }
-  .nav-links a{
-    color: rgba(237,237,237,0.85);
-    padding: .35rem .55rem;
-    border-radius: 999px;
-    border: 1px solid transparent;
-  }
-  .nav-links a:hover{
-    color: var(--text);
-    border-color: rgba(210,180,140,0.35);
-    text-decoration:none;
-  }
+.nav-links{
+  display:flex;
+  gap:.7rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  font-size:.95rem;
+}
 
+/* BOTÓN DESTACADO REAL: Edición 2026 */
+.nav-links a.nav-cta{
+  background: var(--gold);
+  color:#111;
+  border-color: var(--gold);
+  font-weight:800;
+  padding: .40rem .75rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+  text-decoration:none;
+}
+
+/* Hover */
+.nav-links a.nav-cta:hover{
+  background:#e0c39c;
+  color:#111;
+  border-color:#e0c39c;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.45);
+}
+
+/* Mobile */
+@media (max-width:680px){
+  .nav-links a.nav-cta{
+    width:100%;
+    text-align:center;
+    margin-bottom:.25rem;
+  }
+}
   /* HERO */
   header.hero{
     position:relative;
@@ -607,29 +624,31 @@
 <body>
   <div id="top"></div>
 
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="brand">
-        <a href="#top" class="brand-logo-link" aria-label="Vino a la Montaña">
-          <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
-        </a>
-        <span>San Martín de los Andes · Patagonia</span>
-      </div>
-
-      <nav class="nav-links" aria-label="Secciones">
-        <a href="#experiencia-vino-a-la-montana">Experiencia</a>
-        <a href="#dos-mundos">La copa</a>
-        <a href="#organizacion">Organización</a>
-        <a href="#invitada-especial">Invitada</a>
-        <a href="#entorno">Entorno</a>
-        <a href="#edicion">Edición 2025</a>
-        <a href="#prensa">Prensa</a>
-        <a href="#galeria">Galería</a>
-        <a href="#ciudad">La ciudad</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+ <div class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <a href="#top" class="brand-logo-link" aria-label="Vino a la Montaña">
+        <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
+      </a>
+      <span>San Martín de los Andes · Patagonia</span>
     </div>
+
+    <nav class="nav-links" aria-label="Secciones">
+      <a class="nav-cta" href="/vino-a-la-montana-2026/" title="Ir a la edición 2026">Edición 2026</a>
+
+      <a href="#experiencia-vino-a-la-montana">Experiencia</a>
+      <a href="#dos-mundos">La copa</a>
+      <a href="#organizacion">Organización</a>
+      <a href="#invitada-especial">Invitada</a>
+      <a href="#entorno">Entorno</a>
+      <a href="#edicion">Edición 2025</a>
+      <a href="#prensa">Prensa</a>
+      <a href="#galeria">Galería</a>
+      <a href="#ciudad">La ciudad</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </div>
+</div>
 
   <header class="hero" role="banner">
     <img
