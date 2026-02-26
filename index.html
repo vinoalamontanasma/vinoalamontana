@@ -17,6 +17,7 @@
   <link rel="alternate" href="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/" title="Vino a la Montaña 2026" />
 
   <!-- Preload Hero Image -->
+  <!-- (Mantener extensión EXACTA en el servidor: .JPEG) -->
   <link rel="preload" as="image" href="/assets/vino-a-la-montana-cabecera.JPEG" />
 
   <!-- Open Graph -->
@@ -192,7 +193,10 @@
     }
 
     *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top: 92px; /* para que el sticky nav no tape títulos */
+    }
 
     body{
       margin:0;
@@ -550,6 +554,13 @@
       font-size: .9rem;
       color: rgba(237,237,237,0.72);
     }
+    .footer-inner{ max-width:1100px; margin:0 auto; }
+    .footer-brand{ font-weight:700; color:rgba(237,237,237,0.9); letter-spacing:.2px; margin-bottom:.35rem; }
+    .footer-links{ display:flex; gap:.6rem; align-items:center; justify-content:center; flex-wrap:wrap; margin:.55rem 0; }
+    .footer-links a{ color:rgba(210,180,140,0.95); text-decoration:none; }
+    .footer-links a:hover{ text-decoration:underline; }
+    .footer-meta{ color:rgba(237,237,237,0.68); font-size:.9rem; }
+    .dot{ opacity:.6; }
 
     /* NEXT EDITION (teaser 2026) */
     .next-edition{
@@ -934,7 +945,8 @@
         </p>
 
         <p class="muted" style="margin-top:1rem; margin-bottom:0;">
-          <strong>Web:</strong> <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener noreferrer">loisuites.com/chapelco</a>
+          <strong>Web:</strong>
+          <a href="https://loisuites.com/chapelco" target="_blank" rel="noopener noreferrer">loisuites.com/chapelco</a>
         </p>
       </div>
     </section>
@@ -1085,161 +1097,161 @@
       </div>
     </section>
 
- <!-- CONTACTO -->
-<section id="contacto">
-  <h2 class="section-title">Contacto</h2>
+    <!-- CONTACTO -->
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
 
-  <div class="contact-box">
-    <p class="lead" style="margin-bottom:0.75rem;">
-      Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
-      <strong>sponsoreo</strong> o prensa:
-    </p>
+      <div class="contact-box">
+        <p class="lead" style="margin-bottom:0.75rem;">
+          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
+          <strong>sponsoreo</strong> o prensa:
+        </p>
 
-    <p class="muted" style="margin-top:0;">
-      📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
-      📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
-      <span class="form-note">Canal de contacto institucional.</span>
-    </p>
+        <p class="muted" style="margin-top:0;">
+          📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
+          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
+          <span class="form-note">Canal de contacto institucional.</span>
+        </p>
 
-    <form id="vamHomeContactForm"
-          action="https://formspree.io/f/xnjbwnae"
-          method="POST"
-          accept-charset="UTF-8"
-          novalidate>
+        <form id="vamHomeContactForm"
+              action="https://formspree.io/f/xnjbwnae"
+              method="POST"
+              accept-charset="UTF-8"
+              novalidate>
 
-      <!-- Formspree -->
-      <input type="hidden" name="_subject" value="Vino a la Montaña — Contacto (Home)" />
-      <input type="hidden" name="_format" value="plain" />
-      <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-      <input type="hidden" name="tipo" value="Contacto Home" />
+          <!-- Formspree -->
+          <input type="hidden" name="_subject" value="Vino a la Montaña — Contacto (Home)" />
+          <input type="hidden" name="_format" value="plain" />
+          <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="tipo" value="Contacto Home" />
 
-      <label for="home_nombre">Nombre</label>
-      <input id="home_nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
+          <label for="home_nombre">Nombre</label>
+          <input id="home_nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
 
-      <label for="home_email">Email</label>
-      <input id="home_email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
+          <label for="home_email">Email</label>
+          <input id="home_email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
 
-      <label for="home_motivo">Motivo de contacto</label>
-      <select id="home_motivo" name="motivo" required>
-        <option value="info">Información general</option>
-        <option value="bodega">Participar como bodega</option>
-        <option value="sponsoreo">Sponsoreo</option>
-        <option value="prensa">Prensa</option>
-      </select>
+          <label for="home_motivo">Motivo de contacto</label>
+          <select id="home_motivo" name="motivo" required>
+            <option value="info">Información general</option>
+            <option value="bodega">Participar como bodega</option>
+            <option value="sponsoreo">Sponsoreo</option>
+            <option value="prensa">Prensa</option>
+          </select>
 
-      <label for="home_mensaje">Mensaje</label>
-      <textarea id="home_mensaje" name="mensaje" placeholder="Escribinos tu consulta" minlength="10" required></textarea>
+          <label for="home_mensaje">Mensaje</label>
+          <textarea id="home_mensaje" name="mensaje" placeholder="Escribinos tu consulta" minlength="10" required></textarea>
 
-      <button class="btn" type="submit">Enviar</button>
+          <button class="btn" type="submit">Enviar</button>
 
-      <div class="form-note" id="vamHomeContactNote" role="status" aria-live="polite">
-        Te respondemos a la brevedad.
+          <div class="form-note" id="vamHomeContactNote" role="status" aria-live="polite">
+            Te respondemos a la brevedad.
+          </div>
+        </form>
+
+        <script>
+        (function(){
+          const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
+
+          async function submitToFormspree(form){
+            const endpoint = form.getAttribute('action');
+            const formData = new FormData(form);
+
+            const res = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: formData
+            });
+
+            if (!res.ok) {
+              let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
+              try {
+                const data = await res.json();
+                if (data && data.errors && data.errors.length) {
+                  msg = data.errors.map(e => e.message).join(' ');
+                }
+              } catch (_) {}
+              throw new Error(msg);
+            }
+          }
+
+          function wireForm(formId, noteId){
+            const form = document.getElementById(formId);
+            const note = document.getElementById(noteId);
+            if (!form) return;
+
+            form.addEventListener('submit', async function(e){
+              e.preventDefault();
+
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
+
+              // Anti doble envío
+              if (form.dataset.submitting === "true") return;
+              form.dataset.submitting = "true";
+
+              const submitBtn = form.querySelector('button[type="submit"]');
+              const originalText = submitBtn ? submitBtn.textContent : '';
+
+              try {
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
+                if (note) note.textContent = 'Enviando…';
+
+                await submitToFormspree(form);
+
+                form.reset();
+
+                if (note) note.textContent = 'Enviado. Redirigiendo…';
+                window.location.href = THANK_YOU_URL;
+
+              } catch (err) {
+                if (note) note.textContent = (err && err.message) ? err.message : 'Error al enviar. Intentá nuevamente.';
+              } finally {
+                form.dataset.submitting = "false";
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+              }
+            });
+          }
+
+          wireForm('vamHomeContactForm', 'vamHomeContactNote');
+        })();
+        </script>
+
       </div>
-    </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">Vino a la Montaña</div>
+
+      <nav class="footer-links" aria-label="Enlaces del sitio">
+        <a href="/vino-a-la-montana-2026/">Edición 2026</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="/prensa/">Prensa</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="/galeria/">Galería</a>
+        <span class="dot" aria-hidden="true">·</span>
+        <a href="#top">Volver arriba</a>
+      </nav>
+
+      <div class="footer-meta">
+        © <span id="y"></span> · San Martín de los Andes · Patagonia Argentina
+      </div>
+    </div>
 
     <script>
-    (function(){
-      const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
-
-      async function submitToFormspree(form){
-        const endpoint = form.getAttribute('action');
-        const formData = new FormData(form);
-
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData
-        });
-
-        if (!res.ok) {
-          let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
-          try {
-            const data = await res.json();
-            if (data && data.errors && data.errors.length) {
-              msg = data.errors.map(e => e.message).join(' ');
-            }
-          } catch (_) {}
-          throw new Error(msg);
-        }
-      }
-
-      function wireForm(formId, noteId){
-        const form = document.getElementById(formId);
-        const note = document.getElementById(noteId);
-        if (!form) return;
-
-        form.addEventListener('submit', async function(e){
-          e.preventDefault();
-
-          if (!form.checkValidity()) {
-            form.reportValidity();
-            return;
-          }
-
-          // Anti doble envío
-          if (form.dataset.submitting === "true") return;
-          form.dataset.submitting = "true";
-
-          const submitBtn = form.querySelector('button[type="submit"]');
-          const originalText = submitBtn ? submitBtn.textContent : '';
-
-          try {
-            if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
-            if (note) note.textContent = 'Enviando…';
-
-            await submitToFormspree(form);
-
-            form.reset();
-
-            if (note) note.textContent = 'Enviado. Redirigiendo…';
-            window.location.href = THANK_YOU_URL;
-
-          } catch (err) {
-            if (note) note.textContent = (err && err.message) ? err.message : 'Error al enviar. Intentá nuevamente.';
-          } finally {
-            form.dataset.submitting = "false";
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
-          }
-        });
-      }
-
-      wireForm('vamHomeContactForm', 'vamHomeContactNote');
-    })();
+      (function () {
+        var el = document.getElementById('y');
+        if (el) el.textContent = new Date().getFullYear();
+      })();
     </script>
-
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">Vino a la Montaña</div>
-
-    <nav class="footer-links" aria-label="Enlaces del sitio">
-      <a href="/vino-a-la-montana-2026/">Edición 2026</a>
-      <span class="dot" aria-hidden="true">·</span>
-      <a href="/prensa/">Prensa</a>
-      <span class="dot" aria-hidden="true">·</span>
-      <a href="/galeria/">Galería</a>
-      <span class="dot" aria-hidden="true">·</span>
-      <a href="#top">Volver arriba</a>
-    </nav>
-
-    <div class="footer-meta">
-      © <span id="y"></span> · San Martín de los Andes · Patagonia Argentina
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var el = document.getElementById('y');
-      if (el) el.textContent = new Date().getFullYear();
-    })();
-  </script>
-</footer>
+  </footer>
 
 </body>
 </html>
