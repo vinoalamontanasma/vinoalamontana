@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="format-detection" content="telephone=no" />
 
- <title>Vino a la Montaña 2025 · Feria de vinos patagónicos en San Martín de los Andes</title>
+  <title>Vino a la Montaña 2025 · Feria de vinos patagónicos en San Martín de los Andes</title>
 
   <meta name="description" content="Vino a la Montaña 2025 fue la primera feria de vinos patagónicos en San Martín de los Andes. Conocé la edición realizada y accedé a la información de la próxima edición 2026." />
   <meta name="author" content="Vino a la Montaña" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
- <meta name="theme-color" content="#0b0b0b" />
+  <meta name="theme-color" content="#0b0b0b" />
 
-<!-- Canonical -->
-<link rel="canonical" href="https://www.vinoalamontana.com.ar/" />
-<link rel="alternate" href="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/" title="Vino a la Montaña 2026" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.vinoalamontana.com.ar/" />
+  <link rel="alternate" href="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/" title="Vino a la Montaña 2026" />
 
-<!-- Preload Hero Image -->
-<link rel="preload" as="image" href="/assets/vino-a-la-montana-cabecera.JPEG" />
+  <!-- Preload Hero Image -->
+  <link rel="preload" as="image" href="/assets/vino-a-la-montana-cabecera.JPEG" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Vino a la Montaña" />
@@ -178,106 +178,498 @@
     ]
   }
   </script>
-  
-<style>
 
-  /* todo tu CSS existente */
+  <style>
+    :root{
+      --bg:#0b0b0b;
+      --panel:#111;
+      --text:#ededed;
+      --muted:#cfcfcf;
+      --gold:#d2b48c;
+      --border:rgba(255,255,255,0.10);
+      --shadow:0 20px 60px rgba(0,0,0,0.55);
+      --radius:18px;
+    }
 
-  footer{
-    text-align:center;
-    padding:26px 18px 34px;
-    color:var(--muted);
-    font-size:13px;
-  }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
 
+    body{
+      margin:0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-  /* PEGAR AQUÍ EL BLOQUE EDITORIAL PRO */
-  /* =========================
-     HERO — LOOK EDITORIAL PRO
-     ========================= */
+    a{ color: var(--gold); text-decoration:none; }
+    a:hover{ text-decoration: underline; }
 
-  header.hero{ position:relative; overflow:hidden; }
+    /* NAV */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,11,11,0.65);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 1rem;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:.15rem;
+      line-height:1.1;
+    }
+    .brand span{ font-size: .85rem; color: rgba(237,237,237,0.75); }
+    .brand-logo{
+      height: 42px;
+      width:auto;
+      display:block;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35));
+    }
+    .brand-logo-link:hover{ text-decoration:none; }
 
-  .hero-img{
-    filter: brightness(0.96) contrast(1.06) saturate(0.98);
-    transform: scale(1.02);
-    will-change: transform, filter;
-  }
+    .nav-links{
+      display:flex;
+      gap:.7rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      font-size:.95rem;
+    }
 
-  header.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index:2;
-    background:
-      radial-gradient(1100px 520px at 50% 35%,
-        rgba(0,0,0,0.08) 0%,
-        rgba(0,0,0,0.28) 55%,
-        rgba(0,0,0,0.58) 100%),
-      linear-gradient(to top,
-        rgba(0,0,0,0.56) 0%,
-        rgba(0,0,0,0.16) 62%,
-        rgba(0,0,0,0.06) 100%);
-  }
+    /* BOTÓN DESTACADO REAL: Edición 2026 */
+    .nav-links a.nav-cta{
+      background: var(--gold);
+      color:#111;
+      border: 1px solid var(--gold);
+      font-weight:800;
+      padding: .40rem .75rem;
+      border-radius:999px;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+      text-decoration:none;
+    }
+    .nav-links a.nav-cta:hover{
+      background:#e0c39c;
+      color:#111;
+      border-color:#e0c39c;
+      transform: translateY(-1px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.45);
+      text-decoration:none;
+    }
 
-  header.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index:2;
-    opacity:0.10;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-    background-size: 260px 260px;
-  }
+    /* HERO */
+    header.hero{
+      position:relative;
+      height: 48vh;
+      min-height: 380px;
+      max-height: 520px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      overflow:hidden;
+      padding: 2rem 1.25rem;
+    }
+    .hero-img{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      object-position: center 80%;
+      z-index:1;
+      filter: brightness(1.05) contrast(1.04) saturate(1.04);
+    }
+    .hero-overlay{
+      position:absolute; inset:0;
+      z-index:2;
+      background: linear-gradient(to top, rgba(0,0,0,0.68), rgba(0,0,0,0.18) 60%, rgba(0,0,0,0.06));
+    }
+    .hero-box{
+      position:relative; z-index:3;
+      max-width: 980px;
+      width: min(980px, 92vw);
+      text-align:center;
+      padding: 1.6rem 1.6rem;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(210,180,140,0.22);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.42);
+      backdrop-filter: blur(6px);
+    }
+    .hero-logo{
+      width: min(820px, 86vw);
+      height:auto;
+      display:block;
+      margin: 0 auto .65rem auto;
+      opacity:.70;
+      filter: drop-shadow(0 16px 30px rgba(0,0,0,0.45));
+    }
 
-  .hero-box{
-    position:relative;
-    z-index:3;
-    background: rgba(0,0,0,0.18);
-    border: 1px solid rgba(210,180,140,0.16);
-    box-shadow: 0 22px 70px rgba(0,0,0,0.52);
-    backdrop-filter: blur(8px);
-  }
+    .hero-cta{
+      margin-top: 1.05rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      align-items: stretch;
+    }
+    .hero-cta .btn{ width: 100%; text-align: center; }
 
-  .hero-logo{
-    opacity: 0.68;
-    filter: drop-shadow(0 14px 26px rgba(0,0,0,0.45));
-  }
+    .btn{
+      display:inline-block;
+      padding:.78rem 1.1rem;
+      border-radius:999px;
+      font-weight:700;
+      letter-spacing:.2px;
+      background: var(--gold);
+      color:#111;
+      border: 1px solid rgba(210,180,140,0.6);
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn:hover{ text-decoration:none; filter: brightness(0.98); }
+    .btn-ghost{
+      background: rgba(0,0,0,0.15);
+      color:#f2f2f2;
+      border: 1px solid rgba(210,180,140,0.45);
+    }
 
-</style>
+    /* SECTIONS */
+    main{ overflow-x:hidden; }
+    section{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 4rem 1.25rem;
+    }
+    .section-title{
+      font-size: 2rem;
+      color: var(--gold);
+      margin: 0 0 1.25rem 0;
+      letter-spacing: .2px;
+    }
+    .section-lead{
+      margin: -0.6rem 0 1.2rem 0;
+      color: rgba(237,237,237,0.78);
+      font-size: 1.02rem;
+    }
+    .lead{
+      font-size: 1.06rem;
+      color: rgba(237,237,237,0.92);
+      margin-top:0;
+    }
+    .muted{ color: rgba(237,237,237,0.78); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      align-items:start;
+    }
+    .card{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 1.8rem;
+    }
+    .card h3{
+      margin: 0 0 .75rem 0;
+      font-size: 1.25rem;
+      color:#fff;
+      letter-spacing:.2px;
+    }
+    .pill{
+      display:inline-block;
+      font-size: .82rem;
+      padding: .25rem .55rem;
+      border-radius:999px;
+      border: 1px solid rgba(210,180,140,0.35);
+      color: rgba(210,180,140,0.95);
+      margin-right: .35rem;
+      margin-bottom: .35rem;
+    }
+    .quote{
+      margin: 1rem 0 0 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(210,180,140,0.55);
+      color: rgba(237,237,237,0.85);
+      font-style: italic;
+    }
+
+    /* EXPERIENCIA */
+    .pilares{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .pilar{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 1.5rem;
+    }
+    .pilar h4{
+      margin: 0 0 .6rem 0;
+      font-size: 1.15rem;
+      color:#fff;
+      letter-spacing:.2px;
+    }
+    .detalle-experiencia{
+      margin-top: 1.75rem;
+      background: rgba(17,17,17,0.65);
+      border: 1px solid rgba(210,180,140,0.20);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    /* PRESS */
+    ul.press-list{ margin:.35rem 0 0 0; padding-left: 1.1rem; }
+    ul.press-list li{ margin:.35rem 0; }
+
+    /* BLOQUES DE FOTO */
+    .foto-organizadores,
+    .foto-invitada,
+    .foto-entorno{
+      max-width: 920px;
+      margin: 1.5rem auto 1.75rem auto;
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+    .foto-organizadores img,
+    .foto-invitada img,
+    .foto-entorno img{ width:100%; height:auto; display:block; }
+    .foto-organizadores figcaption,
+    .foto-invitada figcaption,
+    .foto-entorno figcaption{
+      padding: .75rem .9rem;
+      font-size: .95rem;
+      color: rgba(237,237,237,0.78);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* GALERÍA MINI */
+    .mini-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .mini-item{
+      position: relative;
+      display:block;
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow:hidden;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+    }
+    .mini-item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(210,180,140,0.35);
+      filter: brightness(1.02);
+      text-decoration:none;
+    }
+    .mini-item img{
+      width:100%;
+      height: 210px;
+      object-fit: cover;
+      object-position: center 45%;
+      display:block;
+    }
+    .mini-cap{
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: .65rem .85rem;
+      font-size: .95rem;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.35), rgba(0,0,0,0));
+      letter-spacing: .2px;
+      text-align: left;
+      pointer-events: none;
+    }
+    .credito-fotos{ margin: .9rem 0 0; font-size: .92rem; text-align:center; }
+    .mini-actions{ margin-top: 1.25rem; text-align:center; }
+
+    /* CONTACT */
+    .contact-box{
+      background: rgba(17,17,17,0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+      padding: 2rem;
+    }
+    form{ margin-top: 1.25rem; }
+    label{
+      display:block;
+      margin: 0 0 0.35rem 0;
+      font-size: 0.9rem;
+      color: rgba(237,237,237,0.78);
+    }
+    input, select, textarea{
+      width:100%;
+      padding: .75rem .8rem;
+      margin-bottom: 1rem;
+      background:#0b0b0b;
+      border: 1px solid rgba(255,255,255,0.16);
+      color: var(--text);
+      border-radius: 10px;
+      font-family: inherit;
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(210,180,140,0.55);
+      box-shadow: 0 0 0 3px rgba(210,180,140,0.12);
+    }
+    textarea{ min-height:130px; resize:vertical; }
+    .form-note{
+      font-size: .88rem;
+      color: rgba(237,237,237,0.72);
+      margin-top:.5rem;
+    }
+
+    /* FOOTER */
+    footer{
+      border-top: 1px solid var(--border);
+      background:#060606;
+      text-align:center;
+      padding: 2.2rem 1.25rem;
+      font-size: .9rem;
+      color: rgba(237,237,237,0.72);
+    }
+
+    /* NEXT EDITION (teaser 2026) */
+    .next-edition{
+      max-width:1100px;
+      margin:0 auto;
+      padding: 2.2rem 1.25rem 0;
+    }
+    .next-edition .container{max-width:1100px;margin:0 auto}
+    .next-edition__kicker{margin:0 0 6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;opacity:.85}
+    .next-edition__title{margin:0 0 10px;font-size:1.35rem;line-height:1.2;color:var(--gold)}
+    .next-edition__text{margin:0 0 14px;max-width:75ch;color:rgba(237,237,237,0.82)}
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      .pilares{ grid-template-columns: 1fr; }
+      .mini-grid{ grid-template-columns: repeat(2, 1fr); }
+      .mini-item img{ height: 220px; }
+    }
+    @media (max-width: 680px){
+      header.hero{ height: 50vh; min-height: 390px; }
+      .hero-box{ padding: 1.4rem 1.1rem; }
+      .nav-inner{ padding: 0.75rem 1rem; }
+      .nav-links{ gap: 0.5rem; }
+      .brand-logo{ height: 36px; }
+
+      .foto-organizadores,
+      .foto-invitada,
+      .foto-entorno{
+        max-width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+
+      .mini-grid{ grid-template-columns: 1fr; }
+      .mini-item img{ height: 240px; }
+
+      .next-edition{ padding: 1.6rem 1.25rem 0; }
+      .next-edition__title{ font-size:1.15rem; }
+    }
+
+    /* =========================
+       HERO — LOOK EDITORIAL PRO
+       ========================= */
+    header.hero{ position:relative; overflow:hidden; }
+    .hero-img{
+      filter: brightness(0.96) contrast(1.06) saturate(0.98);
+      transform: scale(1.02);
+      will-change: transform, filter;
+    }
+    header.hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:2;
+      background:
+        radial-gradient(1100px 520px at 50% 35%,
+          rgba(0,0,0,0.08) 0%,
+          rgba(0,0,0,0.28) 55%,
+          rgba(0,0,0,0.58) 100%),
+        linear-gradient(to top,
+          rgba(0,0,0,0.56) 0%,
+          rgba(0,0,0,0.16) 62%,
+          rgba(0,0,0,0.06) 100%);
+    }
+    header.hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:2;
+      opacity:0.10;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      background-size: 260px 260px;
+    }
+    .hero-box{
+      position:relative;
+      z-index:3;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(210,180,140,0.16);
+      box-shadow: 0 22px 70px rgba(0,0,0,0.52);
+      backdrop-filter: blur(8px);
+    }
+    .hero-logo{
+      opacity: 0.68;
+      filter: drop-shadow(0 14px 26px rgba(0,0,0,0.45));
+    }
+  </style>
 </head>
 
 <body>
   <div id="top"></div>
 
- <div class="nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <a href="#top" class="brand-logo-link" aria-label="Vino a la Montaña">
-        <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
-      </a>
-      <span>San Martín de los Andes · Patagonia</span>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <a href="#top" class="brand-logo-link" aria-label="Vino a la Montaña">
+          <img src="/assets/logo-oficial.png" alt="Vino a la Montaña" class="brand-logo" />
+        </a>
+        <span>San Martín de los Andes · Patagonia</span>
+      </div>
+
+      <nav class="nav-links" aria-label="Secciones">
+        <a class="nav-cta" href="/vino-a-la-montana-2026/" title="Ir a la edición 2026">Edición 2026</a>
+        <a href="#experiencia-vino-a-la-montana">Experiencia</a>
+        <a href="#dos-mundos">La copa</a>
+        <a href="#organizacion">Organización</a>
+        <a href="#invitada-especial">Invitada</a>
+        <a href="#entorno">Entorno</a>
+        <a href="#edicion">Edición 2025</a>
+        <a href="#prensa">Prensa</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ciudad">La ciudad</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
     </div>
-
-    <nav class="nav-links" aria-label="Secciones">
-      <a class="nav-cta" href="/vino-a-la-montana-2026/" title="Ir a la edición 2026">Edición 2026</a>
-
-      <a href="#experiencia-vino-a-la-montana">Experiencia</a>
-      <a href="#dos-mundos">La copa</a>
-      <a href="#organizacion">Organización</a>
-      <a href="#invitada-especial">Invitada</a>
-      <a href="#entorno">Entorno</a>
-      <a href="#edicion">Edición 2025</a>
-      <a href="#prensa">Prensa</a>
-      <a href="#galeria">Galería</a>
-      <a href="#ciudad">La ciudad</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </div>
-</div>
 
   <header class="hero" role="banner">
     <img
@@ -290,12 +682,7 @@
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-box">
-      <img
-        class="hero-logo"
-        src="/assets/logo-oficial.png"
-        alt="Vino a la Montaña"
-        decoding="async"
-      />
+      <img class="hero-logo" src="/assets/logo-oficial.png" alt="Vino a la Montaña" decoding="async" />
 
       <p style="margin:0; font-size:.82rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(210,180,140,0.92);">
         Primera edición realizada · Septiembre 2025
@@ -391,8 +778,7 @@
           tangible de una experiencia vivida en la montaña, desde el primer brindis.
         </p>
       </div>
-
-        </section>
+    </section>
 
     <!-- LA COPA (DOS MUNDOS) -->
     <section id="dos-mundos">
@@ -640,7 +1026,7 @@
       </div>
     </section>
 
-    <!-- GALERÍA MINI (3 miniaturas) -->
+    <!-- GALERÍA MINI -->
     <section id="galeria" class="galeria-mini">
       <h2 class="section-title">Galería</h2>
       <p class="section-lead">Un vistazo a Vino a la Montaña. Ver más fotos en la galería completa.</p>
@@ -700,210 +1086,139 @@
     </section>
 
     <!-- CONTACTO -->
-<section id="contacto">
-  <h2 class="section-title">Contacto</h2>
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
 
-  <div class="contact-box">
-    <p class="lead" style="margin-bottom:0.75rem;">
-      Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
-      <strong>sponsoreo</strong> o prensa:
-    </p>
+      <div class="contact-box">
+        <p class="lead" style="margin-bottom:0.75rem;">
+          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
+          <strong>sponsoreo</strong> o prensa:
+        </p>
 
-    <p class="muted" style="margin-top:0;">
-      📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
-      📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
-      <span class="form-note">Canal de contacto institucional.</span>
-    </p>
+        <p class="muted" style="margin-top:0;">
+          📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
+          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
+          <span class="form-note">Canal de contacto institucional.</span>
+        </p>
 
-<form id="vamHomeContactForm"
-      action="https://formspree.io/f/xnjbwnae"
-      method="POST"
-      accept-charset="UTF-8">
+        <form id="vamHomeContactForm"
+              action="https://formspree.io/f/xnjbwnae"
+              method="POST"
+              accept-charset="UTF-8">
 
-  <!-- Formspree -->
-  <input type="hidden" name="_subject" value="Vino a la Montaña — Contacto (Home)" />
-  <input type="hidden" name="_format" value="plain" />
-  <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-  <input type="hidden" name="tipo" value="Contacto Home" />
+          <!-- Formspree -->
+          <input type="hidden" name="_subject" value="Vino a la Montaña — Contacto (Home)" />
+          <input type="hidden" name="_format" value="plain" />
+          <input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="tipo" value="Contacto Home" />
 
-  <label for="home_nombre">Nombre</label>
-  <input id="home_nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
+          <label for="home_nombre">Nombre</label>
+          <input id="home_nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
 
-  <label for="home_email">Email</label>
-  <input id="home_email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
+          <label for="home_email">Email</label>
+          <input id="home_email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
 
-  <label for="home_motivo">Motivo de contacto</label>
-  <select id="home_motivo" name="motivo" required>
-    <option value="info">Información general</option>
-    <option value="bodega">Participar como bodega</option>
-    <option value="sponsoreo">Sponsoreo</option>
-    <option value="prensa">Prensa</option>
-  </select>
+          <label for="home_motivo">Motivo de contacto</label>
+          <select id="home_motivo" name="motivo" required>
+            <option value="info">Información general</option>
+            <option value="bodega">Participar como bodega</option>
+            <option value="sponsoreo">Sponsoreo</option>
+            <option value="prensa">Prensa</option>
+          </select>
 
-  <label for="home_mensaje">Mensaje</label>
-  <textarea id="home_mensaje" name="mensaje" placeholder="Escribinos tu consulta" minlength="10" required></textarea>
+          <label for="home_mensaje">Mensaje</label>
+          <textarea id="home_mensaje" name="mensaje" placeholder="Escribinos tu consulta" minlength="10" required></textarea>
 
-  <button class="btn" type="submit">Enviar</button>
+          <button class="btn" type="submit">Enviar</button>
 
-  <div class="form-note" id="vamHomeContactNote" role="status" aria-live="polite">
-    Te respondemos a la brevedad.
-  </div>
-</form>
+          <div class="form-note" id="vamHomeContactNote" role="status" aria-live="polite">
+            Te respondemos a la brevedad.
+          </div>
+        </form>
 
-<script>
-(function(){
-  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
+        <script>
+        (function(){
+          const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
 
-  async function submitToFormspree(form){
-    const endpoint = form.getAttribute('action');
-    const formData = new FormData(form);
+          async function submitToFormspree(form){
+            const endpoint = form.getAttribute('action');
+            const formData = new FormData(form);
 
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    });
+            const res = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: formData
+            });
 
-    if (!res.ok) {
-      let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
-      try {
-        const data = await res.json();
-        if (data && data.errors && data.errors.length) {
-          msg = data.errors.map(e => e.message).join(' ');
-        }
-      } catch (_) {}
-      throw new Error(msg);
-    }
-  }
+            if (!res.ok) {
+              let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
+              try {
+                const data = await res.json();
+                if (data && data.errors && data.errors.length) {
+                  msg = data.errors.map(e => e.message).join(' ');
+                }
+              } catch (_) {}
+              throw new Error(msg);
+            }
+          }
 
-  function wireForm(formId, noteId){
-    const form = document.getElementById(formId);
-    const note = document.getElementById(noteId);
-    if (!form) return;
+          function wireForm(formId, noteId){
+            const form = document.getElementById(formId);
+            const note = document.getElementById(noteId);
+            if (!form) return;
 
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
+            // Estado inicial (evita “¿dónde va dataset.submitting?”)
+            if (typeof form.dataset.submitting === 'undefined') form.dataset.submitting = "false";
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+            form.addEventListener('submit', async function(e){
+              e.preventDefault();
 
-      // Anti doble envío
-      if (form.dataset.submitting === "true") return;
-      form.dataset.submitting = "true";
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.textContent : '';
+              // Anti doble envío
+              if (form.dataset.submitting === "true") return;
+              form.dataset.submitting = "true";
 
-      try {
-        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
-        if (note) note.textContent = 'Enviando…';
+              const submitBtn = form.querySelector('button[type="submit"]');
+              const originalText = submitBtn ? submitBtn.textContent : '';
 
-        await submitToFormspree(form);
+              try {
+                if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Enviando...'; }
+                if (note) note.textContent = 'Enviando…';
 
-        form.reset();
+                await submitToFormspree(form);
 
-        if (note) note.textContent = 'Enviado. Redirigiendo…';
-        window.location.href = THANK_YOU_URL;
+                form.reset();
 
-      } catch (err) {
-        if (note) note.textContent = (err && err.message) ? err.message : 'Error al enviar. Intentá nuevamente.';
-      } finally {
-        form.dataset.submitting = "false";
-        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
-      }
-    });
-  }
+                if (note) note.textContent = 'Enviado. Redirigiendo…';
+                window.location.href = THANK_YOU_URL;
 
-  wireForm('vamHomeContactForm', 'vamHomeContactNote');
-})();
-</script>
-(function(){
-  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
+              } catch (err) {
+                if (note) note.textContent = (err && err.message) ? err.message : 'Error al enviar. Intentá nuevamente.';
+              } finally {
+                form.dataset.submitting = "false";
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+              }
+            });
+          }
 
-  async function submitToFormspree(form){
-    const endpoint = form.getAttribute('action');
-    const formData = new FormData(form);
+          wireForm('vamHomeContactForm', 'vamHomeContactNote');
+        })();
+        </script>
 
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: formData
-    });
+      </div>
+    </section>
 
-    if (!res.ok) {
-      let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
-      try {
-        const data = await res.json();
-        if (data && data.errors && data.errors.length) {
-          msg = data.errors.map(e => e.message).join(' ');
-        }
-      } catch (_) {}
-      throw new Error(msg);
-    }
-  }
+  </main>
 
-  function wireForm(formId, noteId){
-    const form = document.getElementById(formId);
-    const note = document.getElementById(noteId);
-    if (!form) return;
+  <footer>
+    © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
+  </footer>
 
-    form.addEventListener('submit', async function(e){
-      e.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // PROTECCIÓN anti doble envío
-      if (form.dataset.submitting === "true") return;
-      form.dataset.submitting = "true";
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalText = submitBtn ? submitBtn.textContent : '';
-
-      try {
-        if (submitBtn) {
-          submitBtn.disabled = true;
-          submitBtn.textContent = 'Enviando...';
-        }
-
-        if (note) note.textContent = 'Enviando…';
-
-        await submitToFormspree(form);
-
-        form.reset();
-
-        if (note) note.textContent = 'Enviado. Redirigiendo…';
-
-        window.location.href = THANK_YOU_URL;
-
-      } catch (err) {
-
-        if (note) {
-          note.textContent = (err && err.message)
-            ? err.message
-            : 'Error al enviar. Intentá nuevamente.';
-        }
-
-      } finally {
-
-        // REACTIVAR formulario
-        form.dataset.submitting = "false";
-
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        }
-      }
-    });
-  }
-
-  wireForm('vamHomeContactForm', 'vamHomeContactNote');
-
-})();
-</script>
+</body>
+</html>
