@@ -1111,117 +1111,142 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto">
-      <h2 class="section-title">Contacto</h2>
+<section id="contacto">
+  <h2 class="section-title">Contacto</h2>
 
-      <div class="contact-box">
-        <p class="lead" style="margin-bottom:0.75rem;">
-          Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
-          <strong>sponsoreo</strong> o prensa:
-        </p>
+  <div class="contact-box">
+    <p class="lead" style="margin-bottom:0.75rem;">
+      Para <strong>información adicional</strong>, consultas para <strong>participar</strong>, propuestas de
+      <strong>sponsoreo</strong> o prensa:
+    </p>
 
-        <p class="muted" style="margin-top:0;">
-          📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
-          📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
-          <span class="form-note">Canal de contacto institucional.</span>
-        </p>
+    <p class="muted" style="margin-top:0;">
+      📩 <a href="mailto:contacto@vinoalamontana.com.ar">contacto@vinoalamontana.com.ar</a><br />
+      📷 Instagram: <a href="https://instagram.com/vinoalamontana.sma" target="_blank" rel="noopener noreferrer">@vinoalamontana.sma</a><br />
+      <span class="form-note">Canal de contacto institucional.</span>
+    </p>
 
-        <form id="contactForm">
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
+<form id="vamHomeContactForm"
+      action="https://formspree.io/f/xnjbwnae"
+      method="POST"
+      accept-charset="UTF-8"
+      novalidate>
 
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
+  <!-- Formspree -->
+  <input type="hidden" name="_subject" value="Vino a la Montaña — Contacto (Home)" />
+<input type="hidden" name="_format" value="plain" />
+<input type="hidden" name="_next" value="https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html" />
+<input type="hidden" name="_captcha" value="false" />
+<input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+<input type="hidden" name="tipo" value="Contacto Home" />
 
-          <label for="motivo">Motivo de contacto</label>
-          <select id="motivo" name="motivo" required>
-            <option value="info">Información general</option>
-            <option value="bodega">Participar como bodega</option>
-            <option value="sponsoreo">Sponsoreo</option>
-            <option value="prensa">Prensa</option>
-          </select>
+  <label for="home_nombre">Nombre</label>
+  <input id="home_nombre" name="nombre" type="text" placeholder="Nombre y apellido" autocomplete="name" required />
 
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Escribinos tu consulta" required></textarea>
+  <label for="home_email">Email</label>
+  <input id="home_email" name="email" type="email" placeholder="tu@email.com" autocomplete="email" required />
 
-          <button class="btn" type="submit">Enviar</button>
-          <div class="form-note" id="formNote">Se abrirá tu correo con el mensaje prearmado para enviar.</div>
-        </form>
-      </div>
-    </section>
+  <label for="home_motivo">Motivo de contacto</label>
+  <select id="home_motivo" name="motivo" required>
+    <option value="info">Información general</option>
+    <option value="bodega">Participar como bodega</option>
+    <option value="sponsoreo">Sponsoreo</option>
+    <option value="prensa">Prensa</option>
+  </select>
 
-  </main>
+  <label for="home_mensaje">Mensaje</label>
+  <textarea id="home_mensaje" name="mensaje" placeholder="Escribinos tu consulta" required></textarea>
 
-  <footer>
-    © Vino a la Montaña · San Martín de los Andes · Patagonia Argentina
-  </footer>
+  <button class="btn" type="submit" name="submit">Enviar</button>
+  <div class="form-note" id="vamHomeContactNote" role="status" aria-live="polite">
+    Te respondemos a la brevedad.
+  </div>
+</form>
 
-  <!-- WhatsApp flotante -->
-  <a class="whatsapp-float"
-     href="https://wa.me/5492944668508?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20Vino%20a%20la%20Monta%C3%B1a%202026%20en%20San%20Mart%C3%ADn%20de%20los%20Andes"
-     target="_blank"
-     rel="noopener"
-     aria-label="WhatsApp Vino a la Montaña">
-    <svg viewBox="0 0 32 32" width="28" height="28" fill="white" aria-hidden="true">
-      <path d="M19.11 17.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.2-.24-.57-.48-.5-.66-.51l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.2 5.08 4.5.7.3 1.25.48 1.67.61.7.22 1.34.19 1.85.12.56-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
-    </svg>
-  </a>
+<script>
+(function(){
+  const THANK_YOU_URL = 'https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/gracias.html';
 
-  <script>
-    // Envío simple por mailto (hasta integrar un servicio real tipo Formspree/Netlify)
-    const form = document.getElementById('contactForm');
-    const note = document.getElementById('formNote');
+  async function submitToFormspree(form){
+    const endpoint = form.getAttribute('action');
+    const formData = new FormData(form);
 
-    if (form) {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    });
 
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
+    if (!res.ok) {
+      let msg = 'No se pudo enviar el formulario. Probá de nuevo.';
+      try {
+        const data = await res.json();
+        if (data && data.errors && data.errors.length) {
+          msg = data.errors.map(e => e.message).join(' ');
         }
-
-        const nombre = document.getElementById('nombre').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const motivo = document.getElementById('motivo').value;
-        const mensaje = document.getElementById('mensaje').value.trim();
-
-        const subjectMap = {
-          info: 'Consulta · Vino a la Montaña',
-          bodega: 'Participación de bodega · Vino a la Montaña',
-          sponsoreo: 'Sponsoreo · Vino a la Montaña',
-          prensa: 'Prensa · Vino a la Montaña'
-        };
-
-        const subject = subjectMap[motivo] || 'Contacto · Vino a la Montaña';
-
-        const body =
-`Nombre: ${nombre}
-Email: ${email}
-Motivo: ${motivo}
-
-Mensaje:
-${mensaje}
-`;
-
-        const mailto = `mailto:contacto@vinoalamontana.com.ar?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-        // 1) Disparar mailto mientras sigue siendo "gesto" del usuario (más compatible en iOS)
-        window.location.href = mailto;
-
-        // 2) Mensaje al usuario
-        if (note) {
-          note.textContent = "Se abrirá tu correo con el mensaje prearmado. Si preferís, también podés escribirnos directo por email.";
-        }
-
-        // 3) Reset luego (no interfiere con mailto en Safari/iOS)
-        setTimeout(() => {
-          form.reset();
-          document.getElementById('motivo').value = 'info';
-        }, 80);
-      });
+      } catch (_) {}
+      throw new Error(msg);
     }
-  </script>
+  }
 
-</body>
-</html>
+  function wireForm(formId, noteId){
+    const form = document.getElementById(formId);
+    const note = document.getElementById(noteId);
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      // PROTECCIÓN anti doble envío
+      if (form.dataset.submitting === "true") return;
+      form.dataset.submitting = "true";
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.textContent : '';
+
+      try {
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Enviando...';
+        }
+
+        if (note) note.textContent = 'Enviando…';
+
+        await submitToFormspree(form);
+
+        form.reset();
+
+        if (note) note.textContent = 'Enviado. Redirigiendo…';
+
+        window.location.href = THANK_YOU_URL;
+
+      } catch (err) {
+
+        if (note) {
+          note.textContent = (err && err.message)
+            ? err.message
+            : 'Error al enviar. Intentá nuevamente.';
+        }
+
+      } finally {
+
+        // REACTIVAR formulario
+        form.dataset.submitting = "false";
+
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      }
+    });
+  }
+
+  wireForm('vamHomeContactForm', 'vamHomeContactNote');
+
+})();
+</script>
