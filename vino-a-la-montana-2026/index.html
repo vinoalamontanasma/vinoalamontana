@@ -36,70 +36,100 @@
   <meta name="twitter:image" content="https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-2026-og.jpg" />
   <meta name="twitter:image:alt" content="Vino a la Montaña 2026 · El evento del vino de la Patagonia" />
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://www.vinoalamontana.com.ar/#org",
-        "name":"Vino a la Montaña",
-        "url":"https://www.vinoalamontana.com.ar/",
-        "logo":"https://www.vinoalamontana.com.ar/assets/logo-oficial.png",
-        "sameAs":[
-          "https://www.instagram.com/vinoalamontana.sma/"
-        ],
-        "contactPoint":[
-          {
-            "@type":"ContactPoint",
-            "contactType":"info",
-            "email":"contacto@vinoalamontana.com.ar",
-            "availableLanguage":["es"]
-          }
-        ]
-      },
-      {
-        "@type":"WebSite",
-        "@id":"https://www.vinoalamontana.com.ar/#website",
-        "url":"https://www.vinoalamontana.com.ar/",
-        "name":"Vino a la Montaña",
-        "inLanguage":"es-AR",
-        "publisher":{"@id":"https://www.vinoalamontana.com.ar/#org"}
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/#webpage",
-        "url":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/",
-        "name":"Vino a la Montaña 2026 · El evento del vino de la Patagonia",
-        "inLanguage":"es-AR",
-        "isPartOf":{"@id":"https://www.vinoalamontana.com.ar/#website"},
-        "about":{"@id":"https://www.vinoalamontana.com.ar/#org"}
-      },
-      {
-        "@type":"Event",
-        "@id":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/#event",
-        "name":"Vino a la Montaña 2026",
-        "description":"El encuentro del vino de la Patagonia en San Martín de los Andes. Edición 2026 en preparación: convocatoria abierta para bodegas y sponsors.",
-        "eventStatus":"https://schema.org/EventScheduled",
-        "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
-        "inLanguage":"es-AR",
-        "location":{
-          "@type":"Place",
-          "name":"San Martín de los Andes",
-          "address":{
-            "@type":"PostalAddress",
-            "addressLocality":"San Martín de los Andes",
-            "addressRegion":"Neuquén",
-            "addressCountry":"AR"
-          }
-        },
-        "organizer":{"@id":"https://www.vinoalamontana.com.ar/#org"},
-        "url":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/"
+ <!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://www.vinoalamontana.com.ar/#org",
+      "name":"Vino a la Montaña",
+      "url":"https://www.vinoalamontana.com.ar/",
+      "logo":"https://www.vinoalamontana.com.ar/assets/logo-oficial.png",
+      "sameAs":[
+        "https://www.instagram.com/vinoalamontana.sma/"
+      ],
+      "contactPoint":[
+        {
+          "@type":"ContactPoint",
+          "contactType":"info",
+          "email":"contacto@vinoalamontana.com.ar",
+          "availableLanguage":["es"]
+        }
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://www.vinoalamontana.com.ar/#website",
+      "url":"https://www.vinoalamontana.com.ar/",
+      "name":"Vino a la Montaña",
+      "inLanguage":"es-AR",
+      "publisher":{
+        "@id":"https://www.vinoalamontana.com.ar/#org"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/#webpage",
+      "url":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/",
+      "name":"Vino a la Montaña 2026 · El evento del vino de la Patagonia",
+      "inLanguage":"es-AR",
+      "isPartOf":{
+        "@id":"https://www.vinoalamontana.com.ar/#website"
+      },
+      "about":{
+        "@id":"https://www.vinoalamontana.com.ar/#event"
+      }
+    },
+    {
+      "@type":"Event",
+      "@id":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/#event",
+      "name":"Vino a la Montaña 2026",
+      "description":"El encuentro del vino de la Patagonia en San Martín de los Andes. Edición 2026 en preparación: convocatoria abierta para bodegas y sponsors.",
+      "eventStatus":"https://schema.org/EventScheduled",
+      "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+      "inLanguage":"es-AR",
+
+      "location":{
+        "@type":"Place",
+        "name":"San Martín de los Andes",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"San Martín de los Andes",
+          "addressRegion":"Neuquén",
+          "addressCountry":"AR"
+        }
+      },
+
+      "organizer":{
+        "@id":"https://www.vinoalamontana.com.ar/#org"
+      },
+
+      "performer":[
+        {
+          "@type":"Organization",
+          "name":"Bodegas patagónicas participantes"
+        }
+      ],
+
+      "offers":{
+        "@type":"Offer",
+        "url":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/",
+        "availability":"https://schema.org/PreOrder"
+      },
+
+      "isPartOf":{
+        "@id":"https://www.vinoalamontana.com.ar/#eventseries"
+      },
+
+      "image":"https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-2026-san-martin-de-los-andes.webp",
+
+      "url":"https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/"
+    }
+  ]
+}
+</script>
 
   <style>
     :root{
