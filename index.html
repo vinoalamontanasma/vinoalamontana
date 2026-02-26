@@ -1217,23 +1217,27 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">Vino a la Montaña</div>
-    <div class="footer-links">
+
+    <nav class="footer-links" aria-label="Enlaces del sitio">
       <a href="/vino-a-la-montana-2026/">Edición 2026</a>
-      <span aria-hidden="true">·</span>
+      <span class="dot" aria-hidden="true">·</span>
       <a href="/prensa/">Prensa</a>
-      <span aria-hidden="true">·</span>
+      <span class="dot" aria-hidden="true">·</span>
       <a href="/galeria/">Galería</a>
-      <span aria-hidden="true">·</span>
+      <span class="dot" aria-hidden="true">·</span>
       <a href="#top">Volver arriba</a>
-    </div>
+    </nav>
+
     <div class="footer-meta">
       © <span id="y"></span> · San Martín de los Andes · Patagonia Argentina
     </div>
   </div>
 
   <script>
-    // Año automático (no toca tu estética)
-    document.getElementById('y').textContent = new Date().getFullYear();
+    (function () {
+      var el = document.getElementById('y');
+      if (el) el.textContent = new Date().getFullYear();
+    })();
   </script>
 </footer>
 
