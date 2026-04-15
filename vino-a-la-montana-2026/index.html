@@ -215,42 +215,46 @@
       text-decoration:none;
     }
 
-    /* HERO */
-    .hero{
-      text-align:center;
-      padding:5.2rem 1.25rem 4.2rem;
-      min-height:68vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      background:
-        linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.86) 100%),
-        url('/assets/vino-a-la-montana-2026-san-martin-de-los-andes.webp') center/cover no-repeat;
-    }
-    .hero h1{
-      margin:0 0 .85rem 0;
-      font-size:3rem;
-      font-weight:600;
-      color: var(--gold);
-      letter-spacing:.5px;
-      line-height:1.12;
-      text-shadow: 0 3px 14px rgba(0,0,0,0.45);
-      max-width: 22ch;
-    }
-    .kicker{
-      margin:0 0 .9rem 0;
-      font-size:.85rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:rgba(255,255,255,0.72);
-    }
-    .hero p{
-      max-width:820px;
-      margin:0 auto 1.6rem;
-      color: rgba(237,237,237,0.92);
-    }
+ /* HERO */
+.hero{
+  text-align:center;
+  padding:5.2rem 1.25rem 4.2rem;
+  min-height:68vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.55) 100%),
+    url('/assets/vino-a-la-montana-2026-san-martin-de-los-andes.webp') center 40%/cover no-repeat;
+}
 
+.hero h1{
+  margin:0 0 .85rem 0;
+  font-size:3rem;
+  font-weight:600;
+  color: var(--gold);
+  letter-spacing:.5px;
+  line-height:1.12;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.65);
+  max-width: 22ch;
+}
+
+.kicker{
+  margin:0 0 .9rem 0;
+  font-size:.85rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.78);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.hero p{
+  max-width:820px;
+  margin:0 auto 1.6rem;
+  color: rgba(237,237,237,0.94);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.55);
+}
     .cta-grid{
       display:grid;
       grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
