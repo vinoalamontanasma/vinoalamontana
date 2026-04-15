@@ -44,11 +44,12 @@
   <meta name="twitter:image" content="https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG" />
   <meta name="twitter:image:alt" content="Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes" />
   
-<!-- Schema.org Organization + WebSite + WebPage -->
+<!-- Schema.org GLOBAL -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
       "@type": "Organization",
       "@id": "https://www.vinoalamontana.com.ar/#org",
@@ -58,19 +59,21 @@
         "@type": "ImageObject",
         "url": "https://www.vinoalamontana.com.ar/assets/logo-oficial.png"
       },
-      "description": "Vino a la Montaña es la feria de vinos patagónicos de San Martín de los Andes, Patagonia Argentina.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://www.vinoalamontana.com.ar/assets/logo-oficial.png"
+      },
       "sameAs": [
         "https://www.instagram.com/vinoalamontana.sma/"
       ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "contactType": "information",
-          "email": "contacto@vinoalamontana.com.ar",
-          "availableLanguage": ["es"]
-        }
-      ]
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "information",
+        "email": "contacto@vinoalamontana.com.ar",
+        "availableLanguage": ["es"]
+      }]
     },
+
     {
       "@type": "WebSite",
       "@id": "https://www.vinoalamontana.com.ar/#website",
@@ -81,12 +84,12 @@
         "@id": "https://www.vinoalamontana.com.ar/#org"
       }
     },
+
     {
       "@type": "WebPage",
       "@id": "https://www.vinoalamontana.com.ar/#webpage",
       "url": "https://www.vinoalamontana.com.ar/",
       "name": "Vino a la Montaña · La Ruta del Vino de la Patagonia en San Martín de los Andes",
-      "description": "Vino a la Montaña es la feria de vinos patagónicos de San Martín de los Andes. La Ruta del Vino de la Patagonia integra evento, prensa, galería y próximas ediciones.",
       "inLanguage": "es-AR",
       "isPartOf": {
         "@id": "https://www.vinoalamontana.com.ar/#website"
@@ -100,111 +103,109 @@
       },
       "publisher": {
         "@id": "https://www.vinoalamontana.com.ar/#org"
+      },
+      "mainEntity": {
+        "@id": "https://www.vinoalamontana.com.ar/#eventseries"
       }
-    }
-  ]
-}
-</script>
+    },
 
-<!-- Schema.org Event (Edición 2025) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "@id": "https://www.vinoalamontana.com.ar/#event-2025",
-  "name": "Vino a la Montaña · Feria de Vinos Patagónicos (Edición 2025)",
-  "description": "Feria y degustación de vinos patagónicos en San Martín de los Andes, Patagonia Argentina.",
-  "startDate": "2025-09-19",
-  "endDate": "2025-09-20",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventCompleted",
-  "inLanguage": "es-AR",
-  "location": {
-    "@type": "Place",
-    "name": "Loi Suites Chapelco Golf & Resort",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Ruta Nacional 40",
-      "addressLocality": "San Martín de los Andes",
-      "addressRegion": "Neuquén",
-      "addressCountry": "AR"
-    }
-  },
-  "organizer": {
-    "@id": "https://www.vinoalamontana.com.ar/#org"
-  },
-  "performer": {
-    "@type": "Organization",
-    "name": "Bodegas patagónicas participantes"
-  },
-  "image": "https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG",
-  "url": "https://www.vinoalamontana.com.ar/",
-  "mainEntityOfPage": {
-    "@id": "https://www.vinoalamontana.com.ar/#webpage"
-  }
-}
-</script>
+    {
+      "@type": "EventSeries",
+      "@id": "https://www.vinoalamontana.com.ar/#eventseries",
+      "name": "Vino a la Montaña",
+      "description": "Feria de vinos patagónicos en San Martín de los Andes, Patagonia Argentina.",
+      "url": "https://www.vinoalamontana.com.ar/",
+      "organizer": {
+        "@id": "https://www.vinoalamontana.com.ar/#org"
+      }
+    },
 
-<!-- Schema.org EventSeries -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EventSeries",
-  "@id": "https://www.vinoalamontana.com.ar/#eventseries",
-  "name": "Vino a la Montaña",
-  "description": "Feria de vinos patagónicos en San Martín de los Andes, Patagonia Argentina.",
-  "url": "https://www.vinoalamontana.com.ar/",
-  "organizer": {
-    "@id": "https://www.vinoalamontana.com.ar/#org"
-  },
-  "subEvent": [
     {
       "@type": "Event",
       "@id": "https://www.vinoalamontana.com.ar/#event-2025",
       "name": "Vino a la Montaña 2025",
-      "eventStatus": "https://schema.org/EventCompleted"
+      "startDate": "2025-09-19T18:00",
+      "endDate": "2025-09-20T23:00",
+      "eventStatus": "https://schema.org/EventCompleted",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Loi Suites Chapelco Golf & Resort",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ruta Nacional 40",
+          "addressLocality": "San Martín de los Andes",
+          "addressRegion": "Neuquén",
+          "addressCountry": "AR"
+        }
+      },
+      "image": "https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG",
+      "organizer": {
+        "@id": "https://www.vinoalamontana.com.ar/#org"
+      },
+      "superEvent": {
+        "@id": "https://www.vinoalamontana.com.ar/#eventseries"
+      }
     },
+
     {
       "@type": "Event",
-      "@id": "https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/#event",
+      "@id": "https://www.vinoalamontana.com.ar/#event-2026",
       "name": "Vino a la Montaña 2026",
+      "startDate": "2026-10-10T18:00",
+      "endDate": "2026-10-11T23:00",
       "eventStatus": "https://schema.org/EventScheduled",
-      "url": "https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/"
-    }
-  ]
-}
-</script>
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Loi Suites Chapelco Golf & Resort",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "San Martín de los Andes",
+          "addressRegion": "Neuquén",
+          "addressCountry": "AR"
+        }
+      },
+      "image": "https://www.vinoalamontana.com.ar/assets/vino-a-la-montana-cabecera.JPEG",
+      "url": "https://www.vinoalamontana.com.ar/vino-a-la-montana-2026/",
+      "organizer": {
+        "@id": "https://www.vinoalamontana.com.ar/#org"
+      },
+      "superEvent": {
+        "@id": "https://www.vinoalamontana.com.ar/#eventseries"
+      }
+    },
 
-<!-- Schema.org FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
     {
-      "@type": "Question",
-      "name": "¿Qué es Vino a la Montaña?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Vino a la Montaña es una feria de vinos patagónicos que se realiza en San Martín de los Andes, Patagonia Argentina. Reúne bodegas de Neuquén, Río Negro y Chubut en un encuentro boutique que integra vino, gastronomía y enoturismo."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Dónde se realiza Vino a la Montaña?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "El evento se realiza en San Martín de los Andes, provincia del Neuquén, Patagonia Argentina."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "¿Quiénes participan en Vino a la Montaña?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Participan bodegas patagónicas, productores, enólogos y profesionales del sector gastronómico y hotelero, junto a público interesado en descubrir etiquetas regionales."
-      }
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Vino a la Montaña?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vino a la Montaña es una feria de vinos patagónicos que se realiza en San Martín de los Andes, Patagonia Argentina."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo es Vino a la Montaña 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La edición 2026 se realizará el 10 y 11 de octubre de 18:00 a 23:00 hs en San Martín de los Andes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se realiza el evento?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El evento se realiza en el Hotel Loi Suites Chapelco Golf & Resort, en San Martín de los Andes, Patagonia Argentina."
+          }
+        }
+      ]
     }
+
   ]
 }
 </script>
