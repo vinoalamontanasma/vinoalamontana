@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vinoalamontana.com.ar/sitemap.xml
+# Bloquear páginas técnicas
+Disallow: /404.html
+Disallow: /vino-a-la-montana-2026/gracias.html
+
+# Sitemap
+Sitemap: https://www.vinoalamontana.com.ar/sitemap.xml
